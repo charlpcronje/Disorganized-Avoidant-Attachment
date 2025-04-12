@@ -41,21 +41,12 @@ $pageContent = 'pages/' . $pageInfo['slug'] . '.php';
 
 // 5. Check if the content file exists (basic check to prevent include errors)
 if (!file_exists($pageContent)) {
-    // Check if a direct PHP file exists with this name (for development/example pages)
-    $directPhpFile = 'pages/' . $requestedSlug . '.php';
-    if (file_exists($directPhpFile)) {
-        // Allow direct PHP files without database entries
-        $currentPage = $requestedSlug;
-        $pageTitle = SITE_NAME . ' - ' . ucfirst($requestedSlug);
-        $pageContent = $directPhpFile;
-    } else {
-        // If content file missing, show introduction instead (simplest fallback)
-        $currentPage = 'introduction';
-        $pageInfo = getPageBySlug($currentPage); // Re-fetch intro info
-        $pageTitle = SITE_NAME . ' - Introduction';
-        $pageContent = 'pages/introduction.php';
-        // Note: This might show the wrong title if introduction fails above, but minimal change asked.
-    }
+    // If content file missing, show introduction instead (simplest fallback)
+    $currentPage = 'introduction';
+    $pageInfo = getPageBySlug($currentPage); // Re-fetch intro info
+    $pageTitle = SITE_NAME . ' - Introduction';
+    $pageContent = 'pages/introduction.php';
+    // Note: This might show the wrong title if introduction fails above, but minimal change asked.
 }
 
 // 6. Get next/prev based on the *actual* current page's order
