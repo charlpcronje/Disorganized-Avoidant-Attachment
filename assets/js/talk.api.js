@@ -102,13 +102,17 @@ class TalkAPI {
             }
 
             if (data.audio_url) {
-                // Cache the audio URL
-                this.audioCache[cacheKey] = data.audio_url;
+                // Convert relative URL to absolute URL using the API base URL
+                const apiBaseUrl = this.config.apiEndpoint.split('/').slice(0, -1).join('/');
+                const absoluteAudioUrl = apiBaseUrl + data.audio_url;
+
+                // Cache the absolute audio URL
+                this.audioCache[cacheKey] = absoluteAudioUrl;
 
                 // Play the audio
-                this.playAudio(data.audio_url, buttonElement);
+                this.playAudio(absoluteAudioUrl, buttonElement);
 
-                return data.audio_url;
+                return absoluteAudioUrl;
             } else {
                 throw new Error('No audio URL returned');
             }
