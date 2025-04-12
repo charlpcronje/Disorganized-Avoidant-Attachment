@@ -80,18 +80,20 @@ export class TalkAPI {
         section.className = 'talk-section';
         section.id = `talk-section-${id}`;
 
-        // Add progress bar
-        const progressBar = this.uiManager.createProgressBar();
-        section.appendChild(progressBar);
-
         // Create play button with speaker icon
         const button = this.createButton(id, voice);
 
-        // Clone the talk element content into the section
-        const content = talkElement.innerHTML;
-        section.innerHTML = content;
+        // Create a content container for the talk content
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'talk-content';
+        contentContainer.innerHTML = talkElement.innerHTML;
 
-        // Add button to section
+        // Add progress bar
+        const progressBar = this.uiManager.createProgressBar();
+
+        // Add elements to section in correct order
+        section.appendChild(progressBar);
+        section.appendChild(contentContainer);
         section.appendChild(button);
 
         // Replace the talk element with our section
@@ -112,18 +114,25 @@ export class TalkAPI {
         section.className = 'talk-section';
         section.id = `talk-section-${id}`;
 
+        // Create play button with speaker icon
+        const button = this.createButton(id, voice);
+
         // Add progress bar
         const progressBar = this.uiManager.createProgressBar();
         section.appendChild(progressBar);
 
-        // Create play button with speaker icon
-        const button = this.createButton(id, voice);
+        // Create a content container
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'talk-content';
 
-        // Move elements into the section
+        // Move elements into the content container
         elements.forEach(el => {
             const clone = el.cloneNode(true);
-            section.appendChild(clone);
+            contentContainer.appendChild(clone);
         });
+
+        // Add content container to section
+        section.appendChild(contentContainer);
 
         // Add button to section
         section.appendChild(button);

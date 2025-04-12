@@ -59,10 +59,11 @@ export class UIManager {
                 top: 0;
                 bottom: 0;
                 width: 10px;
-                background-color: rgba(200, 200, 200, 0.2);
+                background-color: rgba(200, 200, 200, 0.3);
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
                 overflow: hidden;
+                z-index: 10;
             }
 
             /* Progress bar */
@@ -74,6 +75,13 @@ export class UIManager {
                 background-color: #5a84c3;
                 height: 0%;
                 transition: height 0.1s linear;
+            }
+
+            /* Content container */
+            .talk-content {
+                position: relative;
+                width: 100%;
+                padding-right: 40px; /* Space for button */
             }
 
             /* Icons */
