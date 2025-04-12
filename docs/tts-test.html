@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS API Voice Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .voice-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .voice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .voice-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .voice-description {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .test-all-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        #test-all-btn {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .talk-example {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        .talk-play-btn {
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>TTS API Voice Test</h1>
+
+    <div class="test-all-container">
+        <button id="test-all-btn">Test All Voices</button>
+    </div>
+
+    <div id="voice-container">
+        <!-- Voice cards will be generated here -->
+    </div>
+
+    <div class="talk-example">
+        <h2>Custom &lt;talk&gt; Element Example</h2>
+        <p>The TalkAPI also supports custom &lt;talk&gt; elements that can be added to any page:</p>
+
+        <talk voice="nova">Hello! This is a test of the text-to-speech API using the custom talk element. I hope you find my voice pleasant and easy to understand.</talk>
+
+        <talk voice="onyx">This is another example using a different voice. The TalkAPI automatically adds play buttons to these elements.</talk>
+    </div>
+
+    <!-- Include the TalkAPI script -->
+    <script src="../assets/js/talk.api.js"></script>
+
+    <script>
+        // Test paragraph
+        const testParagraph = "Hello! This is a test of the text-to-speech API. I hope you find my voice pleasant and easy to understand. Thank you for listening to this demonstration.";
+
+        // Get voices from TalkAPI
+        let voices = [];
+
+        // Wait for TalkAPI to initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if TalkAPI is available
+            if (window.talkAPI) {
+                voices = window.talkAPI.getVoices();
+                initializeVoiceCards();
+            } else {
+                // Fallback if TalkAPI is not available
+                console.error("TalkAPI not available");
+                handleApiError("TalkAPI not loaded properly. Please check that talk.api.js is included correctly.");
+            }
+        });
+
+        // Create voice cards
+        function initializeVoiceCards() {
+            const voiceContainer = document.getElementById('voice-container');
+            voiceContainer.innerHTML = ''; // Clear container
+
+            voices.forEach(voice => {
+                const voiceCard = document.createElement('div');
+                voiceCard.className = 'voice-card';
+                voiceCard.id = `voice-card-${voice.id}`;
+
+                voiceCard.innerHTML = `
+                    <div class="voice-header">
+                        <div class="voice-name">${voice.id}</div>
+                        <button class="play-btn" data-voice="${voice.id}">Play</button>
+                    </div>
+                    <div class="voice-description">${voice.description}</div>
+                    <div class="audio-container" id="audio-${voice.id}"></div>
+                    <div class="status" id="status-${voice.id}"></div>
+                `;
+
+                voiceContainer.appendChild(voiceCard);
+            });
+
+            // Add event listeners to play buttons
+            document.querySelectorAll('.play-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const voice = button.getAttribute('data-voice');
+                    generateSpeech(voice);
+                });
+            });
+
+            // Test all voices button
+            document.getElementById('test-all-btn').addEventListener('click', testAllVoices);
+        }
+
+        // Function to generate speech for a specific voice
+        async function generateSpeech(voice) {
+            const statusElement = document.getElementById(`status-${voice}`);
+            const audioContainer = document.getElementById(`audio-${voice}`);
+            const playButton = document.querySelector(`button[data-voice="${voice}"]`);
+
+            // Update UI
+            statusElement.textContent = "Generating speech...";
+            playButton.disabled = true;
+            playButton.innerHTML = 'Processing <span class="loading"></span>';
+
+            try {
+                // Use TalkAPI to generate speech
+                const audioUrl = await window.talkAPI.speak(testParagraph, voice);
+
+                // Create audio element
+                audioContainer.innerHTML = `
+                    <audio controls>
+                        <source src="${audioUrl}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                `;
+
+                statusElement.textContent = "Speech generated successfully!";
+                playButton.textContent = "Regenerate";
+                playButton.disabled = false;
+            } catch (error) {
+                statusElement.textContent = `Error: ${error.message}`;
+                console.error("Error generating speech:", error);
+                playButton.textContent = "Retry";
+                playButton.disabled = false;
+            }
+        }
+
+        // Test all voices
+        async function testAllVoices() {
+            const testAllButton = document.getElementById('test-all-btn');
+            testAllButton.disabled = true;
+            testAllButton.innerHTML = 'Testing All Voices <span class="loading"></span>';
+
+            // Generate speech for each voice sequentially
+            for (const voice of voices) {
+                try {
+                    await generateSpeech(voice.id);
+                    // Small delay between requests to avoid overwhelming the server
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                } catch (error) {
+                    console.error(`Error testing voice ${voice.id}:`, error);
+                    // Continue with next voice even if one fails
+                }
+            }
+
+            testAllButton.disabled = false;
+            testAllButton.textContent = 'Test All Voices Again';
+        }
+
+        // Fallback for API errors
+        function handleApiError(message = "Could not connect to the TTS API") {
+            const errorMessage = document.createElement('div');
+            errorMessage.style.color = 'red';
+            errorMessage.style.padding = '20px';
+            errorMessage.style.textAlign = 'center';
+            errorMessage.innerHTML = `
+                <h2>API Connection Error</h2>
+                <p>${message}. Please ensure:</p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>The TTS microservice is running</li>
+                    <li>The API endpoint is correctly configured</li>
+                    <li>Your domain is authorized to use the service</li>
+                </ul>
+            `;
+            document.body.insertBefore(errorMessage, document.getElementById('voice-container'));
+        }
+    </script>
+</body>
+</html>
