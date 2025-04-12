@@ -9,7 +9,7 @@ class TalkAPI {
     constructor(options = {}) {
         // Default configuration
         this.config = {
-            apiEndpoint: '/speak',
+            apiEndpoint: 'https://talk.api.webally.co.za/speak',  // Point to the Nginx reverse proxy
             defaultVoice: 'nova',
             domain: window.location.hostname,
             ...options
