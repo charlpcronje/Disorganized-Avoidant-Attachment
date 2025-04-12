@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 // Site configuration
 define('SITE_NAME', 'Understanding Disorganized Attachment');
 define('BASE_URL', 'https://info.nade.webally.co.za/');
-define('ADMIN_EMAIL', 'charl@wedbally.co.za'); // Replace with your admin email
+define('ADMIN_EMAIL', 'charl@webally.co.za'); // Replace with your admin email
 define('CONTACT_EMAIL', 'contact@example.com');
 
 // Set the timezone

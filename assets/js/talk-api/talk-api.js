@@ -32,6 +32,7 @@ export class TalkAPI {
         // Track current playback state
         this.currentAudio = null;
         this.currentButton = null;
+        this.progressInterval = null;
 
         // Initialize
         this.init();
@@ -79,6 +80,10 @@ export class TalkAPI {
         section.className = 'talk-section';
         section.id = `talk-section-${id}`;
 
+        // Add progress bar
+        const progressBar = this.uiManager.createProgressBar();
+        section.appendChild(progressBar);
+
         // Create play button with speaker icon
         const button = this.createButton(id, voice);
 
@@ -106,6 +111,10 @@ export class TalkAPI {
         const section = document.createElement('div');
         section.className = 'talk-section';
         section.id = `talk-section-${id}`;
+
+        // Add progress bar
+        const progressBar = this.uiManager.createProgressBar();
+        section.appendChild(progressBar);
 
         // Create play button with speaker icon
         const button = this.createButton(id, voice);
@@ -209,7 +218,7 @@ export class TalkAPI {
         const text = this.getTextFromElements(elements);
 
         // Play the audio
-        this.playAudio(text, voice, button, elements);
+        this.playAudio(text, voice, button);
     }
 
     /**
@@ -240,7 +249,7 @@ export class TalkAPI {
     /**
      * Play audio for the given text
      */
-    async playAudio(text, voice, button, elements) {
+    async playAudio(text, voice, button) {
         try {
             // Get audio URL
             const audioUrl = await this.audioManager.getAudioUrl(text, voice, this.audioCache);
@@ -263,8 +272,8 @@ export class TalkAPI {
                     section.classList.add('active');
                 }
 
-                // Start sentence highlighting
-                this.highlightManager.startSentenceHighlighting(text, elements, audio.duration, this.currentAudio);
+                // Set up progress tracking
+                this.startProgressTracking(audio, section);
             };
 
             audio.onended = () => {
@@ -297,7 +306,8 @@ export class TalkAPI {
                 }, 2000);
                 this.currentAudio = null;
                 this.currentButton = null;
-                this.highlightManager.clearHighlights();
+                // Reset progress bar
+                this.resetProgressBar(section);
             };
 
             // Play the audio
@@ -331,15 +341,66 @@ export class TalkAPI {
         this.currentAudio = null;
         this.currentButton = null;
 
-        // Clear highlights
-        this.highlightManager.clearHighlights();
-
         // Remove active class from section
         const id = button.getAttribute('data-id');
         const section = document.getElementById(`talk-section-${id}`);
         if (section) {
             section.classList.remove('active');
+            this.resetProgressBar(section);
         }
+    }
+
+    /**
+     * Start tracking progress for audio playback
+     */
+    startProgressTracking(audio, section) {
+        if (!audio || !section) return;
+
+        // Clear any existing interval
+        if (this.progressInterval) {
+            clearInterval(this.progressInterval);
+        }
+
+        // Update progress every 100ms
+        this.progressInterval = setInterval(() => {
+            if (audio.paused || audio.ended) {
+                if (audio.ended) {
+                    // Set to 100% when ended
+                    this.uiManager.updateProgressBar(section, 1);
+                }
+                return;
+            }
+
+            // Calculate progress (0-1)
+            const progress = audio.currentTime / audio.duration;
+
+            // Update the progress bar
+            this.uiManager.updateProgressBar(section, progress);
+        }, 100);
+
+        // Clear interval when audio ends
+        audio.addEventListener('ended', () => {
+            if (this.progressInterval) {
+                clearInterval(this.progressInterval);
+                this.progressInterval = null;
+            }
+        });
+    }
+
+    /**
+     * Reset progress bar
+     */
+    resetProgressBar(section) {
+        if (!section) return;
+
+        // Clear any existing interval
+        if (this.progressInterval) {
+            clearInterval(this.progressInterval);
+            this.progressInterval = null;
+        }
+
+        // Reset progress to 0
+        this.uiManager.updateProgressBar(section, 0);
     }
 
     /**
