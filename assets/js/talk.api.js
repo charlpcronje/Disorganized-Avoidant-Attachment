@@ -21,6 +21,7 @@ class TalkAPI {
 
         // Currently playing audio
         this.currentAudio = null;
+        this.currentPlayButton = null;
 
         // Currently highlighted elements
         this.highlightedElements = [];
@@ -341,7 +342,6 @@ class TalkAPI {
             const groupId = buttonElement.getAttribute('data-group-id');
             const sectionWrapper = document.getElementById(`talk-section-${groupId}`);
             if (sectionWrapper) {
-                sectionWrapper.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
                 sectionWrapper.style.border = '1px solid rgba(76, 175, 80, 0.7)';
                 sectionWrapper.classList.add('active-talk-section');
             }
@@ -366,7 +366,6 @@ class TalkAPI {
             const groupId = buttonElement.getAttribute('data-group-id');
             const sectionWrapper = document.getElementById(`talk-section-${groupId}`);
             if (sectionWrapper) {
-                sectionWrapper.style.backgroundColor = '';
                 sectionWrapper.style.border = '1px solid rgba(200, 200, 200, 0.3)';
                 sectionWrapper.classList.remove('active-talk-section');
             }
@@ -393,8 +392,8 @@ class TalkAPI {
             const groupId = buttonElement.getAttribute('data-group-id');
             const sectionWrapper = document.getElementById(`talk-section-${groupId}`);
             if (sectionWrapper) {
-                sectionWrapper.style.backgroundColor = '';
                 sectionWrapper.style.border = '1px solid rgba(200, 200, 200, 0.3)';
+                sectionWrapper.classList.remove('active-talk-section');
             }
         };
 
@@ -540,6 +539,9 @@ class TalkAPI {
             elapsed >= item.startTime && elapsed <= item.endTime
         );
 
+        // Clear any existing sentence highlights first
+        this.clearSentenceHighlights();
+
         // If we found a sentence to highlight
         if (currentSentence) {
             // Find the element containing this sentence
@@ -548,8 +550,8 @@ class TalkAPI {
             );
 
             if (sentenceMapping) {
-                // Highlight just this element
-                this.highlightElement(sentenceMapping.element);
+                // Highlight just this sentence within the element
+                this.highlightSentence(sentenceMapping.element, currentSentence.sentence);
             }
         }
 
@@ -570,23 +572,40 @@ class TalkAPI {
     }
 
     /**
-     * Highlight a specific element
-     * @param {HTMLElement} element - Element to highlight
+     * Highlight a specific sentence within an element
+     * @param {HTMLElement} element - Element containing the sentence
+     * @param {string} sentence - The sentence to highlight
      */
-    highlightElement(element) {
-        // Clear previous highlights
-        this.clearHighlights();
+    highlightSentence(element, sentence) {
+        if (!element || !sentence) return;
 
-        // Store original styles
-        element.dataset.originalBackground = element.style.backgroundColor || '';
-        element.dataset.originalTransition = element.style.transition || '';
+        // Get the element's text content
+        const text = element.textContent;
+        if (!text.includes(sentence)) return;
 
-        // Apply highlight to the element
-        element.style.transition = 'background-color 0.3s ease';
-        element.style.backgroundColor = 'rgba(76, 175, 80, 0.15)'; // Light green highlight
+        // Create a span to wrap the sentence
+        const span = document.createElement('span');
+        span.className = 'sentence-highlight';
+        span.textContent = sentence;
 
-        // Add to highlighted elements array
-        this.highlightedElements.push(element);
+        // Store the original HTML
+        if (!element.dataset.originalHtml) {
+            element.dataset.originalHtml = element.innerHTML;
+        }
+
+        // Replace the sentence with the highlighted version
+        // This is a simple approach that works for basic cases
+        // A more robust solution would use text ranges and DOM manipulation
+        try {
+            const escapedSentence = sentence.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escapedSentence})`, 'g');
+            element.innerHTML = text.replace(regex, '<span class="sentence-highlight">$1</span>');
+
+            // Add to highlighted elements array for cleanup
+            this.highlightedElements.push(element);
+        } catch (error) {
+            console.error('Error highlighting sentence:', error);
+        }
     }
 
     /**
@@ -599,9 +618,30 @@ class TalkAPI {
             // Restore original background
             element.style.backgroundColor = element.dataset.originalBackground || '';
             element.style.transition = element.dataset.originalTransition || '';
+
+            // Restore original HTML if it was stored
+            if (element.dataset.originalHtml) {
+                element.innerHTML = element.dataset.originalHtml;
+                delete element.dataset.originalHtml;
+            }
         });
 
         this.highlightedElements = [];
+    }
+
+    /**
+     * Clear only sentence highlights without affecting section highlights
+     */
+    clearSentenceHighlights() {
+        // Remove all sentence-highlight spans
+        document.querySelectorAll('.sentence-highlight').forEach(span => {
+            // If the span is inside a parent element, replace it with its text content
+            if (span.parentNode) {
+                const text = span.textContent;
+                const textNode = document.createTextNode(text);
+                span.parentNode.replaceChild(textNode, span);
+            }
+        });
     }
 
     /**
@@ -638,12 +678,13 @@ style.textContent = `
         transition: background-color 0.3s ease, border 0.3s ease;
     }
     .talk-section-wrapper.active-talk-section {
-        background-color: rgba(76, 175, 80, 0.1) !important;
         border: 1px solid rgba(76, 175, 80, 0.7) !important;
     }
     .sentence-highlight {
-        background-color: rgba(76, 175, 80, 0.2);
-        border-radius: 2px;
+        background-color: rgba(76, 175, 80, 0.3);
+        border-radius: 3px;
+        padding: 2px 0;
+        display: inline;
     }
 
     /* Icon styles */
