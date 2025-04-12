@@ -12,8 +12,8 @@
 
     <div>
         <p style="font-size: 14px;">
-            <i>Hi Nade, ek het hierdie website so paar weke terug begin maark toe ek gesien het dat jy dit nog steeds moeilik vind om te praat oor goed, en ek verstaan dit... Dit is frustrating party keer as ek so graag vir jou iets wil vertel en dit is soveel moeiliker as wat dit kion gewees het, maar dit is hoe jy geleer het om goed te hanteer.
-            Saam met allles wat ek jou gaan vertel gaan jy ookvind dat jy heelwaarskynlik nie BPD het nie en dit is n goeie ding, want BPD gaan nooit weg nie, maar dit wat hy hier gaan leer he nie nodig om weg te gaa nie, maar net dat jy bewus is van dit, dis al. Die is die belangrikste stap.</i>
+            <i>Hi Nade, ek het hierdie website so paar weke terug begin maark toe ek gesien het dat jy dit nog steeds moeilik vind om te praat oor goed, en ek verstaan dit... Dit is frustrating party keer as ek so graag vir jou iets wil vertel en dit is soveel moeiliker as wat dit kon gewees het, maar dit is hoe jy geleer het om goed te hanteer, en dit is okay. 
+            Saam met alles wat ek jou gaan vertel gaan jy ook uitvind dat jy heelwaarskynlik nie BPD het nie en dit is n goeie ding, want BPD gaan nooit weg nie, maar dit wat jy hier gaan leer het nie nodig om weg te gaan nie, maar net dat jy bewus is van dit, dis al, dit is die belangrikste stap.</i>
             <br/>
         </p>
     </div>
@@ -30,12 +30,12 @@
     </div>
     <div>
         <p style="font-size: 14px;">
-             Ek moes die dalk al voeer vir jou gestuur het, maar ek het gehoop dat jy eventually sal vra vir dit wat ek nog die hele tyd na verwys sodat jy sal ernstig wees om dit te wil lees en te wil engage.<br/>
+            Ek het al my tyd spandeer vir langer as n maand om die vir jou te maak. Ek het nooit opgehou lief wees vir jou nie, ek ek het nooit opgee op wie jy is nie. Die alles is nie gefokus om jou te laat terug kom nie, maar vir jou om te heal en regtig te kan voorentoe beweeg in plaas daarvan om alyd weg te hardloop<br/>
         </p>
     </div>
     <i>
     <p style="font-size: 14px;">
-    Ek hoop hierdie beteken vir jou wat ek hoop dit doen. Hier onder begin die website website dan...<br/>
+    Ek hoop hierdie beteken vir jou wat ek hoop dit doen. Hier onder begin die website dan...<br/>
     Met liefde<br/>
     Charl<br/>
     PS: As jy wil weet waar ek al die informasie vandaar gekry het, kan jy dit hier vind: <a href="index.php?page=resources">Resources</a> en jy sal orals links kry <a href="#"><sup>Wat so lyk</sup></a> Dit is links waar dir informasie vandaan kom
@@ -53,8 +53,8 @@
     </div>
 
     <h2>Welcome Nade</h2>
-    <talk voice="echo">
-    <p>This website is designed to help you understand disorganized avoidant attachment style in a digestible, accessible way. The original research document has been broken down into sections, with real examples that illustrate key behaviors and patterns.</p>
+    <talk voice="nova">
+    <p>This website is designed to help you understand disorganized avoidant attachment style in a digestible, accessible way. The original research that was done by Charl that was more than twenty two thousand words long. ie (that is more people writing their doctorate has to do for any given subject) has been shortened and  broken down into sections, with real examples that illustrate key behaviors and patterns.</p>
 
     <p>What makes this resource unique is that each example includes two perspectives:</p>
 
@@ -89,25 +89,39 @@
 
         <div class="tab-content" data-tab="research">
             <talk voice="alloy">
-            <p>A disorganized/fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them<sup>1</sup>. Thus, they live in a constant dilemma: yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available<sup>2</sup>.</p>
+                <p>A disorganized/fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them.<sup>1</sup> Thus, they live in a constant dilemma: yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available.<sup>2</sup></p>
 
-            <p>As one individual described it: "I finally want someone to hold me and give me the peace I never felt... and when I do [find someone safe], I run."<sup>3,4</sup></p>
-
-            <p><sup>1</sup> <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank">Disorganized Attachment in Marriage - Therapevo Counseling</a><br/>
-            <sup>2</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style</a><br/>
-            <sup>3</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=And%20with%20all%20this%20fear%2C,you%20that%20wants%20a%20home" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style</a><br/>
-            <sup>4</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/Disorganized Attachment Style</a></p>
+                <p>As one individual described it: "I finally want someone to hold me and give me the peace I never felt... and when I do [find someone safe], I run."<sup>3,4</sup></p>
             </talk>
+            <p>
+                <ul>
+                    <li>
+                        1. <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank">Disorganized Attachment in Marriage - Therapevo Counseling</a>
+                    </li>
+                    <li> 
+                        2. <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style</a>
+                    </li>   
+                    <li>
+                        3. <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=And%20with%20all%20this%20fear%2C,you%20that%20wants%20a%20home" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style</a>
+                    </li>
+                    <li>
+                        4. <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/Disorganized Attachment Style</a>
+                    </li>
+                </ul>
+            </p>
         </div>
 
         <div class="tab-content" data-tab="personal">
-            <talk voice="alloy">
-            <p>Ek en jy het alles saam gedoen en ons het nooit vas gesit oor enige iets nie, as daar wel iets was wat ons gepla het, dan het ons dit vinnig uit gepraat. Toe kry ons die Fairy Tale cottage wat basically perfek was vir ons op daai stadium. Ons het regtig lekker saam gebly.</p>
-            <p>Maar net toe ons n plek gekry het om vir 'n ruk te settle en waar ons actually kon begin iets saam bou, toe begin ons verhouding te real voel en jy wou nie invested gevoel het in my nie, so jy het goed gedoen wat ek nie nou gaan noem nie, want dit is nie waaroor dit nou gaan nie. Maar al wat belangrik is om te weet is dat jy het goed gedoen om distance te skep, en goed gese soos dat ons net vriende. Kort daarna het ons begin baklei. Wat dit ook veroorsaak het was dat jy weer rustigheid gekry het vir meeste van Desemeber maand. Dit was tot ou Kersaand wat ek en jy saam gesit het en gelag het oor hoe ons baklei het en ons kon nie glo dat ons baklei het nie.</p>
-            <p>Min het ek of jy geweet dat die gesprek waar ons agter gekom het hoe gelukkig ons eintlik is, het ook weer jou attachment style getrigger om distance te moet kry, so die volgende dag toe het ons daai groot fight en jy het vi rmy gese jy kort spasie, en ek het dit nie verstaan nie.</p>
-            <p>Ek wou nog vir hom se dat jy jou privaatheid nodig het maar toe stem jy dadelik in dat ons 'n kamer deel. Ek kon duidelik sien dat dit iets was wat jy regtig wou gehad het. Maar toe ons saam in een kamer in trek toe het jy ook skielik weer distance gesoek en jy het toe ook vir Ian gaan sien. Nie omdat jy saam met ander mans wou wees of om my seer te maaak nie maar sodat jy minder invested kan voel in ons verhouding wat closer begin raaka het. Die fights het toe ook begin agv hoe dit jou laat voel het.</p>
-            <p>Die fights het dit vir jou ook gejustify om weer jou eie kamer te kry, en toe jy daai distance geskep het tussen ons, toe is jy in elk gevat weer konstant by my in die kamer, so baie dat ek jou gevra het vir tyd dat ek my werk kon doen.. Die wat met jou en Ian gebeur het was nooit omdat jy saam met ander mans wou wees nie, ek weet dit nou, maar dit was omdat jy nie so vulnerable wou voel nie, en omdat jy nie wou voel dat jy so baie het om te verloor as ek sou weg gaan nie.</p>
+            <talk voice="ash">
+                <h4>When we were still staying at Gert's Guesthouse</h4>
+
+                <p>When we went to speak to Gert for cheaper rooms</p>
+
+                <p>I wanted to explain to him that you needed privacy. But then, without hesitation, you agreed that we should share a room. I could see in you—it was something you truly wanted. But the moment we moved in together, the moment things became closer between us. You started pulling away. And then you went to that booking, you went to see Ian. When you came back you told me that the other girls pressured you into it, you regretted what happened and we held each other and we cried together. I could see it Not because you wanted other men. Not to hurt me. But because being with him made it easier to not feel so close to me. To not feel so emotionally exposed. The fights that followed came from that tension</p>
+                
+                <p>Those fights made it feel justified—for you to take your own room again. And when you finally had that distance, you were back in my room all the time. So much so that I had to ask you to give me time to work. What happened between you and Ian was never really about being with someone else. I understand that now. It was about not wanting to feel that vulnerable. About not wanting to feel like you had that much to lose if I ever walked away.</p>
             </talk>
+            
         </div>
     </div>
 

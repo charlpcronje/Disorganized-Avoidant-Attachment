@@ -1,0 +1,9 @@
+<talk voice="ash">
+                <p>You and I did everything together. And we never fought—not once. If anything ever did bother us, we'd just talk about it and everything was okay again.We were good for each other and even back then I knew you felt more for me than you were willing to admit. Then we found the Fairy Tale cottage. It was perfect for us—exactly what we needed at that point. It felt right.</p>
+                
+                <p>But just as we finally found a place to settle, a space where we could actually start building something real together—that's when things changed. That's when the relationship started to feel *real*, and you didn't want to feel too invested. So you did things, you went to see Ian again 3 times in November. I'm not going to say anything more about that now, because this isn't about that. But what matters is: you started creating distance. You said things like "we're just friends." And not long after, the fighting started.</p>
+                
+                <p>It's strange… because those fights gave you peace. The distance it created made you calm again. Then in December, the fighting completely stopped. Until Christmas Eve. That night, you and I sat together, laughing about how we were fighing. We couldn't even believe it. It felt like ancient history and I did not think it would be possible for us to do that again.</p>
+                
+                <p>Neither of us knew that moment—where we saw again how happy we actually were—would trigger your fear all over again. The next day, you went to see a client again, I'm not sure which one or what happened but we had that huge fight. You told me you needed space, and I didn't understand it.</p>
+            </talk>
