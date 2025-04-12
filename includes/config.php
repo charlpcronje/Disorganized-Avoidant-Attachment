@@ -16,11 +16,9 @@ error_reporting(E_ALL);
 
 // Site configuration
 define('SITE_NAME', 'Understanding Disorganized Attachment');
-// Get the current domain and protocol for BASE_URL
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$domain = $_SERVER['HTTP_HOST'];
-define('BASE_URL', $protocol . $domain . '/');
-define('ADMIN_EMAIL', 'admin@example.com');
+define('BASE_URL', 'https://info.nade.webally.co.za/');
+define('ADMIN_EMAIL', 'charl@wedbally.co.za'); // Replace with your admin email
+define('CONTACT_EMAIL', 'contact@example.com');
 
 // Set the timezone
 date_default_timezone_set('UTC');

@@ -415,10 +415,20 @@ class TalkAPI {
 
         const result = await response.json();
 
-        // Cache the URL
-        this.audioCache[cacheKey] = result.audio_url;
+        // Make sure we use the full URL from the API, not a relative path
+        let audioUrl = result.audio_url;
 
-        return result.audio_url;
+        // If the URL doesn't start with http/https, it's a relative URL
+        // In that case, make sure we use the talk.api domain, not the current domain
+        if (!audioUrl.startsWith('http')) {
+            audioUrl = 'https://talk.api.webally.co.za' + (audioUrl.startsWith('/') ? '' : '/') + audioUrl;
+            console.log('Converted relative URL to absolute URL:', audioUrl);
+        }
+
+        // Cache the URL
+        this.audioCache[cacheKey] = audioUrl;
+
+        return audioUrl;
     }
 
     /**
