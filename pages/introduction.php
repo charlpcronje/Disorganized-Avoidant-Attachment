@@ -81,9 +81,11 @@
         </div>
 
         <div class="tab-content" data-tab="research">
+            <talk voice="alloy">
             <p>A disorganized/fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank"><sup> (Disorganized Attachment in Marriage - Therapevo Counseling)</sup></a>. Thus, they live in a constant dilemma: yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/ Disorganized Attachment Style)</sup></a>.</p>
 
             <p>As one individual described it: "I finally want someone to hold me and give me the peace I never felt... and when I do [find someone safe], I run." <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=And%20with%20all%20this%20fear%2C,you%20that%20wants%20a%20home" target="_blank"><sup>(In the Mind of An Fearful Avoidant/ Disorganized Attachment Style)</sup></a> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/Disorganized Attachment Style)</sup></a></p>
+            </talk>
         </div>
 
         <div class="tab-content" data-tab="personal">
@@ -101,6 +103,7 @@
 
     <h2>How to Use This Site</h2>
 
+    <talk voice="echo">
     <p>This website is organized into sections that cover different aspects of disorganized attachment:</p>
 
     <ol>
@@ -116,11 +119,14 @@
     <li><strong><a href="https://info.nade.webally.co.za/index.php?page=bpd-attachment">BPD and Attachment</a></strong> - Exploring if BPD was ever the an issue</li>
     <li><strong><a href="https://info.nade.webally.co.za/index.php?page=real-way-forward">A Real way forward</a></strong> - So what to do next? Is there a way forward, what do you want?</li>
 </ol>
+</talk>
 
 
+    <talk voice="echo">
     <p>You can navigate through each section using the navigation menu or the "Continue" buttons at the bottom of each page. Each section includes examples with tabs that let you toggle between research examples and personal experiences.</p>
 
     <p>The goal is not to label or judge, but to foster understanding and compassion while recognizing unhealthy patterns that may be causing pain in relationships.</p>
+    </talk>
 
     <div class="text-center mt-xl">
         <a href="index.php?page=what-is" class="btn btn-lg">Begin the Journey</a>
