@@ -243,7 +243,7 @@ class TalkAPI {
     }
 
     /**
-     * Play audio from the given URL
+     * Play audio from the given URL with sentence-by-sentence highlighting
      * @param {string} audioUrl - The URL of the audio to play
      * @param {HTMLElement} buttonElement - Button element for UI updates
      * @param {Array} elements - Elements to highlight during playback
@@ -253,12 +253,23 @@ class TalkAPI {
         const audio = new Audio(audioUrl);
         this.currentAudio = audio;
 
-        // Highlight elements when playing starts
+        // Store elements and text for highlighting
+        this.elementsToHighlight = elements;
+
+        // When audio metadata is loaded, we can get duration
+        audio.onloadedmetadata = () => {
+            // Prepare sentence highlighting based on audio duration
+            this.prepareHighlighting(audio.duration, elements);
+        };
+
+        // When audio starts playing
         audio.onplay = () => {
             if (buttonElement) {
                 buttonElement.innerHTML = '🔈 Playing...';
             }
-            this.highlightElements(elements);
+
+            // Start the highlighting sequence
+            this.startHighlightSequence();
         };
 
         // Update button and remove highlights when playing ends
@@ -268,6 +279,7 @@ class TalkAPI {
                 buttonElement.disabled = false;
             }
             this.clearHighlights();
+            this.stopHighlightSequence();
             this.currentAudio = null;
         };
 
@@ -282,42 +294,198 @@ class TalkAPI {
                 }, 2000);
             }
             this.clearHighlights();
+            this.stopHighlightSequence();
             this.currentAudio = null;
+        };
+
+        // Handle audio pausing
+        audio.onpause = () => {
+            this.stopHighlightSequence();
         };
 
         // Play the audio
         audio.play().catch(error => {
             console.error('Error playing audio:', error);
             this.clearHighlights();
+            this.stopHighlightSequence();
             this.currentAudio = null;
         });
     }
 
     /**
-     * Highlight elements during audio playback
-     * @param {Array} elements - Elements to highlight
+     * Prepare sentence-by-sentence highlighting based on audio duration
+     * @param {number} duration - Audio duration in seconds
+     * @param {Array} elements - Elements containing the text
      */
-    highlightElements(elements) {
+    prepareHighlighting(duration, elements) {
+        // Get all text content
+        const text = this.getCleanText(elements);
+
+        // Split into sentences (basic split by punctuation)
+        const sentences = this.splitIntoSentences(text);
+
+        // Calculate average reading speed (words per second)
+        const wordCount = text.split(/\s+/).length;
+        const wordsPerSecond = wordCount / duration;
+
+        // Create a timeline of when each sentence should be highlighted
+        this.highlightTimeline = [];
+        let currentTime = 0;
+
+        sentences.forEach(sentence => {
+            // Count words in this sentence
+            const sentenceWordCount = sentence.split(/\s+/).length;
+
+            // Calculate how long this sentence should take to read
+            const sentenceDuration = sentenceWordCount / wordsPerSecond;
+
+            // Add to timeline
+            this.highlightTimeline.push({
+                sentence: sentence,
+                startTime: currentTime,
+                endTime: currentTime + sentenceDuration
+            });
+
+            // Update current time
+            currentTime += sentenceDuration;
+        });
+
+        // Map sentences to DOM elements and their text nodes
+        this.mapSentencesToElements(elements, sentences);
+    }
+
+    /**
+     * Map sentences to their containing DOM elements
+     * @param {Array} elements - DOM elements
+     * @param {Array} sentences - Sentences to map
+     */
+    mapSentencesToElements(elements, sentences) {
+        // Create a map of sentences to their DOM elements
+        this.sentenceMap = [];
+
+        // For each element, find which sentences it contains
+        elements.forEach(element => {
+            const elementText = element.textContent;
+
+            sentences.forEach(sentence => {
+                if (elementText.includes(sentence)) {
+                    this.sentenceMap.push({
+                        sentence: sentence,
+                        element: element
+                    });
+                }
+            });
+        });
+    }
+
+    /**
+     * Split text into sentences
+     * @param {string} text - Text to split
+     * @returns {Array} - Array of sentences
+     */
+    splitIntoSentences(text) {
+        // Basic sentence splitting (handles periods, question marks, exclamation points)
+        const sentenceRegex = /[^.!?]+[.!?]+/g;
+        const sentences = text.match(sentenceRegex) || [];
+
+        // Handle any remaining text that doesn't end with punctuation
+        const remainingText = text.replace(sentenceRegex, '').trim();
+        if (remainingText) {
+            sentences.push(remainingText);
+        }
+
+        return sentences.map(s => s.trim());
+    }
+
+    /**
+     * Start the highlighting sequence
+     */
+    startHighlightSequence() {
+        // Clear any existing highlights and timers
+        this.clearHighlights();
+        this.stopHighlightSequence();
+
+        // Store start time
+        this.highlightStartTime = Date.now();
+
+        // Start the highlight update loop
+        this.updateHighlighting();
+    }
+
+    /**
+     * Update the highlighting based on current audio position
+     */
+    updateHighlighting() {
+        if (!this.currentAudio || !this.highlightTimeline) return;
+
+        // Calculate elapsed time
+        const elapsed = (Date.now() - this.highlightStartTime) / 1000;
+
+        // Find the current sentence based on elapsed time
+        const currentSentence = this.highlightTimeline.find(item =>
+            elapsed >= item.startTime && elapsed <= item.endTime
+        );
+
+        // If we found a sentence to highlight
+        if (currentSentence) {
+            // Find the element containing this sentence
+            const sentenceMapping = this.sentenceMap.find(mapping =>
+                mapping.sentence === currentSentence.sentence
+            );
+
+            if (sentenceMapping) {
+                // Highlight just this element
+                this.highlightElement(sentenceMapping.element, currentSentence.sentence);
+            }
+        }
+
+        // Continue updating if audio is still playing
+        if (this.currentAudio && !this.currentAudio.paused) {
+            this.highlightTimer = requestAnimationFrame(() => this.updateHighlighting());
+        }
+    }
+
+    /**
+     * Stop the highlight sequence
+     */
+    stopHighlightSequence() {
+        if (this.highlightTimer) {
+            cancelAnimationFrame(this.highlightTimer);
+            this.highlightTimer = null;
+        }
+    }
+
+    /**
+     * Highlight a specific element and try to highlight the specific sentence
+     * @param {HTMLElement} element - Element to highlight
+     * @param {string} sentence - Sentence to highlight within the element
+     */
+    highlightElement(element, sentence) {
+        // Clear previous highlights
         this.clearHighlights();
 
-        elements.forEach(element => {
-            // Store original background color
-            element.dataset.originalBackground = element.style.backgroundColor || '';
-            element.dataset.originalTransition = element.style.transition || '';
+        // Store original styles
+        element.dataset.originalBackground = element.style.backgroundColor || '';
+        element.dataset.originalTransition = element.style.transition || '';
 
-            // Apply highlight
-            element.style.transition = 'background-color 0.5s ease';
-            element.style.backgroundColor = '#f0f8ff'; // Light blue highlight
+        // Apply highlight to the element
+        element.style.transition = 'background-color 0.3s ease';
+        element.style.backgroundColor = '#f0f8ff'; // Light blue highlight
 
-            // Add to highlighted elements array
-            this.highlightedElements.push(element);
-        });
+        // Add to highlighted elements array
+        this.highlightedElements.push(element);
+
+        // Try to find and highlight the specific sentence within the element
+        // This is a simplified approach - for a more accurate solution, we would need
+        // to use a text range and selection API to highlight specific text
     }
 
     /**
      * Clear all highlighted elements
      */
     clearHighlights() {
+        if (!this.highlightedElements) this.highlightedElements = [];
+
         this.highlightedElements.forEach(element => {
             // Restore original background
             element.style.backgroundColor = element.dataset.originalBackground || '';
