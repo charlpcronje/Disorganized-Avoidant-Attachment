@@ -120,18 +120,19 @@ class TalkAPI {
         // Create play button
         const playButton = document.createElement('button');
         playButton.className = 'talk-play-btn';
-        playButton.innerHTML = '🔊';
+        playButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>';
         playButton.style.position = 'absolute';
         playButton.style.top = '5px';
         playButton.style.right = '5px';
-        playButton.style.padding = '5px 10px';
+        playButton.style.padding = '8px 12px';
         playButton.style.backgroundColor = '#4CAF50';
-        playButton.style.color = 'white';
+        playButton.style.color = '#ffffff';
         playButton.style.border = 'none';
         playButton.style.borderRadius = '4px';
         playButton.style.cursor = 'pointer';
         playButton.style.fontSize = '14px';
         playButton.style.zIndex = '100';
+        playButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
 
         // Store data attributes
         playButton.setAttribute('data-group-id', groupId);
@@ -145,12 +146,12 @@ class TalkAPI {
                 if (this.currentAudio.paused) {
                     // Resume playback
                     this.currentAudio.play();
-                    playButton.innerHTML = '⏸'; // Pause symbol
+                    playButton.innerHTML = '<i class="talk-icon talk-icon-pause"></i>'; // Pause symbol
                     playButton.setAttribute('title', 'Pause');
                 } else {
                     // Pause playback
                     this.currentAudio.pause();
-                    playButton.innerHTML = '▶'; // Play symbol
+                    playButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play symbol
                     playButton.setAttribute('title', 'Resume');
                 }
                 return;
@@ -160,7 +161,7 @@ class TalkAPI {
             if (this.currentAudio) {
                 this.currentAudio.pause();
                 if (this.currentPlayButton) {
-                    this.currentPlayButton.innerHTML = '🔊'; // Reset previous button
+                    this.currentPlayButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Reset previous button
                     this.currentPlayButton.setAttribute('title', 'Listen to this section');
                 }
                 this.currentAudio = null;
@@ -175,7 +176,7 @@ class TalkAPI {
             this.currentPlayButton = playButton;
 
             // Update button appearance
-            playButton.innerHTML = '⏳'; // Hourglass
+            playButton.innerHTML = '<i class="talk-icon talk-icon-loading"></i>'; // Loading spinner
             playButton.setAttribute('title', 'Generating audio...');
 
             // Speak the text
@@ -247,7 +248,7 @@ class TalkAPI {
     async speak(text, voice, buttonElement, elements = []) {
         // Update button UI
         if (buttonElement) {
-            buttonElement.innerHTML = '⏳'; // Hourglass
+            buttonElement.innerHTML = '<i class="talk-icon talk-icon-loading"></i>'; // Loading spinner
             buttonElement.disabled = true;
         }
 
@@ -332,7 +333,7 @@ class TalkAPI {
         // When audio starts playing
         audio.onplay = () => {
             if (buttonElement) {
-                buttonElement.innerHTML = '⏸'; // Pause symbol
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-pause"></i>'; // Pause symbol
                 buttonElement.setAttribute('title', 'Pause');
             }
 
@@ -340,8 +341,9 @@ class TalkAPI {
             const groupId = buttonElement.getAttribute('data-group-id');
             const sectionWrapper = document.getElementById(`talk-section-${groupId}`);
             if (sectionWrapper) {
-                sectionWrapper.style.backgroundColor = 'rgba(200, 240, 200, 0.2)';
-                sectionWrapper.style.border = '1px solid rgba(76, 175, 80, 0.5)';
+                sectionWrapper.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+                sectionWrapper.style.border = '1px solid rgba(76, 175, 80, 0.7)';
+                sectionWrapper.classList.add('active-talk-section');
             }
 
             // Start the highlighting sequence
@@ -351,7 +353,7 @@ class TalkAPI {
         // Update button and remove highlights when playing ends
         audio.onended = () => {
             if (buttonElement) {
-                buttonElement.innerHTML = '🔊'; // Listen icon
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play icon
                 buttonElement.setAttribute('title', 'Listen to this section');
                 buttonElement.disabled = false;
             }
@@ -366,6 +368,7 @@ class TalkAPI {
             if (sectionWrapper) {
                 sectionWrapper.style.backgroundColor = '';
                 sectionWrapper.style.border = '1px solid rgba(200, 200, 200, 0.3)';
+                sectionWrapper.classList.remove('active-talk-section');
             }
         };
 
@@ -373,10 +376,10 @@ class TalkAPI {
         audio.onerror = () => {
             console.error('Error playing audio:', audioUrl);
             if (buttonElement) {
-                buttonElement.innerHTML = '❌'; // Error symbol
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-error"></i>'; // Error symbol
                 buttonElement.setAttribute('title', 'Playback Error');
                 setTimeout(() => {
-                    buttonElement.innerHTML = '🔊'; // Listen icon
+                    buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play icon
                     buttonElement.setAttribute('title', 'Retry');
                     buttonElement.disabled = false;
                 }, 2000);
@@ -399,7 +402,7 @@ class TalkAPI {
         audio.onpause = () => {
             this.stopHighlightSequence();
             if (buttonElement) {
-                buttonElement.innerHTML = '▶'; // Play symbol
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play symbol
                 buttonElement.setAttribute('title', 'Resume');
             }
         };
@@ -408,10 +411,10 @@ class TalkAPI {
         audio.play().catch(error => {
             console.error('Error playing audio:', error);
             if (buttonElement) {
-                buttonElement.innerHTML = '❌'; // Error symbol
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-error"></i>'; // Error symbol
                 buttonElement.setAttribute('title', 'Playback Error');
                 setTimeout(() => {
-                    buttonElement.innerHTML = '🔊'; // Listen icon
+                    buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play icon
                     buttonElement.setAttribute('title', 'Retry');
                     buttonElement.disabled = false;
                 }, 2000);
@@ -546,7 +549,7 @@ class TalkAPI {
 
             if (sentenceMapping) {
                 // Highlight just this element
-                this.highlightElement(sentenceMapping.element, currentSentence.sentence);
+                this.highlightElement(sentenceMapping.element);
             }
         }
 
@@ -567,7 +570,7 @@ class TalkAPI {
     }
 
     /**
-     * Highlight a specific element and try to highlight the specific sentence
+     * Highlight a specific element
      * @param {HTMLElement} element - Element to highlight
      */
     highlightElement(element) {
@@ -580,7 +583,7 @@ class TalkAPI {
 
         // Apply highlight to the element
         element.style.transition = 'background-color 0.3s ease';
-        element.style.backgroundColor = '#f0f8ff'; // Light blue highlight
+        element.style.backgroundColor = 'rgba(76, 175, 80, 0.15)'; // Light green highlight
 
         // Add to highlighted elements array
         this.highlightedElements.push(element);
@@ -634,13 +637,46 @@ style.textContent = `
     .talk-section-wrapper {
         transition: background-color 0.3s ease, border 0.3s ease;
     }
-    .talk-section-wrapper.active {
-        background-color: rgba(200, 240, 200, 0.2);
-        border: 1px solid rgba(76, 175, 80, 0.5);
+    .talk-section-wrapper.active-talk-section {
+        background-color: rgba(76, 175, 80, 0.1) !important;
+        border: 1px solid rgba(76, 175, 80, 0.7) !important;
     }
     .sentence-highlight {
         background-color: rgba(76, 175, 80, 0.2);
         border-radius: 2px;
+    }
+
+    /* Icon styles */
+    .talk-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .talk-icon-play {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
+    }
+
+    .talk-icon-pause {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>');
+    }
+
+    .talk-icon-loading {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 4V2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2v2c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8z"/></svg>');
+        animation: spin 1s linear infinite;
+    }
+
+    .talk-icon-error {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 `;
 document.head.appendChild(style);
