@@ -1,4 +1,4 @@
-<p?php
+<?php
 // /pages/introduction.php
 // Introduction page for the Disorganized Attachment site
 ?>
@@ -38,7 +38,7 @@
     Ek hoop hierdie beteken vir jou wat ek hoop dit doen. Hier onder begin die website website dan...<br/>
     Met liefde<br/>
     Charl<br/>
-    PS: As jy wil weet waar ek al die informasie vandaar gekry het, kan jy dit hier vind: <a href="index.php?page=resources">Resources</a> en jy sal orals links kry <a href="#"><sup>Wat so lyk</sup></a> Dit is links waar dir informasie vandaan kom 
+    PS: As jy wil weet waar ek al die informasie vandaar gekry het, kan jy dit hier vind: <a href="index.php?page=resources">Resources</a> en jy sal orals links kry <a href="#"><sup>Wat so lyk</sup></a> Dit is links waar dir informasie vandaan kom
 </i>
 </p>
 
@@ -87,11 +87,11 @@
         </div>
 
         <div class="tab-content" data-tab="personal">
-            Ek en jy het alles saam gedoen en ons het nooit vas gesit oor enige iets nie, as daar wel iets was wat ons gepla het, dan het ons dit vinnig uit gepraat. Toe kry ons die Fairy Tale cottage wat basically perfek was vir ons op daai stadium. Ons het regtig lekker saam gebly. 
+            Ek en jy het alles saam gedoen en ons het nooit vas gesit oor enige iets nie, as daar wel iets was wat ons gepla het, dan het ons dit vinnig uit gepraat. Toe kry ons die Fairy Tale cottage wat basically perfek was vir ons op daai stadium. Ons het regtig lekker saam gebly.
             </br></br>
             Maar net toe ons n plek gekry het om vir 'n ruk te settle en waar ons actually kon begin iets saam bou, toe begin ons verhouding te real voel en jy wou nie invested gevoel het in my nie, so jy het goed gedoen wat ek nie nou gaan noem nie, want dit is nie waaroor dit nou gaan nie. Maar al wat belangrik is om te weet is dat jy het goed gedoen om distance te skep, en goed gese soos dat ons net vriende. Kort daarna het ons begin baklei. Wat dit ook veroorsaak het was dat jy weer rustigheid gekry het vir meeste van Desemeber maand. Dit was tot ou Kersaand wat ek en jy saam gesit het en gelag het oor hoe ons baklei het en ons kon nie glo dat ons baklei het nie.
             </br><br/>
-            Min het ek of jy geweet dat die gesprek waar ons agter gekom het hoe gelukkig ons eintlik is, het ook weer jou attachment style getrigger om distance te moet kry, so die volgende dag toe het ons daai groot fight en jy het vi rmy gese jy kort spasie, en ek het dit nie verstaan nie. 
+            Min het ek of jy geweet dat die gesprek waar ons agter gekom het hoe gelukkig ons eintlik is, het ook weer jou attachment style getrigger om distance te moet kry, so die volgende dag toe het ons daai groot fight en jy het vi rmy gese jy kort spasie, en ek het dit nie verstaan nie.
             </br></br>
             Ek wou nog vir hom se dat jy jou privaatheid nodig het maar toe stem jy dadelik in dat ons 'n kamer deel. Ek kon duidelik sien dat dit iets was wat jy regtig wou gehad het. Maar toe ons saam in een kamer in trek toe het jy ook skielik weer distance gesoek en jy het toe ook vir Ian gaan sien. Nie omdat jy saam met ander mans wou wees of om my seer te maaak nie maar sodat jy minder invested kan voel in ons verhouding wat closer begin raaka het. Die fights het toe ook begin agv hoe dit jou laat voel het.
             </br></br>

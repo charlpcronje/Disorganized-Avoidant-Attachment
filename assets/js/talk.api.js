@@ -10,7 +10,8 @@ class TalkAPI {
         // Default configuration
         this.config = {
             apiEndpoint: 'https://talk.api.webally.co.za/speak',  // Point to the Nginx reverse proxy
-            defaultVoice: 'nova',
+            defaultVoice: 'echo',  // Default voice for regular content
+            exampleVoice: 'alloy', // Default voice for examples
             domain: window.location.hostname,
             ...options
         };
@@ -18,57 +19,166 @@ class TalkAPI {
         // Cache for audio elements
         this.audioCache = {};
 
-        // Initialize by scanning for <talk> elements
+        // Currently playing audio
+        this.currentAudio = null;
+
+        // Currently highlighted elements
+        this.highlightedElements = [];
+
+        // Initialize by scanning for sections
         this.init();
     }
 
     /**
-     * Initialize the TalkAPI by scanning for <talk> elements
+     * Initialize the TalkAPI by scanning for content sections
      */
     init() {
-        // Find all <talk> elements and add play buttons
-        document.querySelectorAll('talk').forEach(element => {
-            this.setupTalkElement(element);
-        });
+        // Process main content sections
+        this.setupContentSections();
+
+        // Process example sections separately
+        this.setupExampleSections();
 
         // Make the API available globally
         window.talkAPI = this;
     }
 
     /**
-     * Set up a <talk> element with play functionality
-     * @param {HTMLElement} element - The <talk> element to set up
+     * Set up content sections with play buttons
      */
-    setupTalkElement(element) {
-        // Get voice from attribute or use default
-        const voice = element.getAttribute('voice') || this.config.defaultVoice;
-        const text = element.textContent.trim();
+    setupContentSections() {
+        // Find all content sections (paragraphs, headers, list items)
+        const contentSections = document.querySelectorAll('.page-content > p, .page-content > h2, .page-content > h3, .page-content > ul, .page-content > ol');
+
+        // Group consecutive elements for a better user experience
+        let currentGroup = [];
+        let groupCount = 0;
+
+        contentSections.forEach((section, index) => {
+            // Skip if inside an example container
+            if (section.closest('.example-container') || section.closest('.tab-content')) {
+                return;
+            }
+
+            // Add to current group
+            currentGroup.push(section);
+
+            // Create a group when we reach 3 elements or it's the last element
+            if (currentGroup.length >= 3 || index === contentSections.length - 1) {
+                this.createSectionButton(currentGroup, `content-group-${groupCount}`, this.config.defaultVoice);
+                currentGroup = [];
+                groupCount++;
+            }
+        });
+    }
+
+    /**
+     * Set up example sections with play buttons
+     */
+    setupExampleSections() {
+        // Find all example tabs
+        document.querySelectorAll('.tab-content').forEach((tabContent, index) => {
+            // Create a play button for each tab content
+            const tabId = tabContent.getAttribute('data-tab');
+            this.createSectionButton([tabContent], `example-${tabId}-${index}`, this.config.exampleVoice);
+        });
+    }
+
+    /**
+     * Create a play button for a group of elements
+     * @param {Array} elements - Array of DOM elements in the group
+     * @param {string} groupId - Unique ID for the group
+     * @param {string} voice - Voice to use for this group
+     */
+    createSectionButton(elements, groupId, voice) {
+        if (elements.length === 0) return;
+
+        // Get the first element to attach the button to
+        const firstElement = elements[0];
+
+        // Extract text from all elements
+        const text = elements.map(el => el.textContent.trim()).join(' ');
+        if (!text) return;
+
+        // Create container for the button
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'talk-button-container';
+        buttonContainer.style.textAlign = 'right';
+        buttonContainer.style.marginBottom = '15px';
 
         // Create play button
         const playButton = document.createElement('button');
         playButton.className = 'talk-play-btn';
         playButton.innerHTML = '🔊 Listen';
+        playButton.style.padding = '5px 10px';
+        playButton.style.backgroundColor = '#4CAF50';
+        playButton.style.color = 'white';
+        playButton.style.border = 'none';
+        playButton.style.borderRadius = '4px';
+        playButton.style.cursor = 'pointer';
+        playButton.style.fontSize = '14px';
+
+        // Store data attributes
+        playButton.setAttribute('data-group-id', groupId);
         playButton.setAttribute('data-voice', voice);
-        playButton.setAttribute('data-text', text);
 
         // Add click event
         playButton.addEventListener('click', () => {
-            this.speak(text, voice, playButton);
+            // Stop any currently playing audio
+            if (this.currentAudio) {
+                this.currentAudio.pause();
+                this.currentAudio = null;
+                this.clearHighlights();
+            }
+
+            // Get clean text without HTML tags
+            const cleanText = this.getCleanText(elements);
+
+            // Speak the text
+            this.speak(cleanText, voice, playButton, elements);
         });
 
-        // Add button after the element
-        element.parentNode.insertBefore(playButton, element.nextSibling);
+        // Add button to container
+        buttonContainer.appendChild(playButton);
+
+        // Insert button container after the first element
+        firstElement.parentNode.insertBefore(buttonContainer, firstElement.nextSibling);
+    }
+
+    /**
+     * Get clean text from elements without HTML tags
+     * @param {Array} elements - Array of DOM elements
+     * @returns {string} - Clean text
+     */
+    getCleanText(elements) {
+        // Create a temporary div to extract text
+        const tempDiv = document.createElement('div');
+
+        // Clone each element and append to temp div
+        elements.forEach(el => {
+            const clone = el.cloneNode(true);
+            tempDiv.appendChild(clone);
+        });
+
+        // Get text content and clean it
+        let text = tempDiv.textContent.trim();
+
+        // Remove extra whitespace
+        text = text.replace(/\s+/g, ' ');
+
+        return text;
     }
 
     /**
      * Generate speech for the given text and voice
      * @param {string} text - The text to convert to speech
      * @param {string} voice - The voice to use
-     * @param {HTMLElement} [buttonElement] - Optional button element for UI updates
+     * @param {HTMLElement} buttonElement - Button element for UI updates
+     * @param {Array} elements - Elements to highlight during playback
      * @returns {Promise<string>} - Promise resolving to the audio URL
      */
-    async speak(text, voice = this.config.defaultVoice, buttonElement = null) {
-        // Update button UI if provided
+    async speak(text, voice, buttonElement, elements = []) {
+        // Update button UI
         if (buttonElement) {
             buttonElement.innerHTML = '⏳ Generating...';
             buttonElement.disabled = true;
@@ -78,7 +188,7 @@ class TalkAPI {
             // Check cache first
             const cacheKey = `${voice}_${text}`;
             if (this.audioCache[cacheKey]) {
-                this.playAudio(this.audioCache[cacheKey], buttonElement);
+                this.playAudio(this.audioCache[cacheKey], buttonElement, elements);
                 return this.audioCache[cacheKey];
             }
 
@@ -110,7 +220,7 @@ class TalkAPI {
                 this.audioCache[cacheKey] = absoluteAudioUrl;
 
                 // Play the audio
-                this.playAudio(absoluteAudioUrl, buttonElement);
+                this.playAudio(absoluteAudioUrl, buttonElement, elements);
 
                 return absoluteAudioUrl;
             } else {
@@ -135,25 +245,30 @@ class TalkAPI {
     /**
      * Play audio from the given URL
      * @param {string} audioUrl - The URL of the audio to play
-     * @param {HTMLElement} [buttonElement] - Optional button element for UI updates
+     * @param {HTMLElement} buttonElement - Button element for UI updates
+     * @param {Array} elements - Elements to highlight during playback
      */
-    playAudio(audioUrl, buttonElement = null) {
+    playAudio(audioUrl, buttonElement, elements = []) {
         // Create audio element
         const audio = new Audio(audioUrl);
+        this.currentAudio = audio;
 
-        // Update button when playing starts
+        // Highlight elements when playing starts
         audio.onplay = () => {
             if (buttonElement) {
                 buttonElement.innerHTML = '🔈 Playing...';
             }
+            this.highlightElements(elements);
         };
 
-        // Update button when playing ends
+        // Update button and remove highlights when playing ends
         audio.onended = () => {
             if (buttonElement) {
                 buttonElement.innerHTML = '🔊 Listen';
                 buttonElement.disabled = false;
             }
+            this.clearHighlights();
+            this.currentAudio = null;
         };
 
         // Handle errors
@@ -166,12 +281,50 @@ class TalkAPI {
                     buttonElement.disabled = false;
                 }, 2000);
             }
+            this.clearHighlights();
+            this.currentAudio = null;
         };
 
         // Play the audio
         audio.play().catch(error => {
             console.error('Error playing audio:', error);
+            this.clearHighlights();
+            this.currentAudio = null;
         });
+    }
+
+    /**
+     * Highlight elements during audio playback
+     * @param {Array} elements - Elements to highlight
+     */
+    highlightElements(elements) {
+        this.clearHighlights();
+
+        elements.forEach(element => {
+            // Store original background color
+            element.dataset.originalBackground = element.style.backgroundColor || '';
+            element.dataset.originalTransition = element.style.transition || '';
+
+            // Apply highlight
+            element.style.transition = 'background-color 0.5s ease';
+            element.style.backgroundColor = '#f0f8ff'; // Light blue highlight
+
+            // Add to highlighted elements array
+            this.highlightedElements.push(element);
+        });
+    }
+
+    /**
+     * Clear all highlighted elements
+     */
+    clearHighlights() {
+        this.highlightedElements.forEach(element => {
+            // Restore original background
+            element.style.backgroundColor = element.dataset.originalBackground || '';
+            element.style.transition = element.dataset.originalTransition || '';
+        });
+
+        this.highlightedElements = [];
     }
 
     /**
@@ -193,6 +346,19 @@ class TalkAPI {
         ];
     }
 }
+
+// Add CSS for highlighted text
+const style = document.createElement('style');
+style.textContent = `
+    .talk-play-btn:hover {
+        background-color: #45a049 !important;
+    }
+    .talk-play-btn:disabled {
+        background-color: #cccccc !important;
+        cursor: not-allowed;
+    }
+`;
+document.head.appendChild(style);
 
 // Initialize the TalkAPI when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
