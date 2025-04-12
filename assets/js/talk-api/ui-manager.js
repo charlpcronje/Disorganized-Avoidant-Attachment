@@ -70,7 +70,7 @@ export class UIManager {
             .talk-progress-bar {
                 position: absolute;
                 left: 0;
-                bottom: 0;
+                top: 0;
                 width: 100%;
                 background-color: #5a84c3;
                 height: 0%;
