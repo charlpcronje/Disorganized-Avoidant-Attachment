@@ -1,0 +1,87 @@
+/* /assets/css/nav-update.css */
+/* Updates to make the navigation multi-row */
+
+/* Main navigation updates to allow wrapping */
+.main-nav {
+    display: block; /* Changed from flex */
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: flex-end; /* Align to right side */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: var(--spacing-md); /* Reduced from --spacing-lg */
+    margin-bottom: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+}
+
+.nav-link {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-sm); /* Added horizontal padding */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-sm); /* Slightly smaller font */
+}
+
+/* Adjust header for multi-row nav */
+.site-header {
+    min-height: var(--header-height); /* Changed from fixed height */
+    height: auto; /* Allow it to grow with the nav */
+    padding: var(--spacing-sm) 0;
+}
+
+/* Container adjustments for multi-row nav */
+.site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Updated mobile styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        font-size: 24px;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+    
+    .main-nav.open {
+        max-height: 500px;
+        overflow-y: auto; /* Added scrolling for many items */
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        padding: var(--spacing-md);
+        align-items: flex-start; /* Left-align items */
+    }
+    
+    .nav-item {
+        margin: 0 0 var(--spacing-md) 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+        font-size: var(--font-size-md); /* Return to normal size */
+    }
+}
