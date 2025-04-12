@@ -738,7 +738,15 @@ talk {
 }
 
 .talk-highlight-container {
-    background-color: rgba(90, 132, 195, 0.2);
+    background-color: rgba(90, 132, 195, 0.1);
     border-radius: 3px;
     transition: background-color 0.3s ease;
+}
+
+.talk-highlight-sentence {
+    background-color: rgba(90, 132, 195, 0.3);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 0 3px;
 }

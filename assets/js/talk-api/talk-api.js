@@ -47,9 +47,6 @@ export class TalkAPI {
         // Set up content sections
         this.setupContentSections();
 
-        // Set up example sections
-        this.setupExampleSections();
-
         // Make the API available globally
         window.talkAPI = this;
     }

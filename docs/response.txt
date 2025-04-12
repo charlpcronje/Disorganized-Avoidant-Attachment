@@ -1,0 +1,292 @@
+analytics.js:20 Analytics API endpoint: /api/sync.php
+index.js:10  TalkAPI v2.1.0 loaded - MODULAR VERSION
+talk-api.js:21 Using API endpoint: https://talk.api.webally.co.za/speak
+talk-api.js:63 Found 3 <talk> tags in the document
+talk-api.js:69 Talk tag 1 using voice: alloy
+talk-api.js:69 Talk tag 2 using voice: echo
+talk-api.js:69 Talk tag 3 using voice: echo
+talk-api.js:51 Uncaught TypeError: this.setupExampleSections is not a function
+    at TalkAPI.init (talk-api.js:51:14)
+    at new TalkAPI (talk-api.js:37:14)
+    at HTMLDocument.<anonymous> (index.js:11:5)
+init @ talk-api.js:51
+TalkAPI @ talk-api.js:37
+(anonymous) @ index.js:11
+talk-api.js:170 Button clicked: talk-0
+talk-api.js:208 BUTTON STATE: Loading - Color set to #2e7d32 (dark green)
+analytics.js:317 Analytics events synced successfully: {success: true, message: 'Events recorded successfully', stats: {…}}
+audio-manager.js:50 Converted relative URL to absolute URL: https://talk.api.webally.co.za/audio/alloy_c9a7e1e7bd55f461ad233e572cc6b62f00c61ed144871f21708ff78684eccc05.mp3
+talk-api.js:257  READY: Audio loaded and ready to play
+talk-api.js:260 BUTTON STATE: Ready - Button shows PAUSE icon - Color is #2e7d32 (dark green)
+highlight-manager.js:51 Found 4 links in the text
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: A disorganized/fearful-avoidant person typically has a negative view of self and others.
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"A disorganized/​fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them <a href="https:​/​/​www.onlyyouforever.com/​disorganized-attachment-in-marriage/​#:​~:​text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank"><sup> (Disorganized Attachment in Marriage - Therapevo Counseling)​</​sup></​a>. Thus, they live in a constant dilemma:​ yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available <a href="https:​/​/​www.reddit.com/​r/​HealMyAttachmentStyle/​comments/​1cxw7xz/​in_the_mind_of_an_fearful_avoidant_disorganized/​#:​~:​text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/​ Disorganized Attachment Style)​</​sup></​a>." class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  They may feel deeply unworthy of love and assume others will eventually hurt or leave them  (Disorganized Attachment in Marriage - Therapevo Counseling).
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"A disorganized/​fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them <a href="https:​/​/​www.onlyyouforever.com/​disorganized-attachment-in-marriage/​#:​~:​text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank"><sup> (Disorganized Attachment in Marriage - Therapevo Counseling)​</​sup></​a>. Thus, they live in a constant dilemma:​ yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available <a href="https:​/​/​www.reddit.com/​r/​HealMyAttachmentStyle/​comments/​1cxw7xz/​in_the_mind_of_an_fearful_avoidant_disorganized/​#:​~:​text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/​ Disorganized Attachment Style)​</​sup></​a>." class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  Thus, they live in a constant dilemma: yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available (In the Mind of An Fearful Avoidant/ Disorganized Attachment Style).
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"A disorganized/​fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them <a href="https:​/​/​www.onlyyouforever.com/​disorganized-attachment-in-marriage/​#:​~:​text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank"><sup> (Disorganized Attachment in Marriage - Therapevo Counseling)​</​sup></​a>. Thus, they live in a constant dilemma:​ yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available <a href="https:​/​/​www.reddit.com/​r/​HealMyAttachmentStyle/​comments/​1cxw7xz/​in_the_mind_of_an_fearful_avoidant_disorganized/​#:​~:​text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/​ Disorganized Attachment Style)​</​sup></​a>." class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  As one individual described it: "I finally want someone to hold me and give me the peace I never felt...
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  and when I do [find someone safe], I run.
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"As one individual described it:​ "I finally want someone to hold me and give me the peace I never felt... and when I do [find someone safe]​, I run." <a href="https:​/​/​www.reddit.com/​r/​HealMyAttachmentStyle/​comments/​1cxw7xz/​in_the_mind_of_an_fearful_avoidant_disorganized/​#:​~:​text=And%20with%20all%20this%20fear%2C,you%20that%20wants%20a%20home" target="_blank"><sup>(In the Mind of An Fearful Avoidant/​ Disorganized Attachment Style)​</​sup></​a> <a href="https:​/​/​www.reddit.com/​r/​HealMyAttachmentStyle/​comments/​1cxw7xz/​in_the_mind_of_an_fearful_avoidant_disorganized/​#:​~:​text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank"><sup>(In the Mind of An Fearful Avoidant/​Disorganized Attachment Style)​</​sup></​a>" class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+talk-api.js:274 Audio playback ended
+talk-api.js:279 Announcing 4 links
+talk-api.js:356 Announcing links: There were 4 links in the text that was just read to you.
+audio-manager.js:50 Converted relative URL to absolute URL: https://talk.api.webally.co.za/audio/alloy_05f149132eebb2a98b8cf23ef61fffb27acd92c219c3181fd3ce4870517f6cf3.mp3
+talk-api.js:170 Button clicked: talk-1
+talk-api.js:208 BUTTON STATE: Loading - Color set to #2e7d32 (dark green)
+audio-manager.js:50 Converted relative URL to absolute URL: https://talk.api.webally.co.za/audio/echo_f0f34cab1e4f717e25e592ccaf6d28350f7bc79e5de15eaaf03071611407f792.mp3
+talk-api.js:257  READY: Audio loaded and ready to play
+talk-api.js:260 BUTTON STATE: Ready - Button shows PAUSE icon - Color is #2e7d32 (dark green)
+highlight-manager.js:51 Found 11 links in the text
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: This website is organized into sections that cover different aspects of disorganized attachment: What is Disorganized Attachment?
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  - The core conflict and origins.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    The Push-Pull Cycle - How fearful-avoidants crave closeness yet withdraw from it.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Lies, Deflection, and Blame - Defense mechanisms used to protect against vulnerability.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Sabotage Through Cheating and Rebounds - How intimacy fears can lead to relationship-destroying behaviors.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Preference for Toxic Relationships - Why healthy love can feel threatening.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Trauma Responses - Understanding that these behaviors stem from unhealed wounds.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    The Vicious Cycle - How avoidance reinforces itself over time.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Secure vs.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  Disorganized Attachment - Comparing healthy responses to fearful-avoidant ones.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    Healing and Recovery - Pathways to awareness and developing secure attachment.
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: 
+    BPD and Attachment - Exploring if BPD was ever the an issue
+    A Real way forward - So what to do next?
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  Is there a way forward, what do you want?
+highlight-manager.js:76 Found element containing sentence: <ol data-original-html=​"
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=what-is">What is Disorganized Attachment?</​a></​strong> - The core conflict and origins.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=push-pull">The Push-Pull Cycle</​a></​strong> - How fearful-avoidants crave closeness yet withdraw from it.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=lies-deflection">Lies, Deflection, and Blame</​a></​strong> - Defense mechanisms used to protect against vulnerability.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=sabotage">Sabotage Through Cheating and Rebounds</​a></​strong> - How intimacy fears can lead to relationship-destroying behaviors.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=toxic-preference">Preference for Toxic Relationships</​a></​strong> - Why healthy love can feel threatening.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=trauma-responses">Trauma Responses</​a></​strong> - Understanding that these behaviors stem from unhealed wounds.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=vicious-cycle">The Vicious Cycle</​a></​strong> - How avoidance reinforces itself over time.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=secure-vs">Secure vs. Disorganized Attachment</​a></​strong> - Comparing healthy responses to fearful-avoidant ones.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=healing">Healing and Recovery</​a></​strong> - Pathways to awareness and developing secure attachment.</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=bpd-attachment">BPD and Attachment</​a></​strong> - Exploring if BPD was ever the an issue</​li>
+    <li><strong><a href="https:​/​/​info.nade.webally.co.za/​index.php?page=real-way-forward">A Real way forward</​a></​strong> - So what to do next? Is there a way forward, what do you want?</​li>
+" class=​"talk-highlight-container">​…​</ol>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+talk-api.js:274 Audio playback ended
+talk-api.js:279 Announcing 11 links
+talk-api.js:356 Announcing links: There were 11 links in the text that was just read to you.
+audio-manager.js:50 Converted relative URL to absolute URL: https://talk.api.webally.co.za/audio/echo_564abb25463c37f850ed4da1a2c43d352b1dd2b0a6e4e6698c39a26f72e12340.mp3
+talk-api.js:170 Button clicked: talk-2
+talk-api.js:208 BUTTON STATE: Loading - Color set to #2e7d32 (dark green)
+audio-manager.js:50 Converted relative URL to absolute URL: https://talk.api.webally.co.za/audio/echo_c47449c6f568d78f9e22f5fe3e783aef7c1d5f3617ef18feae70ec46209b7100.mp3
+talk-api.js:257  READY: Audio loaded and ready to play
+talk-api.js:260 BUTTON STATE: Ready - Button shows PAUSE icon - Color is #2e7d32 (dark green)
+highlight-manager.js:51 Found 0 links in the text
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight: You can navigate through each section using the navigation menu or the "Continue" buttons at the bottom of each page.
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"You can navigate through each section using the navigation menu or the "Continue" buttons at the bottom of each page. Each section includes examples with tabs that let you toggle between research examples and personal experiences." class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  Each section includes examples with tabs that let you toggle between research examples and personal experiences.
+highlight-manager.js:76 Found element containing sentence: <p data-original-html=​"You can navigate through each section using the navigation menu or the "Continue" buttons at the bottom of each page. Each section includes examples with tabs that let you toggle between research examples and personal experiences." class=​"talk-highlight-container">​…​</p>​
+highlight-manager.js:115 Applied simplified highlighting to prevent crashes
+highlight-manager.js:88 Successfully highlighted sentence
+highlight-manager.js:70  HIGHLIGHT: Highlighting sentence
+highlight-manager.js:71 Sentence to highlight:  The goal is not to label or judge, but to foster understanding and compassion while recognizing unhealthy patterns that may be causing pain in relationships.
+talk-api.js:274 Audio playback ended

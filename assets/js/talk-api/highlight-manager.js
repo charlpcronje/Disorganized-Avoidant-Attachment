@@ -98,23 +98,43 @@ export class HighlightManager {
     }
 
     /**
-     * Simple highlighting that doesn't manipulate the DOM structure
-     * This is a simplified version to prevent page crashes
+     * Improved highlighting that works with child elements
      */
     highlightTextNodesWithSentence(element, sentence) {
         try {
-            // Store original HTML
+            // Clear previous highlights within this element
+            const existingHighlights = element.querySelectorAll('.talk-highlight-sentence');
+            existingHighlights.forEach(highlight => {
+                highlight.classList.remove('talk-highlight-sentence');
+            });
+
+            // Store original HTML if not already stored
             if (!element.dataset.originalHtml) {
                 element.dataset.originalHtml = element.innerHTML;
             }
 
-            // Add a class to the element itself instead of manipulating its children
-            element.classList.add('talk-highlight-container');
+            // Find child elements that might contain the sentence
+            const childElements = element.children;
+            let foundMatch = false;
 
-            // Log success without actually changing the DOM structure
-            console.log('Applied simplified highlighting to prevent crashes');
+            // First try to find exact matches in child elements
+            for (let i = 0; i < childElements.length; i++) {
+                const child = childElements[i];
+                if (child.textContent.includes(sentence)) {
+                    child.classList.add('talk-highlight-sentence');
+                    foundMatch = true;
+                    break;
+                }
+            }
+
+            // If no child element contains the full sentence, highlight the parent
+            if (!foundMatch) {
+                element.classList.add('talk-highlight-container');
+            }
+
+            console.log('Applied improved highlighting');
         } catch (error) {
-            console.error('Error in simplified highlighting:', error);
+            console.error('Error in highlighting:', error);
         }
     }
 
@@ -148,6 +168,12 @@ export class HighlightManager {
         const highlightContainers = document.querySelectorAll('.talk-highlight-container');
         highlightContainers.forEach(container => {
             container.classList.remove('talk-highlight-container');
+        });
+
+        // Remove sentence highlights
+        const sentenceHighlights = document.querySelectorAll('.talk-highlight-sentence');
+        sentenceHighlights.forEach(highlight => {
+            highlight.classList.remove('talk-highlight-sentence');
         });
 
         // Clear the tracked elements
