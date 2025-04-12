@@ -58,46 +58,42 @@ export class TalkAPI {
      * Set up content sections with play buttons
      */
     setupContentSections() {
-        // Find all content sections
-        const contentSections = document.querySelectorAll('.page-content > p, .page-content > h2, .page-content > h3, .page-content > ul, .page-content > ol');
+        // Find all talk tags
+        const talkElements = document.querySelectorAll('talk, .talk');
+        console.log(`Found ${talkElements.length} <talk> tags in the document`);
 
-        // Group consecutive elements
-        let currentGroup = [];
-        let groupCount = 0;
+        // Process each talk tag
+        talkElements.forEach((talkElement, index) => {
+            // Get the voice attribute or use default
+            const voice = talkElement.getAttribute('voice') || this.config.defaultVoice;
+            console.log(`Talk tag ${index+1} using voice: ${voice}`);
 
-        contentSections.forEach((section, index) => {
-            // Skip if inside an example container or tab content
-            if (section.closest('.example-container') || section.closest('.tab-content')) {
-                return;
-            }
-
-            // Add to current group
-            currentGroup.push(section);
-
-            // Create a group when we reach 3 elements or it's the last element
-            if (currentGroup.length >= 3 || index === contentSections.length - 1) {
-                this.createSectionWithButton(currentGroup, `content-${groupCount}`, this.config.defaultVoice);
-                currentGroup = [];
-                groupCount++;
-            }
+            // Create a section for this talk element
+            this.createTalkSection(talkElement, `talk-${index}`, voice);
         });
     }
 
     /**
-     * Set up example sections with play buttons
+     * Create a section for a talk element
      */
-    setupExampleSections() {
-        // Find all example tabs
-        document.querySelectorAll('.tab-content').forEach((tabContent, index) => {
-            const tabId = tabContent.getAttribute('data-tab');
+    createTalkSection(talkElement, id, voice) {
+        // Create section wrapper
+        const section = document.createElement('div');
+        section.className = 'talk-section';
+        section.id = `talk-section-${id}`;
 
-            // Get all paragraphs within the tab content
-            const paragraphs = tabContent.querySelectorAll('p');
-            if (paragraphs.length > 0) {
-                // Create a play button for tab content
-                this.createTabButton(tabContent, `example-${tabId}-${index}`, this.config.exampleVoice);
-            }
-        });
+        // Create play button with speaker icon
+        const button = this.createButton(id, voice);
+
+        // Clone the talk element content into the section
+        const content = talkElement.innerHTML;
+        section.innerHTML = content;
+
+        // Add button to section
+        section.appendChild(button);
+
+        // Replace the talk element with our section
+        talkElement.parentNode.replaceChild(section, talkElement);
     }
 
     /**
