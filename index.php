@@ -76,7 +76,7 @@ if ($pageInfo && $sessionId) {
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/nav-update.css">
-
+    <link rel="stylesheet" href="assets/css/talk.css">
     <!-- Google Fonts (preconnect) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,6 +226,6 @@ if ($pageInfo && $sessionId) {
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/examples.js"></script>
     <script src="assets/js/analytics.js"></script>
-    <script type="module" src="assets/js/talk-api/index.js"></script>
+    <script type="module" src="assets/js/talk.apijs"></script>
 </body>
 </html>

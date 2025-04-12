@@ -1,3 +1,351 @@
+# Combined Markdown Export
+
+Generated: 2025-04-12T23:05:29.620588
+
+
+## Index
+
+- `audio-manager.js` — ~239 tokens
+- `highlight-manager.js` — ~691 tokens
+- `icon-provider.js` — ~232 tokens
+- `index.js` — ~122 tokens
+- `talk-api.js` — ~1834 tokens
+- `ui-manager.js` — ~395 tokens
+
+**Total tokens: ~3513**
+
+---
+
+### `audio-manager.js`
+
+```js
+/**
+ * Audio Manager for TalkAPI
+ * Handles audio-related functionality
+ */
+
+export class AudioManager {
+    constructor(config) {
+        this.config = config;
+    }
+    
+    /**
+     * Get audio URL for the given text and voice
+     */
+    async getAudioUrl(text, voice, audioCache) {
+        // Check cache first
+        const cacheKey = `${voice}_${text}`;
+        if (audioCache[cacheKey]) {
+            return audioCache[cacheKey];
+        }
+        
+        // Prepare request data
+        const data = {
+            text: text,
+            voice: voice,
+            domain: this.config.domain
+        };
+        
+        // Make API request
+        const response = await fetch(this.config.apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        // Make sure we use the full URL from the API, not a relative path
+        let audioUrl = result.audio_url;
+        
+        // If the URL doesn't start with http/https, it's a relative URL
+        // In that case, make sure we use the talk.api domain, not the current domain
+        if (!audioUrl.startsWith('http')) {
+            audioUrl = 'https://talk.api.webally.co.za' + (audioUrl.startsWith('/') ? '' : '/') + audioUrl;
+            console.log('Converted relative URL to absolute URL:', audioUrl);
+        }
+        
+        // Cache the URL
+        audioCache[cacheKey] = audioUrl;
+        
+        return audioUrl;
+    }
+}
+```
+
+### `highlight-manager.js`
+
+```js
+/**
+ * Highlight Manager for TalkAPI
+ * Handles text highlighting functionality
+ */
+
+export class HighlightManager {
+    constructor() {
+        this.highlightedElements = [];
+    }
+
+    /**
+     * Start sentence highlighting
+     */
+    startSentenceHighlighting(text, elements, duration, currentAudio) {
+        // Split text into sentences
+        const sentences = this.splitIntoSentences(text);
+        if (sentences.length === 0) return;
+
+        // Count links in the text for later announcement
+        const linkCount = this.countLinks(elements);
+
+        // Calculate time per sentence
+        const timePerSentence = duration / sentences.length;
+
+        // Highlight sentences one by one
+        sentences.forEach((sentence, index) => {
+            setTimeout(() => {
+                if (!currentAudio || currentAudio.paused) return;
+                this.highlightSentence(elements, sentence);
+
+                // If this is the last sentence and we have links, prepare to announce them
+                if (index === sentences.length - 1 && linkCount > 0) {
+                    // Store link count for announcement after audio ends
+                    currentAudio.dataset.linkCount = linkCount;
+                }
+            }, index * timePerSentence * 1000);
+        });
+    }
+
+    /**
+     * Count links in elements
+     */
+    countLinks(elements) {
+        let linkCount = 0;
+
+        elements.forEach(element => {
+            const links = element.querySelectorAll('a');
+            linkCount += links.length;
+        });
+
+        console.log(`Found ${linkCount} links in the text`);
+        return linkCount;
+    }
+
+    /**
+     * Split text into sentences
+     */
+    splitIntoSentences(text) {
+        // Simple sentence splitting - can be improved
+        return text.match(/[^.!?]+[.!?]+/g) || [text];
+    }
+
+    /**
+     * Highlight a sentence within elements
+     */
+    highlightSentence(elements, sentence) {
+        // Clear previous highlights
+        this.clearHighlights();
+
+        console.log('%c HIGHLIGHT: Highlighting sentence', 'background: #9c27b0; color: white; padding: 3px; border-radius: 3px;');
+        console.log('Sentence to highlight:', sentence);
+
+        // Find the element containing this sentence
+        for (const element of elements) {
+            if (element.textContent.includes(sentence)) {
+                console.log('Found element containing sentence:', element);
+
+                // Store original HTML
+                if (!element.dataset.originalHtml) {
+                    element.dataset.originalHtml = element.innerHTML;
+                }
+
+                try {
+                    // Instead of replacing the entire innerHTML, we'll use DOM traversal
+                    // to preserve HTML structure and only highlight the text nodes
+                    this.highlightTextNodesWithSentence(element, sentence);
+
+                    console.log('Successfully highlighted sentence');
+
+                    // Add to highlighted elements
+                    this.highlightedElements.push(element);
+                    break;
+                } catch (error) {
+                    console.error('Error highlighting sentence:', error);
+                }
+            }
+        }
+    }
+
+    /**
+     * Improved highlighting that works with child elements
+     */
+    highlightTextNodesWithSentence(element, sentence) {
+        try {
+            // Clear previous highlights within this element
+            const existingHighlights = element.querySelectorAll('.talk-highlight-sentence');
+            existingHighlights.forEach(highlight => {
+                highlight.classList.remove('talk-highlight-sentence');
+            });
+
+            // Store original HTML if not already stored
+            if (!element.dataset.originalHtml) {
+                element.dataset.originalHtml = element.innerHTML;
+            }
+
+            // Find child elements that might contain the sentence
+            const childElements = element.children;
+            let foundMatch = false;
+
+            // First try to find exact matches in child elements
+            for (let i = 0; i < childElements.length; i++) {
+                const child = childElements[i];
+                if (child.textContent.includes(sentence)) {
+                    child.classList.add('talk-highlight-sentence');
+                    foundMatch = true;
+                    break;
+                }
+            }
+
+            // If no child element contains the full sentence, highlight the parent
+            if (!foundMatch) {
+                element.classList.add('talk-highlight-container');
+            }
+
+            console.log('Applied improved highlighting');
+        } catch (error) {
+            console.error('Error in highlighting:', error);
+        }
+    }
+
+    /**
+     * Get all text nodes in an element
+     */
+    getTextNodes(element) {
+        const textNodes = [];
+        const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let node;
+        while (node = walker.nextNode()) {
+            if (node.nodeValue.trim() !== '') {
+                textNodes.push(node);
+            }
+        }
+
+        return textNodes;
+    }
+
+    /**
+     * Clear all highlights
+     */
+    clearHighlights() {
+        // Remove highlight container classes
+        const highlightContainers = document.querySelectorAll('.talk-highlight-container');
+        highlightContainers.forEach(container => {
+            container.classList.remove('talk-highlight-container');
+        });
+
+        // Remove sentence highlights
+        const sentenceHighlights = document.querySelectorAll('.talk-highlight-sentence');
+        sentenceHighlights.forEach(highlight => {
+            highlight.classList.remove('talk-highlight-sentence');
+        });
+
+        // Clear the tracked elements
+        this.highlightedElements = [];
+    }
+}
+```
+
+### `icon-provider.js`
+
+```js
+/**
+ * Icon Provider for TalkAPI
+ * Provides SVG icons for the UI
+ */
+
+export class IconProvider {
+    /**
+     * Get speaker icon SVG
+     */
+    getSpeakerIcon() {
+        return '<svg class="talk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+    }
+    
+    /**
+     * Get play icon SVG
+     */
+    getPlayIcon() {
+        return '<svg class="talk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5v14l11-7z"/></svg>';
+    }
+    
+    /**
+     * Get pause icon SVG
+     */
+    getPauseIcon() {
+        return '<svg class="talk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+    }
+    
+    /**
+     * Get loading icon SVG
+     */
+    getLoadingIcon() {
+        return '<svg class="talk-icon talk-loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 4V2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2v2c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8z"/></svg>';
+    }
+    
+    /**
+     * Get error icon SVG
+     */
+    getErrorIcon() {
+        return '<svg class="talk-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>';
+    }
+}
+```
+
+### `index.js`
+
+```js
+/**
+ * TTS API Client - Version 2.1.0
+ * Main entry point for the TalkAPI
+ */
+
+import { TalkAPI } from './talk-api.js';
+
+// Initialize the TalkAPI when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('%c TalkAPI v2.1.0 loaded - MODULAR VERSION', 'background: #2e7d32; color: white; padding: 8px; border-radius: 4px; font-weight: bold;');
+    new TalkAPI();
+});
+
+// Add CSS for loading animation
+const loadingStyle = document.createElement('style');
+loadingStyle.textContent = `
+    .talk-loading {
+        animation: talk-spin 1s linear infinite;
+    }
+    
+    @keyframes talk-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+`;
+document.head.appendChild(loadingStyle);
+```
+
+### `talk-api.js`
+
+```js
 /**
  * Main TalkAPI class
  */
@@ -461,3 +809,135 @@ export class TalkAPI {
         }
     }
 }
+```
+
+### `ui-manager.js`
+
+```js
+/**
+ * UI Manager for TalkAPI
+ * Handles UI-related functionality
+ */
+
+export class UIManager {
+    /**
+     * Add required CSS styles
+     */
+    addStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Button styles */
+            .talk-button {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                padding: 8px 12px;
+                background-color: #2e7d32 !important;
+                color: #FFFFFF !important;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                z-index: 100;
+                box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .talk-button:hover {
+                background-color: #1b5e20 !important;
+            }
+
+            .talk-button:disabled {
+                background-color: #2e7d32 !important;
+                opacity: 0.7;
+                cursor: wait;
+            }
+
+            /* Section wrapper styles */
+            .talk-section {
+                position: relative;
+                border: 1px solid rgba(200, 200, 200, 0.3);
+                border-radius: 5px;
+                padding: 10px 10px 10px 20px; /* Added left padding for progress bar */
+                margin-bottom: 15px;
+                transition: border 0.3s ease;
+            }
+
+            .talk-section.active {
+                border: 1px solid rgba(76, 175, 80, 0.7);
+            }
+
+            /* Progress bar container */
+            .talk-progress-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 10px;
+                background-color: rgba(200, 200, 200, 0.3);
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                overflow: hidden;
+                z-index: 10;
+            }
+
+            /* Progress bar */
+            .talk-progress-bar {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background-color: #5a84c3;
+                height: 0%;
+                transition: height 0.1s linear;
+            }
+
+            /* Content container */
+            .talk-content {
+                position: relative;
+                width: 100%;
+                padding-right: 40px; /* Space for button */
+            }
+
+            /* Icons */
+            .talk-icon {
+                width: 18px;
+                height: 18px;
+                display: inline-block;
+                filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+                margin-right: 0px;
+                color: #FFFFFF !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    /**
+     * Create progress bar element
+     */
+    createProgressBar() {
+        const container = document.createElement('div');
+        container.className = 'talk-progress-container';
+
+        const bar = document.createElement('div');
+        bar.className = 'talk-progress-bar';
+
+        container.appendChild(bar);
+        return container;
+    }
+
+    /**
+     * Update progress bar
+     */
+    updateProgressBar(section, progress) {
+        if (!section) return;
+
+        const progressBar = section.querySelector('.talk-progress-bar');
+        if (progressBar) {
+            // Set the height as a percentage (0-100%)
+            progressBar.style.height = `${Math.min(100, Math.max(0, progress * 100))}%`;
+        }
+    }
+}
+```
