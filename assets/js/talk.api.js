@@ -121,19 +121,19 @@ class TalkAPI {
         // Create play button
         const playButton = document.createElement('button');
         playButton.className = 'talk-play-btn';
-        playButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>';
+        playButton.innerHTML = '<i class="talk-icon talk-icon-speaker"></i>';
         playButton.style.position = 'absolute';
         playButton.style.top = '5px';
         playButton.style.right = '5px';
         playButton.style.padding = '8px 12px';
-        playButton.style.backgroundColor = '#4CAF50';
+        playButton.style.backgroundColor = '#2e7d32'; // Darker green
         playButton.style.color = '#ffffff';
         playButton.style.border = 'none';
         playButton.style.borderRadius = '4px';
         playButton.style.cursor = 'pointer';
         playButton.style.fontSize = '14px';
         playButton.style.zIndex = '100';
-        playButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+        playButton.style.boxShadow = '0 3px 5px rgba(0,0,0,0.3)';
 
         // Store data attributes
         playButton.setAttribute('data-group-id', groupId);
@@ -144,25 +144,29 @@ class TalkAPI {
         playButton.addEventListener('click', () => {
             // If this button is for currently playing audio, pause it
             if (this.currentAudio && this.currentPlayButton === playButton) {
+                console.log('Toggle play/pause for current audio');
                 if (this.currentAudio.paused) {
                     // Resume playback
                     this.currentAudio.play();
                     playButton.innerHTML = '<i class="talk-icon talk-icon-pause"></i>'; // Pause symbol
                     playButton.setAttribute('title', 'Pause');
+                    console.log('Resumed playback');
                 } else {
                     // Pause playback
                     this.currentAudio.pause();
                     playButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play symbol
                     playButton.setAttribute('title', 'Resume');
+                    console.log('Paused playback');
                 }
                 return;
             }
 
             // Stop any currently playing audio
             if (this.currentAudio) {
+                console.log('Stopping previous audio');
                 this.currentAudio.pause();
                 if (this.currentPlayButton) {
-                    this.currentPlayButton.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Reset previous button
+                    this.currentPlayButton.innerHTML = '<i class="talk-icon talk-icon-speaker"></i>'; // Reset previous button
                     this.currentPlayButton.setAttribute('title', 'Listen to this section');
                 }
                 this.currentAudio = null;
@@ -179,6 +183,7 @@ class TalkAPI {
             // Update button appearance
             playButton.innerHTML = '<i class="talk-icon talk-icon-loading"></i>'; // Loading spinner
             playButton.setAttribute('title', 'Generating audio...');
+            console.log('Starting audio generation for new section');
 
             // Speak the text
             this.speak(cleanText, voice, playButton, elements);
@@ -333,6 +338,7 @@ class TalkAPI {
 
         // When audio starts playing
         audio.onplay = () => {
+            console.log('Audio playback started');
             if (buttonElement) {
                 buttonElement.innerHTML = '<i class="talk-icon talk-icon-pause"></i>'; // Pause symbol
                 buttonElement.setAttribute('title', 'Pause');
@@ -352,8 +358,9 @@ class TalkAPI {
 
         // Update button and remove highlights when playing ends
         audio.onended = () => {
+            console.log('Audio playback ended');
             if (buttonElement) {
-                buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play icon
+                buttonElement.innerHTML = '<i class="talk-icon talk-icon-speaker"></i>'; // Speaker icon
                 buttonElement.setAttribute('title', 'Listen to this section');
                 buttonElement.disabled = false;
             }
@@ -399,6 +406,7 @@ class TalkAPI {
 
         // Handle audio pausing
         audio.onpause = () => {
+            console.log('Audio playback paused');
             this.stopHighlightSequence();
             if (buttonElement) {
                 buttonElement.innerHTML = '<i class="talk-icon talk-icon-play"></i>'; // Play symbol
@@ -668,10 +676,10 @@ class TalkAPI {
 const style = document.createElement('style');
 style.textContent = `
     .talk-play-btn:hover {
-        background-color: #45a049 !important;
+        background-color: #1b5e20 !important; /* Darker green on hover */
     }
     .talk-play-btn:disabled {
-        background-color: #cccccc !important;
+        background-color: #757575 !important; /* Darker gray when disabled */
         cursor: not-allowed;
     }
     .talk-section-wrapper {
@@ -695,7 +703,11 @@ style.textContent = `
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+        filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)); /* Stronger shadow */
+    }
+
+    .talk-icon-speaker {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>');
     }
 
     .talk-icon-play {
@@ -728,4 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add a class to the body to indicate TalkAPI is loaded
     document.body.classList.add('talkapi-loaded');
+
+    // Log version to confirm the latest file is loaded
+    console.log('%c TalkAPI v1.2.0 loaded - Latest update: Fixed sentence highlighting, restored speaker icon, improved button colors, added shadows', 'background: #2e7d32; color: white; padding: 5px; border-radius: 3px;');
 });
