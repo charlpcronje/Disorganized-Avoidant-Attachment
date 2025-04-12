@@ -16,7 +16,10 @@ error_reporting(E_ALL);
 
 // Site configuration
 define('SITE_NAME', 'Understanding Disorganized Attachment');
-define('BASE_URL', 'http://localhost/attachment-site/');
+// Get the current domain and protocol for BASE_URL
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$domain = $_SERVER['HTTP_HOST'];
+define('BASE_URL', $protocol . $domain . '/');
 define('ADMIN_EMAIL', 'admin@example.com');
 
 // Set the timezone

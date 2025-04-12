@@ -2,7 +2,18 @@
 // /api/sync.php
 // Endpoint for receiving and storing analytics data
 
+// Set CORS headers to allow requests from any origin
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With, X-API-Key');
+header('Access-Control-Allow-Credentials: true');
 header('Content-Type: application/json');
+
+// Handle preflight OPTIONS requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
 require_once '../includes/config.php';
 require_once '../includes/db.php';
@@ -52,30 +63,30 @@ try {
     $stmt = $conn->prepare("UPDATE sessions SET end_time = CURRENT_TIMESTAMP, total_duration = TIMESTAMPDIFF(SECOND, start_time, CURRENT_TIMESTAMP) WHERE id = ?");
     $stmt->bind_param("i", $sessionId);
     $stmt->execute();
-    
+
     // Process each event
     $successCount = 0;
     $errorCount = 0;
-    
+
     $insertStmt = $conn->prepare("INSERT INTO events (session_id, page_id, event_type, event_data) VALUES (?, ?, ?, ?)");
-    
+
     foreach ($events as $event) {
         if (!isset($event['type']) || !isset($event['pageId']) || !isset($event['timestamp']) || !isset($event['data'])) {
             $errorCount++;
             continue;
         }
-        
+
         $pageId = intval($event['pageId']);
         $eventType = $event['type'];
         $eventData = json_encode($event['data']);
-        
+
         // Validate event type
         $validTypes = ['pageview', 'scroll', 'click', 'tab_switch', 'continue', 'navigation', 'page_exit'];
         if (!in_array($eventType, $validTypes)) {
             $errorCount++;
             continue;
         }
-        
+
         $insertStmt->bind_param("iiss", $sessionId, $pageId, $eventType, $eventData);
         if ($insertStmt->execute()) {
             $successCount++;
@@ -84,10 +95,10 @@ try {
             $logger->error('Failed to insert event: ' . $db->error());
         }
     }
-    
+
     // Commit transaction
     $conn->commit();
-    
+
     $response = [
         'success' => true,
         'message' => 'Events recorded successfully',
@@ -97,7 +108,7 @@ try {
             'errors' => $errorCount
         ]
     ];
-    
+
 } catch (Exception $e) {
     // Rollback transaction on error
     $conn->rollback();

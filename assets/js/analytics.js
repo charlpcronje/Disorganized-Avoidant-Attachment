@@ -8,7 +8,16 @@ class Analytics {
         this.scrollDebounce = window.SCROLL_DEBOUNCE || 500; // milliseconds
         this.storageKey = 'attachment_site_analytics';
         // Fix for CORS issue - use relative path instead of absolute URL
-        this.apiEndpoint = '/api/sync.php';
+        // Check if we're on the production domain
+        if (window.location.hostname === 'info.nade.webally.co.za') {
+            this.apiEndpoint = '/api/sync.php';
+        } else {
+            // Fallback to the BASE_URL if defined, or use a relative path
+            this.apiEndpoint = (window.BASE_URL || '/') + 'api/sync.php';
+        }
+
+        // Log the API endpoint for debugging
+        console.log('Analytics API endpoint:', this.apiEndpoint);
 
         // Add no-cors mode to fetch requests to handle CORS issues
         this.fetchMode = 'no-cors';
