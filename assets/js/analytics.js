@@ -88,12 +88,12 @@ class Analytics {
         document.addEventListener('click', (e) => {
             // Navigation clicks
             if (e.target.closest('nav a') || e.target.closest('.sub-nav a')) {
-                this.recordNavigationClick(e.target.closest('a').href, e.target.textContent.trim());
+                this.recordNavigationClick(e.target.closest('a').href, e.target.textContent.trim(), e);
             }
 
             // Continue button clicks
             if (e.target.closest('.continue-btn')) {
-                this.recordContinueClick();
+                this.recordContinueClick(e);
             }
 
             // Tab switches
@@ -101,7 +101,7 @@ class Analytics {
                 const tabBtn = e.target.closest('.tab-btn');
                 const tabId = tabBtn.dataset.tab;
                 const tabLabel = tabBtn.textContent.trim();
-                this.recordTabSwitch(tabId, tabLabel);
+                this.recordTabSwitch(tabId, tabLabel, e);
             }
         });
 
@@ -203,8 +203,11 @@ class Analytics {
     }
 
     // Record navigation click
-    recordNavigationClick(url, label) {
+    recordNavigationClick(url, label, e) {
         if (!this.pageId) return;
+
+        // Get click position from the event or use defaults
+        const position = e ? { x: e.clientX, y: e.clientY } : { x: 0, y: 0 };
 
         this.pendingEvents.push({
             type: 'navigation',
@@ -213,10 +216,7 @@ class Analytics {
             data: {
                 url,
                 label,
-                position: {
-                    x: event.clientX,
-                    y: event.clientY
-                }
+                position: position
             }
         });
 
@@ -224,10 +224,13 @@ class Analytics {
     }
 
     // Record continue button click
-    recordContinueClick() {
+    recordContinueClick(e) {
         if (!this.pageId) return;
 
         const nextPageUrl = document.querySelector('.continue-btn').getAttribute('href');
+
+        // Get click position from the event or use defaults
+        const position = e ? { x: e.clientX, y: e.clientY } : { x: 0, y: 0 };
 
         this.pendingEvents.push({
             type: 'continue',
@@ -235,10 +238,7 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 nextPageUrl,
-                position: {
-                    x: event.clientX,
-                    y: event.clientY
-                }
+                position: position
             }
         });
 
@@ -246,8 +246,11 @@ class Analytics {
     }
 
     // Record tab switch
-    recordTabSwitch(tabId, tabLabel) {
+    recordTabSwitch(tabId, tabLabel, e) {
         if (!this.pageId) return;
+
+        // Get click position from the event or use defaults
+        const position = e ? { x: e.clientX, y: e.clientY } : { x: 0, y: 0 };
 
         this.pendingEvents.push({
             type: 'tab_switch',
@@ -256,10 +259,7 @@ class Analytics {
             data: {
                 tabId,
                 tabLabel,
-                position: {
-                    x: event.clientX,
-                    y: event.clientY
-                }
+                position: position
             }
         });
 
@@ -314,11 +314,51 @@ class Analytics {
                     event => !events.some(e => e.timestamp === event.timestamp && e.type === event.type)
                 );
                 this.saveEvents();
+                console.log('Analytics events synced successfully:', data);
+            } else {
+                // Log server-side errors
+                console.error('Server error syncing analytics events:', data.message);
+
+                // If there's a data truncation error, fix the event types
+                if (data.message && data.message.includes('Data truncated for column')) {
+                    console.warn('Fixing truncated event types...');
+                    this.fixTruncatedEventTypes();
+                }
             }
         })
         .catch(error => {
             console.error('Failed to sync analytics events:', error);
         });
+    }
+
+    /**
+     * Fix truncated event types in pending events
+     * This method is called when a data truncation error is detected
+     */
+    fixTruncatedEventTypes() {
+        // The valid event types according to the server
+        const validTypes = ['pageview', 'scroll', 'click', 'tab_switch', 'continue', 'navigation', 'page_exit'];
+
+        // Check each pending event and truncate the type if needed
+        this.pendingEvents.forEach(event => {
+            // If the event type is not in the valid types list, truncate it
+            if (!validTypes.includes(event.type)) {
+                console.warn(`Truncating event type: ${event.type}`);
+
+                // Try to match with a valid type
+                const matchedType = validTypes.find(type => event.type.startsWith(type));
+                if (matchedType) {
+                    event.type = matchedType;
+                } else {
+                    // If no match, use a generic type
+                    event.type = 'click';
+                }
+            }
+        });
+
+        // Save the fixed events
+        this.saveEvents();
+        console.log('Event types fixed, will retry on next sync interval');
     }
 }
 
