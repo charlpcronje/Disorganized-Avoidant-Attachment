@@ -98,66 +98,23 @@ export class HighlightManager {
     }
 
     /**
-     * Highlight text nodes that contain parts of the sentence
+     * Simple highlighting that doesn't manipulate the DOM structure
+     * This is a simplified version to prevent page crashes
      */
     highlightTextNodesWithSentence(element, sentence) {
-        // Get all text nodes in the element
-        const textNodes = this.getTextNodes(element);
-
-        // Find which text nodes contain parts of the sentence
-        const matchingNodes = [];
-        let remainingSentence = sentence;
-
-        // First pass: identify nodes that contain parts of the sentence
-        for (const node of textNodes) {
-            const nodeText = node.nodeValue;
-            if (remainingSentence.includes(nodeText) || nodeText.includes(remainingSentence)) {
-                matchingNodes.push(node);
-                // Remove the matched text from the remaining sentence
-                remainingSentence = remainingSentence.replace(nodeText, '');
+        try {
+            // Store original HTML
+            if (!element.dataset.originalHtml) {
+                element.dataset.originalHtml = element.innerHTML;
             }
-        }
 
-        // If we didn't find any matching nodes or didn't match the full sentence,
-        // fall back to a simpler approach
-        if (matchingNodes.length === 0 || remainingSentence.length > 0) {
-            // Fallback to simpler approach
-            const walker = document.createTreeWalker(
-                element,
-                NodeFilter.SHOW_TEXT,
-                null,
-                false
-            );
+            // Add a class to the element itself instead of manipulating its children
+            element.classList.add('talk-highlight-container');
 
-            let node;
-            while (node = walker.nextNode()) {
-                const text = node.nodeValue;
-                if (text.trim() === '') continue;
-
-                // Check if this text node contains any part of the sentence
-                if (sentence.includes(text) || text.includes(sentence)) {
-                    // Create a span element
-                    const span = document.createElement('span');
-                    span.className = 'talk-highlight';
-
-                    // Replace the text node with the span
-                    const newNode = node.splitText(0);
-                    newNode.parentNode.replaceChild(span, newNode);
-                    span.appendChild(document.createTextNode(text));
-                }
-            }
-        } else {
-            // Highlight each matching node
-            for (const node of matchingNodes) {
-                // Create a span element
-                const span = document.createElement('span');
-                span.className = 'talk-highlight';
-
-                // Replace the text node with the span
-                const parent = node.parentNode;
-                parent.replaceChild(span, node);
-                span.appendChild(node);
-            }
+            // Log success without actually changing the DOM structure
+            console.log('Applied simplified highlighting to prevent crashes');
+        } catch (error) {
+            console.error('Error in simplified highlighting:', error);
         }
     }
 
@@ -187,13 +144,13 @@ export class HighlightManager {
      * Clear all highlights
      */
     clearHighlights() {
-        this.highlightedElements.forEach(element => {
-            if (element.dataset.originalHtml) {
-                element.innerHTML = element.dataset.originalHtml;
-                delete element.dataset.originalHtml;
-            }
+        // Remove highlight container classes
+        const highlightContainers = document.querySelectorAll('.talk-highlight-container');
+        highlightContainers.forEach(container => {
+            container.classList.remove('talk-highlight-container');
         });
 
+        // Clear the tracked elements
         this.highlightedElements = [];
     }
 }
