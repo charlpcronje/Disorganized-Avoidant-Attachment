@@ -12,47 +12,25 @@
 
 <div class="content-container page-content">
     <talk voice="echo">
-    <p>Disorganized attachment – often called <strong>fearful-avoidant</strong> in adults – is an attachment style marked by a painful internal conflict. Individuals with this style <em>desperately crave love and connection</em> yet are <em>terrified of intimacy</em> at the same time<sup>1</sup>. They display behaviors of both anxious and avoidant attachment: for example, they might pursue closeness one moment and then suddenly withdraw or shut down the next. This contradictory push-pull occurs because they <em>fear intimacy</em> (expecting to be hurt or abandoned) <strong>but</strong> also <em>fear being alone</em>, creating <em>mixed emotions</em> and confusion in relationships<sup>1</sup>.</p>
-
-    <p><sup>1</sup> <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=A%20disorganized%20attachment%20style%20can,mixed%20emotions%20when%20approaching%20relationships" target="_blank">Disorganized Attachment in Marriage – Therapevo Counseling</a></p>
+    <p>This was covered on the previous page, and comes down to: Individuals with this style <em>desperately crave love and connection</em> yet are <em>terrified of intimacy</em> at the same time.<sup>1</sup></p>
     </talk>
-
-    <div class="example-container" id="example-definition">
-        <div class="example-header">
-            <h3 class="example-title">Example: The Core Conflict</h3>
-        </div>
-
-        <div class="tabs-wrapper">
-            <button class="tab-btn" data-tab="research">Research Example</button>
-            <button class="tab-btn" data-tab="personal">Personal Example</button>
-        </div>
-
-        <div class="tab-content" data-tab="research">
-            <talk voice="alloy">
-            <p>A disorganized/fearful-avoidant person typically has a negative view of self and others. They may feel deeply unworthy of love and assume others will eventually hurt or leave them<sup>1</sup>. Thus, they live in a constant dilemma: yearning for affection and "home" with someone, yet feeling dangerously exposed when intimacy is actually available<sup>2</sup>.</p>
-
-            <p><sup>1</sup> <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=In%20a%20marriage%2C%20an%20individual,and%20intimately%20connected%20to%20them" target="_blank">Disorganized Attachment in Marriage – Therapevo Counseling</a><br/>
-            <sup>2</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style : r/HealMyAttachmentStyle</a></p>
-            </talk>
-        </div>
-
-        <div class="tab-content" data-tab="personal">
-            <talk voice="alloy">
-            <p>[Add your personal example here that illustrates the core conflict of wanting connection but fearing it at the same time]</p>
-            </talk>
-        </div>
-    </div>
+    
 
     <h3>Origins in Childhood</h3>
 
     <talk voice="echo">
-    <p>This attachment style almost always stems from early trauma or inconsistent caregiving in childhood. Psychologists note that children who develop a disorganized style often come from <em>unpredictable, abusive, or neglectful environments</em><sup>1</sup>. Caregivers may have been a source of both comfort <strong>and</strong> fear – for instance, a parent who sometimes was loving and protective and other times frightening or absent<sup>2</sup>.</p>
+    <p>
+        <b>On this page we will get the full view of this attachment style. </b>
+        <br/>
+        As briefly mentioned on the introduction page this attachment style almost always stems from early trauma or inconsistent caregiving in childhood. Psychologists note that children who develop a disorganized style often come from <em>unpredictable, abusive, or neglectful environments</em><sup>1</sup>. Caregivers may have been a source of both comfort <strong>and</strong> fear – for instance, a parent who sometimes was loving and protective and other times frightening or absent<sup>2</sup>.</p>
 
-    <p>The child becomes conditioned to <em>"chase" after love</em> but also <em>run from it</em> because the very person they seek safety from is also a source of pain<sup>1</sup>. Over time, this results in an internalized belief that <strong>love is unsafe</strong> and <strong>people cannot be trusted</strong>, even as the person longs deeply for attachment.</p>
-
-    <p><sup>1</sup> <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today</a><br/>
-    <sup>2</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=There%20is%20a%20constant%20dilemma,This" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style : r/HealMyAttachmentStyle</a></p>
+        <p>The child becomes conditioned to <em>"chase" after love</em> but also <em>run from it</em> because the very person they seek safety from is also a source of pain<sup>1</sup>. Over time, this results in an internalized belief that <strong>love is unsafe</strong> and <strong>people cannot be trusted</strong>, even as the person longs deeply for attachment.</p>
     </talk>
+
+    <p>
+        1. <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today</a><br/>
+        2. <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=There%20is%20a%20constant%20dilemma,This" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style : r/HealMyAttachmentStyle</a>
+    </p>
 
     <div class="example-container" id="example-childhood-origin">
         <div class="example-header">
@@ -76,7 +54,9 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="alloy">
-            <p>[Add your personal example here that illustrates how childhood experiences created this attachment pattern]</p>
+                
+            <p>I can not say that your parents were bad parents. And from what I can figure out all your brothers are doing okay. But there is one big difference you did not always have that, your younger brother were too young to remember you can never forget. I know you know that between the ages of 1 and 7 years old are crucial</p>
+
             </talk>
         </div>
     </div>

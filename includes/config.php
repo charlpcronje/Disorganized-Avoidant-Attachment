@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 // Site configuration
-define('SITE_NAME', 'Understanding Disorganized Attachment');
+define('SITE_NAME', 'Understanding and Awareness is key');
 define('BASE_URL', 'https://info.nade.webally.co.za/');
 define('ADMIN_EMAIL', 'charl@webally.co.za'); // Replace with your admin email
 define('CONTACT_EMAIL', 'contact@example.com');

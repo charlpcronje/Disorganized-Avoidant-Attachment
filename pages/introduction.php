@@ -9,10 +9,10 @@
     </div>
 </div>
 <div class="content-container page-content">
-
     <div>
+        <video style="min-width:100%; max-width:100%" src="media/intro.mp4" poster="media/intro.jpg" controls></video>
         <p style="font-size: 14px;">
-            <i>Hi Nade, ek het hierdie website so paar weke terug begin maark toe ek gesien het dat jy dit nog steeds moeilik vind om te praat oor goed, en ek verstaan dit... Dit is frustrating party keer as ek so graag vir jou iets wil vertel en dit is soveel moeiliker as wat dit kon gewees het, maar dit is hoe jy geleer het om goed te hanteer, en dit is okay. 
+            <i>
             Saam met alles wat ek jou gaan vertel gaan jy ook uitvind dat jy heelwaarskynlik nie BPD het nie en dit is n goeie ding, want BPD gaan nooit weg nie, maar dit wat jy hier gaan leer het nie nodig om weg te gaan nie, maar net dat jy bewus is van dit, dis al, dit is die belangrikste stap.</i>
             <br/>
         </p>
@@ -33,14 +33,7 @@
             Ek het al my tyd spandeer vir langer as n maand om die vir jou te maak. Ek het nooit opgehou lief wees vir jou nie, ek ek het nooit opgee op wie jy is nie. Die alles is nie gefokus om jou te laat terug kom nie, maar vir jou om te heal en regtig te kan voorentoe beweeg in plaas daarvan om alyd weg te hardloop<br/>
         </p>
     </div>
-    <i>
-    <p style="font-size: 14px;">
-    Ek hoop hierdie beteken vir jou wat ek hoop dit doen. Hier onder begin die website dan...<br/>
-    Met liefde<br/>
-    Charl<br/>
-    PS: As jy wil weet waar ek al die informasie vandaar gekry het, kan jy dit hier vind: <a href="index.php?page=resources">Resources</a> en jy sal orals links kry <a href="#"><sup>Wat so lyk</sup></a> Dit is links waar dir informasie vandaan kom
-</i>
-</p>
+
 
 <!-- Podcast placeholder -->
     <div style="margin: 30px 0; text-align: center;">
@@ -135,36 +128,22 @@
 
     <h2>How to Use This Site</h2>
 
-    <talk voice="echo">
-    <p>This website is organized into sections that cover different aspects of disorganized attachment:</p>
+    <talk voice="nova">
+        <p>This website is organized into sections that cover different aspects of disorganized attachment:</p>
 
-    <ol>
-    <li><strong>What is Disorganized Attachment?</strong> - The core conflict and origins.<sup>1</sup></li>
-    <li><strong>The Push-Pull Cycle</strong> - How fearful-avoidants crave closeness yet withdraw from it.<sup>2</sup></li>
-    <li><strong>Lies, Deflection, and Blame</strong> - Defense mechanisms used to protect against vulnerability.<sup>3</sup></li>
-    <li><strong>Sabotage Through Cheating and Rebounds</strong> - How intimacy fears can lead to relationship-destroying behaviors.<sup>4</sup></li>
-    <li><strong>Preference for Toxic Relationships</strong> - Why healthy love can feel threatening.<sup>5</sup></li>
-    <li><strong>Trauma Responses</strong> - Understanding that these behaviors stem from unhealed wounds.<sup>6</sup></li>
-    <li><strong>The Vicious Cycle</strong> - How avoidance reinforces itself over time.<sup>7</sup></li>
-    <li><strong>Secure vs. Disorganized Attachment</strong> - Comparing healthy responses to fearful-avoidant ones.<sup>8</sup></li>
-    <li><strong>Healing and Recovery</strong> - Pathways to awareness and developing secure attachment.<sup>9</sup></li>
-    <li><strong>BPD and Attachment</strong> - Exploring if BPD was ever the an issue<sup>10</sup></li>
-    <li><strong>A Real way forward</strong> - So what to do next? Is there a way forward, what do you want?<sup>11</sup></li>
-    </ol>
-
-    <p>
-    <sup>1</sup> <a href="https://info.nade.webally.co.za/index.php?page=what-is">What is Disorganized Attachment?</a><br/>
-    <sup>2</sup> <a href="https://info.nade.webally.co.za/index.php?page=push-pull">The Push-Pull Cycle</a><br/>
-    <sup>3</sup> <a href="https://info.nade.webally.co.za/index.php?page=lies-deflection">Lies, Deflection, and Blame</a><br/>
-    <sup>4</sup> <a href="https://info.nade.webally.co.za/index.php?page=sabotage">Sabotage Through Cheating and Rebounds</a><br/>
-    <sup>5</sup> <a href="https://info.nade.webally.co.za/index.php?page=toxic-preference">Preference for Toxic Relationships</a><br/>
-    <sup>6</sup> <a href="https://info.nade.webally.co.za/index.php?page=trauma-responses">Trauma Responses</a><br/>
-    <sup>7</sup> <a href="https://info.nade.webally.co.za/index.php?page=vicious-cycle">The Vicious Cycle</a><br/>
-    <sup>8</sup> <a href="https://info.nade.webally.co.za/index.php?page=secure-vs">Secure vs. Disorganized Attachment</a><br/>
-    <sup>9</sup> <a href="https://info.nade.webally.co.za/index.php?page=healing">Healing and Recovery</a><br/>
-    <sup>10</sup> <a href="https://info.nade.webally.co.za/index.php?page=bpd-attachment">BPD and Attachment</a><br/>
-    <sup>11</sup> <a href="https://info.nade.webally.co.za/index.php?page=real-way-forward">A Real way forward</a>
-    </p>
+        <ol>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=what-is">What is Disorganized Attachment?</a></strong> - The core conflict and origins.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=push-pull">The Push-Pull Cycle</a></strong> - How fearful-avoidants crave closeness yet withdraw from it.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=lies-deflection">Lies, Deflection, and Blame</a></strong> - Defense mechanisms used to protect against vulnerability.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=sabotage">Sabotage Through Cheating and Rebounds</a></strong> - How intimacy fears can lead to relationship-destroying behaviors.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=toxic-preference">Preference for Toxic Relationships</a></strong> - Why healthy love can feel threatening.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=trauma-responses">Trauma Responses</a></strong> - Understanding that these behaviors stem from unhealed wounds.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=vicious-cycle">The Vicious Cycle</a></strong> - How avoidance reinforces itself over time.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=secure-vs">Secure vs. Disorganized Attachment</a></strong> - Comparing healthy responses to fearful-avoidant ones.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=healing">Healing and Recovery</a></strong> - Pathways to awareness and developing secure attachment.</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=bpd-attachment">BPD and Attachment</a></strong> - Exploring if BPD was ever the an issue</li>
+            <li><strong><a href="https://info.nade.webally.co.za/index.php?page=real-way-forward">A Real way forward</a></strong> - So what to do next? Is there a way forward, what do you want?</li>
+        </ol>
     </talk>
 
 
