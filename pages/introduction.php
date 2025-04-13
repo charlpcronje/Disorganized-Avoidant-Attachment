@@ -54,7 +54,7 @@
 
     <h2>Welcome Nade</h2>
     <talk voice="nova">
-    <p>This website is designed to help you understand disorganized avoidant attachment style in a digestible, accessible way. The original research that was done by Charl that was more than twenty two thousand words long. ie (that is more people writing their doctorate has to do for any given subject) has been shortened and  broken down into sections, with real examples that illustrate key behaviors and patterns.</p>
+    <p>This website is designed to help you understand disorganized avoidant attachment style in a digestible, accessible way. The original research that was done by Charl that was more than twenty two thousand words from beginning to end. Or another way to think about it that it is more than people are required to write to get their doctorate for any given subject. Obviously he did not think you would read all of that so it has been shortened and broken down into pages and sections, with real examples that illustrate key behaviors and patterns.</p>
 
     <p>What makes this resource unique is that each example includes two perspectives:</p>
 
@@ -73,9 +73,17 @@
 
     <p>This attachment style almost always stems from early trauma or inconsistent caregiving in childhood. The child becomes conditioned to "chase" after love but also run from it because the very person they seek safety from is also a source of pain<sup>2</sup>.</p>
 
-    <p><sup>1</sup> <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=A%20disorganized%20attachment%20style%20can,mixed%20emotions%20when%20approaching%20relationships" target="_blank">Disorganized Attachment in Marriage - Therapevo Counseling</a><br/>
-    <sup>2</sup> <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today</a></p>
+    
     </talk>
+    <p>
+        1. <a href="https://www.onlyyouforever.com/disorganized-attachment-in-marriage/#:~:text=A%20disorganized%20attachment%20style%20can,mixed%20emotions%20when%20approaching%20relationships" target="_blank">
+            Disorganized Attachment in Marriage - Therapevo Counseling
+        </a>
+        <br/>
+        2. <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">
+            Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today
+        </a>
+    </p>
 
     <div class="example-container" id="example-intro">
         <div class="example-header">
@@ -112,7 +120,7 @@
         </div>
 
         <div class="tab-content" data-tab="personal">
-            <talk voice="ash">
+            <talk voice="onyx">
                 <h4>When we were still staying at Gert's Guesthouse</h4>
 
                 <p>When we went to speak to Gert for cheaper rooms</p>
