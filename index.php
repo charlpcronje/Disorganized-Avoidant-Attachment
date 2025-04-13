@@ -6,6 +6,7 @@
 require_once 'includes/config.php';
 require_once 'includes/db.php';
 require_once 'includes/functions.php';
+require_once 'includes/plugin-loader.php';
 
 // Initialize logger (Keep as is, assuming it works or isn't critical for page loading)
 $logger = new Logger();
@@ -227,5 +228,8 @@ if ($pageInfo && $sessionId) {
     <script src="assets/js/examples.js"></script>
     <script src="assets/js/analytics.js"></script>
     <script type="module" src="assets/js/talk.api.js"></script>
+
+    <?php do_action('wp_enqueue_scripts'); ?>
+    <?php do_action('wp_footer'); ?>
 </body>
 </html>
