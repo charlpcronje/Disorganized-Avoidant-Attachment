@@ -9,10 +9,10 @@
     </div>
 </div>
 <div class="content-container page-content">
-
     <div>
+        <video style="min-width:100%; max-width:100%" src="media/intro.mp4" poster="media/intro.jpg" controls></video>
         <p style="font-size: 14px;">
-            <i>Hi Nade, ek het hierdie website so paar weke terug begin maark toe ek gesien het dat jy dit nog steeds moeilik vind om te praat oor goed, en ek verstaan dit... Dit is frustrating party keer as ek so graag vir jou iets wil vertel en dit is soveel moeiliker as wat dit kon gewees het, maar dit is hoe jy geleer het om goed te hanteer, en dit is okay. 
+            <i>
             Saam met alles wat ek jou gaan vertel gaan jy ook uitvind dat jy heelwaarskynlik nie BPD het nie en dit is n goeie ding, want BPD gaan nooit weg nie, maar dit wat jy hier gaan leer het nie nodig om weg te gaan nie, maar net dat jy bewus is van dit, dis al, dit is die belangrikste stap.</i>
             <br/>
         </p>
@@ -33,14 +33,7 @@
             Ek het al my tyd spandeer vir langer as n maand om die vir jou te maak. Ek het nooit opgehou lief wees vir jou nie, ek ek het nooit opgee op wie jy is nie. Die alles is nie gefokus om jou te laat terug kom nie, maar vir jou om te heal en regtig te kan voorentoe beweeg in plaas daarvan om alyd weg te hardloop<br/>
         </p>
     </div>
-    <i>
-    <p style="font-size: 14px;">
-    Ek hoop hierdie beteken vir jou wat ek hoop dit doen. Hier onder begin die website dan...<br/>
-    Met liefde<br/>
-    Charl<br/>
-    PS: As jy wil weet waar ek al die informasie vandaar gekry het, kan jy dit hier vind: <a href="index.php?page=resources">Resources</a> en jy sal orals links kry <a href="#"><sup>Wat so lyk</sup></a> Dit is links waar dir informasie vandaan kom
-</i>
-</p>
+
 
 <!-- Podcast placeholder -->
     <div style="margin: 30px 0; text-align: center;">
