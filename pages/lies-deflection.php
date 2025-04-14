@@ -241,4 +241,4 @@
     </talk>
 </div>
 
-<!-- Tab functionality is now handled by tabs.js -->
+
