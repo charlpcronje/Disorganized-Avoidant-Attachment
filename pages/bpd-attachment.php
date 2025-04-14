@@ -210,7 +210,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <p>Research indicates significant overlap between BPD and disorganized attachment. Both conditions typically involve:</p>
             <ul>
                 <li>Fear of abandonment</li>
@@ -222,7 +222,7 @@
             <p>Many researchers consider disorganized attachment to be a foundational aspect of BPD development, with one study finding that up to 80% of individuals with BPD exhibit disorganized attachment patterns.</p>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <?php echo isset($personalExamples["example-bpd-similarities"]) ? $personalExamples["example-bpd-similarities"] : "[Personal example content loaded from database]"; ?>
         </div>
     </div>

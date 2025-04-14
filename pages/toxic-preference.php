@@ -27,7 +27,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>If someone grew up with abuse or inconsistent care, their nervous system and psyche become <em>adapted to chaos</em>. Chaos, unpredictability, even neglect – these become <em>familiar</em>. On the other hand, <em>stability, kindness, and reliability</em> are utterly foreign and therefore suspect.</p>
 
@@ -41,7 +41,7 @@
              </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Nade's relationship history reflects this. She was involved with Christo, a controlling brothel owner who isolated her and whom she still defends despite his actions. Charl notes, "whenever she speaks about him, she gets very defensive... It's like he can't do anything wrong." Her later involvement with Hubert, who proved manipulative and harmful, further suggests a pattern of being drawn to unhealthy dynamics that may feel familiar, contrasting with the stability Charl offered, which ultimately triggered her avoidance.</p>
              </talk>
@@ -65,7 +65,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Meanwhile, a partner who is emotionally healthy and stable is intimidating because, as the person said, <em>they fear that person will truly <strong>see</strong> them</em> – see their "broken" self that they believe they must hide. A secure, emotionally available partner holds up a mirror that the fearful-avoidant may not be ready to face.</p>
 
@@ -77,7 +77,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's consistent withdrawal from Charl, especially during moments of stability or when he showed consistent care ("I was always trying to help her," "I paid her rent"), fits this pattern. The stability Charl offered, despite their conflicts, might have felt more threatening to her than the known dysfunction of past relationships (like with Christo), triggering her fear of being "seen" or becoming dependent.</p>
             </talk>
@@ -101,7 +101,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>The calm of a healthy relationship actually triggers their deepest fears: <em>"Their 'consistency' will serve as red flags for your subconscious brain,"</em> as one description of the fearful-avoidant mindset put it<sup>1</sup>.</p>
 
@@ -114,7 +114,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Charl's consistent support and presence, even during Nade's GHB episodes or financial troubles, represented stability. However, Nade often reacted by pushing him away, initiating fights, or stating she needed space right after periods of calm or connection (like Christmas Eve). This suggests the very consistency and reliability Charl offered felt overwhelming or threatening, triggering her avoidant responses.</p>
             </talk>
@@ -138,7 +138,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Consider a case where a fearful-avoidant man meets a securely attached woman who communicates well and doesn't play games. Initially, he may be overjoyed – <em>"she's so kind and understanding, this is wonderful."</em> But as intimacy grows, that joy turns into anxiety.</p>
 
@@ -151,7 +151,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's actions, like repeatedly seeing Ian despite knowing it hurt Charl and violated their agreement, served to sabotage the relationship. Charl notes, "every time we got closer together, you did something to prove to yourself that you did not need me." She found ways (infidelity, lies, pushing away) to undermine the connection, consistent with sabotaging something potentially good out of fear.</p>
             </talk>
@@ -175,7 +175,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Multiple personal accounts echo this. One Reddit writer described falling for exactly the wrong people: <em>"You fall for the one person that you know will leave, because that's what's most comfortable to you… The person you choose to give your heart to is the same person you know will abandon you. You already know how the story ends, so you naturally will choose someone who fits that absent character… that's the type of love you only feel safe enough to accept."</em><sup>1, 2</sup></p>
 
@@ -188,7 +188,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's defense of Christo, who exploited and abandoned her, fits this pattern. Charl observes, "whenever she speaks about him, she gets very defensive... It's like he can't do anything wrong." Her strong attachment to someone who treated her poorly, while pushing away Charl who consistently tried to support her, suggests she was drawn to the familiar pattern of needing to earn love from someone likely to withhold it or abandon her.</p>
             </talk>
@@ -215,7 +215,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Why would someone leave their caring boyfriend for an ex who gave her breadcrumbs? Why would she remain so attached to an ex who "never had feelings for her" while pushing away a man who treated her well?<sup>1</sup> Likely because the ex replayed her childhood wounds – trying to win over someone distant is a script she knows by heart, one that validates her belief that she's not enough.</p>
 
@@ -230,7 +230,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>The consistent cycle of conflict initiated by Nade (bringing up her job, lying, seeing clients) created intense emotional highs and lows. Charl describes the period as a "rollercoaster" and "fighting like every second day." While painful for Charl, this chaotic dynamic might have felt more familiar or stimulating to Nade's attachment system than the periods of calm stability they experienced, leading her to repeatedly disrupt the peace.</p>
              </talk>
@@ -253,3 +253,4 @@
 </div>
 
 <!-- Tab functionality is now handled by tabs.js -->
+

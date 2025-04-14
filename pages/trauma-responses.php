@@ -29,7 +29,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>At the core of disorganized attachment is <strong>fear</strong> – primarily fear of abandonment and rejection, but also fear of being emotionally overwhelmed or harmed by closeness. Research has found that many avoidant behaviors are <em>rooted in a fear of abandonment and rejection which manifests as self-sabotage and apparent commitment issues</em><sup>1</sup>.</p>
 
@@ -42,7 +42,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>In our story, Nade's pattern of sabotaging closeness (sleeping with clients when the relationship deepened) and her abrupt departures after conflicts (leaving Charl after fights in May 2023 and July 2024) can be seen as fear-driven responses. Charl perceived her actions as hurtful and confusing, but understanding them as stemming from a deep fear of intimacy or abandonment (a trauma response) offers a different perspective than malice.</p>
              </talk>
@@ -69,7 +69,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>One commenter who is an avoidant in therapy shared, <em>"I think a LOT of avoidants truly have a fear of abandonment and rejection which manifests as self sabotage… they do as much as they can to both reel you in and keep you at arm's length… always anticipating when the relationship will end."</em><sup>1, 2</sup></p>
 
@@ -81,7 +81,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's reluctance to fully commit ("she wouldn't classify it as a relationship," "never wanted to commit") despite expressing love suggests she was anticipating the relationship's end. Her pattern of keeping contact with exes or clients like Ian might have served as an emotional safety net, reflecting a subconscious belief that the primary relationship with Charl was precarious and wouldn't last.</p>
             </talk>
@@ -105,7 +105,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>This belief formed in childhood when their emotional needs were not met; a child naturally concludes, <em>"It must be my fault – I'm not lovable or else my parent wouldn't treat me like this."</em> This toxic shame lives on into adulthood.</p>
 
@@ -119,7 +119,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's extreme reaction to oversleeping and missing the appointment with Christo (leading to violence and self-injury) could be interpreted as an intense shame response. Missing the appointment might have triggered deep feelings of failure or inadequacy, leading to an uncontrollable outburst rooted in a fragile self-worth, rather than just simple frustration about being late.</p>
             </talk>
@@ -146,7 +146,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>They can go into a kind of <em>freeze state</em> where they genuinely feel disconnected from their emotions or the people around them. This might be why some can cut people off so coldly or engage in risky behaviors (like cheating) seemingly without emotion – in those moments, they are <em>not fully present</em>, having detached as a way to cope.</p>
 
@@ -160,7 +160,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Charl describes Nade's GHB episodes where she became violent, broke things, and seemed disconnected from reality ("she starts falling around... just saying random words... hit herself"). While GHB has its own effects, this behavior also mirrors a dissociative or freeze/fight state often seen in trauma survivors when overwhelmed, suggesting her nervous system was taking over rather than conscious malice.</p>
              </talk>
@@ -184,7 +184,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>In the thick of an emotional trigger, the fearful-avoidant's <em>fight/flight/freeze</em> response is activated:</p>
 
@@ -203,7 +203,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade demonstrated clear **flight** responses (leaving after fights in May 2023 and July 2024, disappearing for days during GHB use) and **fight** responses (initiating conflicts, the physical altercation where she broke things and shouted "Hit me!"). Her **freeze** response might be seen in moments where she shut down communication ("switched off her phone," refusing to talk about issues). These seem like instinctive reactions to perceived threats or emotional overwhelm rather than planned malice.</p>
             </talk>
@@ -227,7 +227,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>So when they feel a wave of fear, anger, or shame, it can be utterly overwhelming. They might <em>explode</em> (yelling, accusing, dramatic outbursts) or <em>implode</em> (vanish, stonewall, self-harm, etc.). These are immature coping mechanisms arising not from a desire to harm, but from <em>an inability to handle the intense emotions</em> coursing through them.</p>
 
@@ -238,7 +238,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's intense reaction to missing the appointment with Christo (breaking a bottle, attacking Charl, self-injury) demonstrates poor emotional regulation. Similarly, her hours-long screaming and destructive behavior on Christmas Day during a GHB episode shows an inability to manage overwhelming emotions, leading to explosive (implosive/self-harm with the finger) actions instead of healthier coping.</p>
             </talk>
@@ -262,7 +262,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>They are capable of empathy and love, but their trauma responses override their better intentions at times. One partner noted compassionately that her fearful-avoidant ex <em>"didn't want to hurt me… he was just scared"</em>.</p>
 
@@ -276,7 +276,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Charl reflects multiple times that he believes Nade didn't intend to hurt him deeply ("I forgive you completely," "it wasn't me or her fault. It was just circumstances," "It's not that they lack empathy... their trauma responses override better intentions"). Despite the immense pain caused, he perceives her actions as stemming from her own struggles and fears (her attachment style) rather than deliberate malice, allowing him to maintain love and compassion.</p>
              </talk>
@@ -313,7 +313,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>They might sabotage to get the inevitable over with, as strange as that sounds. It's almost <em>easier</em> for them to be in control of the wrecking ball (doing something to ruin things) than waiting in dread for the other person to leave or hurt them. It's that internal narrative – <em>"I'm not worth consistent love"</em> – playing out behaviorally.</p>
 
@@ -327,7 +327,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Nade's repeated sabotage (infidelity, breaking promises) when things seemed stable or were moving forward fits the pattern of a self-fulfilling prophecy. By creating chaos, she ensured the relationship couldn't reach a level of stability that might have triggered her deeper fears of unworthiness or eventual abandonment, thus controlling the "inevitable" breakup on her own terms, even if unconsciously.</p>
              </talk>

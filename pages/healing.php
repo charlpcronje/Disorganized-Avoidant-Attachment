@@ -32,7 +32,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Healing starts with <em>recognition</em>. You must see and name the cycle in your life. As one person said, <em>"The fact that you're inquiring is great."</em><sup>1</sup> Simply noticing <em>"I tend to panic and pull away when someone gets close"</em> or <em>"I feel compelled to chase people who don't treat me well"</em> is a huge first step.</p>
 
@@ -48,7 +48,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="onyx">
                 <p>
                     Now that we are at this stage, creating this last part now, I wish I could be there with you when you read and listened to all of this. This is actually such a big realization. Maybe, I don't know how you are experiencing this, but I still wish I was there. While I was creating all of this, I was missing you so much. Because I was talking about who you are and I love who you are. Everything about you. This is not stuff that's wrong. This is stuff that makes you who you are, and I'm fine with it. I don't want you to be any other way, but you have to admit that some of the things that was mentioned did make things difficult for us. 
@@ -84,7 +84,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>It's vital to realize that you <strong>can't control the initial feeling</strong> (the flash of fear or shame) - but you <em>can</em> control your response. So first, accept that you have these feelings. They make sense given your history. Don't beat yourself up for feeling jealous, scared, or wanting to run; self-compassion is critical.</p>
 
@@ -104,7 +104,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about practicing new responses]</p>
             </talk>
@@ -122,7 +122,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Because disorganized attachers have intense emotions, learning <strong>skills to self-regulate</strong> those emotions is crucial. When your heart is racing, your thoughts are catastrophic, or you feel dissociated, having go-to techniques to calm your body and mind will prevent a lot of destructive actions.</p>
 
@@ -148,7 +148,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about emotional regulation techniques]</p>
             </talk>
@@ -166,7 +166,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Fearful-avoidants often have poor communication habits: either not speaking up about needs or feelings, or exploding in a way that's attacking. Learning <strong>healthy communication</strong> is essential for recovery. This means being able to express <em>vulnerable feelings</em> ("I felt hurt when...", "I'm afraid that...") instead of acting them out, and also learning to <em>listen</em> without immediately defending or retreating.</p>
 
@@ -185,7 +185,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about communication improvement]</p>
             </talk>
@@ -203,7 +203,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Disorganized attachment sits on a throne of deeply held beliefs: <em>"People I love will betray or leave me," "I will be rejected if I show my true self," "I don't deserve healthy love," "If I rely on anyone, I'll get hurt,"</em> etc. Part of healing is <strong>rewiring these core beliefs</strong>. This doesn't happen overnight, but every successful new experience will help disconfirm them.</p>
 
@@ -218,7 +218,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="onyx">
                 <p>Now that we are at this stage, from creating this Lost Bot now, I wish I could be there with you when you wriggle this and to let it be there for you. This is actually such a big realization. Maybe, I don't know how you are experiencing this, but I still wish I was there. If I was creating this, I was missing you so much. Because I was talking about who you are and I love who you are. Everything about you. This is not stuff that's wrong. This is stuff that's just you. And I'm fine with it.
 
@@ -238,7 +238,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Going it alone is hard. <strong>Therapy</strong> is often a game-changer for individuals with disorganized attachment because it provides a relationship in which to heal the attachment wounds - a therapeutic alliance that is consistent, non-judgmental, and understanding. Several therapy modalities can be particularly helpful:</p>
 
@@ -264,7 +264,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about therapy and support]</p>
             </talk>
@@ -282,7 +282,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>One of the most powerful healers for disorganized attachment is to <strong>experience a secure relationship</strong> in real life. This could be a romantic partner, but it doesn't have to start there - it could be a mentor, a good friend, a family member, or as mentioned, a therapist. The idea is to <em>internalize a new template</em> for how relationships can be.</p>
 
@@ -301,7 +301,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about secure relationships and role models]</p>
             </talk>
@@ -319,7 +319,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Show research -->
+        <div class="tab-content active" data-tab="research"> <!-- Show research -->
             <talk voice="nova">
                 <p>Recovery is a journey with progress that might feel two-steps-forward, one-step-back. It's crucial to maintain <strong>self-compassion</strong> along the way. Be "brutally honest" with yourself, yes - acknowledge the destructive patterns without excuse - but do so <em>empathetically</em>.</p>
 
@@ -336,7 +336,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal -->
             <talk voice="nova">
                 <p>[Add your personal example here about patience and self-compassion]</p>
             </talk>
@@ -378,3 +378,4 @@
 </div>
 
 <!-- Tab functionality is now handled by tabs.js -->
+

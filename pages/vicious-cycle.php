@@ -27,7 +27,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>Here's how the cycle typically plays out:</p>
 
@@ -42,7 +42,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <p>Looking back, this cycle seems to explain so much of what happened between us, Nade. When we moved into the cottage and started getting really close, things were perfect for that first month. But as soon as that deep intimacy started to feel real, it felt like something shifted. You started seeing Ian again in November, the same client you'd slept with before. It felt like a way to create distance, maybe subconsciously, because the closeness was becoming too much (Fear of Intimacy → Avoidant Behavior). This led to constant fights, eroded trust, and immense pain for both of us (Consequence → Loss). Instead of addressing the real issue – the fear and the betrayal – you deflected, blaming my reactions or the situation, making me feel like the problem (Outcome Feeds Core Beliefs). The more this happened, the more you likely felt trapped or guilty, pushing you further away and reinforcing the belief that relationships end in pain (Increased Shame and Fear). This pattern repeated itself throughout the year, especially when we tried to reconcile or rebuild (Repeat).</p>
             </talk>
@@ -66,7 +66,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>In anxiety treatment, it's well-known that <em>"the immediate reduction in anxiety following avoidance reinforces avoidance behavior; it does not allow the individual the opportunity to learn that the feared consequence might not happen"</em><sup>1</sup>.</p>
 
@@ -81,7 +81,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <p>This feels very true for us. Every time you chose to avoid a difficult conversation, or lied about seeing Ian or borrowing money from him, or went to Erica's place instead of talking to me, it probably felt easier in that moment. You avoided the confrontation, the vulnerability, the potential fight (temporary relief). But each avoidance built a bigger wall between us. You never gave us the chance to work through the issue, to see if maybe I *would* understand, or if we *could* find a compromise. Instead, the avoidance just confirmed your pattern: problems get avoided, trust gets broken, and eventually, the relationship feels too damaged, reinforcing the idea that intimacy leads to pain. You never learned that facing the fear together could have actually made us stronger.</p>
             </talk>
@@ -105,7 +105,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>They may also develop unhealthy coping habits – substance abuse, self-harm, risky behavior – to soothe the constant emotional turmoil. Each time they hurt someone they care about, they also hurt themselves; guilt and regret pile up, which can erode their self-esteem further.</p>
 
@@ -119,7 +119,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <p>Nade, I saw this damage accumulating in you. The GHB use became more extreme, especially during times of conflict or after you saw Ian. You'd become unreachable, sometimes for hours, falling around, hurting yourself, losing memories. You told me you used it "not to feel anything." That sounds like trying to cope with overwhelming internal pain. Each time you lied or betrayed the trust between us, the guilt must have piled up, making you feel worse about yourself, even if you blamed me outwardly. The finger-cutting incident after being late for Christo felt like an explosion of unresolved emotional pain. You seemed trapped, wanting connection but using substances and avoidance to numb the fear and shame, which only made you feel more broken and isolated over time.</p>
             </talk>
@@ -143,7 +143,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>Tragically, this can "prove" to the disorganized individual that people always abandon them – not seeing how their own behavior played a role in pushing people away. For example, an avoidant who ghosts friends repeatedly might find that eventually, the invitations stop coming; they then lament, <em>"See, no one actually cares to check on me,"</em> not fully acknowledging that friends <em>did</em> care but got tired of one-sided effort.</p>
 
@@ -154,7 +154,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <p>The damage to our relationship was immense. I felt constantly confused, hurt, and anxious. I kept trying to understand why you pushed me away, sending long messages and videos, trying desperately to reconnect. But my efforts often seemed to make things worse, pushing you further away. When you left and then came back with Hubert, robbing me and leaving me homeless, that was the ultimate relational damage. You didn't just end the relationship; you destroyed the foundation of trust and safety we once had. Now, you won't talk to me, you block me, and you act like I'm the monster. This fits the pattern: you likely feel overwhelmed by guilt and shame, so you cut me off completely, perhaps telling yourself I deserved it or that I was the problem, instead of facing the damage caused by your actions and Hubert's manipulation.</p>
             </talk>
@@ -178,7 +178,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>They might decide to have only casual relationships or avoid dating altogether ("I'm better off alone") which might seem stable but often leaves them unfulfilled, basically <em>imprisoned by their own walls</em>. On the other end, some lean into the anxious side too much – chasing relationship after relationship to "fix" the last one, without ever addressing why things keep breaking. Both routes tend to lead to more heartbreak.</p>
 
@@ -189,7 +189,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <img src="media/jy_was_nooit_genoeg_nie.png" style="min-width:100%; max-width:100%;"/>
                 <p>Your behavior after the breakup, especially the cruelty and dismissiveness you showed (mocking me, saying hurtful things like "we were never a couple and what you said above. That was crue), seems like a hardening. It's as if the guilt and pain were too much, so you adopted a colder, more dismissive stance to protect yourself. Saying you "don't care" that Hubert lied is a prime example of this dismissiveness. It feels like you've shut down emotionally, perhaps convincing yourself you're better off alone or that relationships aren't worth the pain, which is a tragic outcome of this cycle. It might feel safer now, but it keeps you imprisoned and prevents real healing or connection.</p>
@@ -214,7 +214,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;"> <!-- Display research by default -->
+        <div class="tab-content active" data-tab="research"> <!-- Display research by default -->
             <talk voice="nova">
                 <p>For instance, if normally when you feel smothered you ghost someone, breaking the cycle means <em>not ghosting</em>, instead maybe communicating "I need a little space but I care about you" – a hugely uncomfortable change for a fearful-avoidant, but crucial to get a different outcome (i.e., the friend gives space but doesn't feel abandoned, and the friendship survives, teaching the FA that they can set boundaries without losing people).</p>
 
@@ -225,7 +225,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;"> <!-- Hide personal by default -->
+        <div class="tab-content" data-tab="personal"> <!-- Hide personal by default -->
             <talk voice="nova">
                 <p>Breaking this cycle for you, Nade, would mean acknowledging the pattern. It would mean recognizing that pushing me away when things got close, or lying about seeing Ian, wasn't just a one-off mistake but part of a larger pattern driven by fear. It means seeing that blaming my reactions was easier than facing your own guilt. The first step is realizing, "Maybe it wasn't just him; maybe my fear of vulnerability played a huge role." Acknowledging this pattern – the sabotage, the avoidance, the deflection – is the only way to start choosing differently next time, whether with me or someone else. It’s about realizing you *do* have a choice, even when your instincts scream to run.</p>
             </talk>
@@ -246,3 +246,4 @@
 </div>
 
 <!-- Tab functionality is now handled by tabs.js -->
+

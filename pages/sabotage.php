@@ -27,7 +27,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Engaging with a third party (emotionally or physically) can be a subconscious way to <em>create emotional distance</em> or an "escape hatch" in their primary relationship. It's a way to <em>feel connection without the vulnerability</em> that true one-on-one intimacy with their partner demands.</p>
 
@@ -41,7 +41,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>In our story, Nade maintained contact with and eventually slept with a client (Ian) she had a history with, even after promising Charl she wouldn't. Charl reflects, "she's been sleeping with two of her clients all the time... And it was the same... guy she slept with when we stayed in Silverton." This wasn't just about money; it created emotional distance and conflict, acting as an escape valve whenever intimacy with Charl intensified.</p>
             </talk>
@@ -65,7 +65,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>It's almost a twisted form of <strong>control</strong> - <em>if I already ruined it by cheating, I don't have to face the terror of a genuinely close relationship or the possibility of you leaving me first</em>. Sadly, this becomes a self-fulfilling prophecy: the betrayal often <em>does</em> lead to the loss of the relationship, thus confirming the avoidant's belief that they are unlovable or that people inevitably leave. Insecure attachment - especially with high avoidance or anxiety - correlates with higher likelihood of infidelity<sup>1</sup>. The fearful-avoidant happens to have *both* high anxiety and avoidance, making them particularly vulnerable to this trap.</p>
 
@@ -77,7 +77,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>In our story, Nade repeatedly sabotaged moments of stability or forward movement by bringing up her job or reconnecting with clients, especially Ian. Charl notes, "It's like every single time she does anything that moves her forward... she has to sabotage it." Her decision to see Ian again that final weekend, despite promising to stop and knowing it would hurt Charl, served as a mechanism to create distance and potentially justify leaving, fulfilling her fear that the relationship couldn't handle the pressure (pressure she created).</p>
             </talk>
@@ -101,7 +101,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Research has noted that the fearful-avoidant style is <em>associated with rushing into rebound relationships</em> as a way to escape the negative emotions after a breakup<sup>1</sup>. One guide on attachment styles describes disorganized attachment breakups as a <em>"rollercoaster"</em> - initially the person will do anything to avoid the pain, often through unhealthy behaviors like substance use or jumping immediately into a new romance<sup>2</sup>.</p>
 
@@ -113,7 +113,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>In our story, after the final breakup, she immediately went to stay with Hubert, the man who had been subtly undermining the relationship. Charl notes, "she was at Hubert's place... And then he told me that... he got a lawyer... [and] probably told her not to speak to me." Within weeks, she started "sleeping together" with Hubert. This rapid move into a new situation with someone involved in the previous relationship's breakdown suggests a rebound pattern aimed at avoiding the pain and complexity of the breakup with Charl.</p>
             </talk>
@@ -137,7 +137,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>In one story, a fearful-avoidant man who ghosted a relationship came back a month later to test the waters<sup>1</sup>, and when rejected, was <em>"back"</em> again a few months after <em>that</em>, only to find his ex had moved on<sup>2</sup>. By the time he returned, she had found a healthy love, and she noted the stark contrast between <em>his</em> on-and-off approach and her new partner's steady, genuine love<sup>3</sup>.</p>
 
@@ -152,7 +152,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <>In our story, Nade left Charl in May 2023 and had limited contact for six months. She then re-initiated contact, apologized, and returned. This pattern of leaving abruptly and later attempting reconciliation aligns with the disorganized tendency to circle back after the initial fear subsides and feelings of loss or regret emerge. This is not a bad response, in some cases going back can promote emotional growth or even fix what was broken for no good reason. Knowing when to circle back is what's important and if for the right reasons could be the best thing to do.</p>
             </talk>
@@ -176,7 +176,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>A fearful-avoidant who feels abandoned or who has sabotaged a relationship often has intense feelings of <strong>shame, self-loathing, and panic</strong> afterwards. Instead of constructively dealing with those feelings, they might try to <em>erase them by moving on quickly</em>.</p>
 
@@ -190,7 +190,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                  <p>In our story, Nade's repeated infidelity, particularly with Ian, despite knowing it hurt Charl and violated their agreements, can be seen as a maladaptive coping mechanism. Charl theorizes, "It is like every single time she does anything that moves her forward... she simply has to sabotage it." Her actions, driven perhaps by fear of intimacy or guilt, served to create distance and regulate her overwhelming emotions, albeit destructively. Her immediate move to Hubert post-breakup also fits the pattern of avoiding the pain of loss through a quick new connection.</p>
             </talk>
@@ -218,3 +218,4 @@
 
 
 <!-- Tab functionality is now handled by tabs.js -->
+

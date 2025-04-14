@@ -29,7 +29,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>An individual described how as soon as he showed vulnerability, his fearful-avoidant girlfriend started to withdraw, even though things had been going great<sup>1</sup>. When he gently asked if something was wrong, she denied it and gave a superficial excuse, saying she was just stressed with work and feeling sick<sup>1</sup>.</p>
 
@@ -66,7 +66,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>As one individual with this style confessed, "It's intentionally losing contact with really good friends, never calling or texting, but constantly craving their validation/attention... and then being bitter about it."<sup>1</sup></p>
 
@@ -76,7 +76,7 @@
             </talk>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>While the story focuses on the romantic relationship, Nade's pattern with Charl reflects this. They started as close friends who shared everything ("we spoke for months and months"). However, when conflicts arose or intimacy deepened (like Charl saying "I love you"), she would withdraw emotionally, sometimes ignoring messages for extended periods (Charl mentions waiting six months for her to read his messages) or avoiding difficult conversations altogether, leaving Charl feeling isolated and confused despite their initial closeness.</p>
             </talk>
@@ -106,7 +106,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voic="nova">
                 <p>One Reddit user described an ex who "came on really strong in the beginning" and both partners fell hard, but "as soon as things got real, he doubted his feelings and started taking things back," leading to a breakup before it even became official<sup>1</sup>.</p>
 
@@ -116,7 +116,7 @@
             </talk>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <p>Our story includes a clear example of this. Nade left Charl after a major fight in May 2023 ("she left... And I didn't see her again for six months"). For six months, she was distant. Then, after finally reading his messages and reflecting, she contacted him, "she said sorry for everything... And we sort of made up," and returned to Pretoria. This mirrors the cycle where the avoidant leaves due to fear but later attempts to return when feelings of loss surface. Her final departure in July 2024 also showed initial regret ("she found me and she said that she misses me" three days later) before external manipulation solidified the separation.</p>
         </div>
 
@@ -143,7 +143,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
             <p>One Reddit user described an ex who "came on really strong in the beginning" and both partners fell hard, but "as soon as things got real, he doubted his feelings and started taking things back," leading to a breakup before it even became official<sup>1</sup>.</p>
 
@@ -153,7 +153,7 @@
             </talk>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
              <p>Our story includes a clear example of this. Nade left Charl after a major fight in May 2023 ("she left... And I didn't see her again for six months"). For six months, she was distant. Then, after finally reading his messages and reflecting, she contacted him, "she said sorry for everything... And we sort of made up," and returned to Pretoria. This mirrors the cycle where the avoidant leaves due to fear but later attempts to return when feelings of loss surface. Her final departure in July 2024 also showed initial regret ("she found me and she said that she misses me" three days later) before external manipulation solidified the separation.</p>
             </talk>

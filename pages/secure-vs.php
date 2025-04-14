@@ -29,7 +29,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Often withdraws or "deactivates" when a relationship deepens (for example, after exchanging vulnerable feelings or increasing commitment). Might ghost for a weekend or start a fight to create distance, leaving the partner in the dark.</p>
 
@@ -43,7 +43,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>In our story, Nade (fearful-avoidant) consistently pulled away or sabotaged intimacy when the relationship with Charl deepened (e.g., after saying "more than friends," or after he expressed love). In contrast, Charl (leaning secure, despite trauma) consistently sought connection, tried to communicate his feelings (even if sometimes in messages or flawed ways), and desired to build stability, reflecting a secure inclination towards embracing intimacy rather than fleeing it.</p>
             </talk>
@@ -61,7 +61,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Might internalize resentment and then lash out with <em>blame</em> ("You never care about me!") or punish by withdrawing, rather than vulnerably stating their need. If their partner comes to them upset, they often hear criticism as "you're a failure" and either go on the defensive or shut down.</p>
 
@@ -72,7 +72,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>In our story, Nade often responded to conflict with withdrawal, blame ("now she's accusing me..."), or escalation (breaking things, provoking Charl). Charl, while reacting poorly under extreme stress (shouting, name-calling), consistently tried to *address* the issues, seeking explanations and resolution ("I just wanted the truth," attempting conversations, sending messages/videos). This reflects a secure tendency to engage with problems, contrasting with Nade's avoidant tendency to shut down or deflect.</p>
              </talk>
@@ -90,7 +90,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Might let anxiety fester and then act out – maybe by accusing the partner out of the blue or by preemptively flirting with someone else ("two can play that game") to protect their pride. Even if reassured by their partner, might still hold onto doubt or even feel suspicious of the reassurance itself ("they're just saying that").</p>
 
@@ -101,7 +101,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>In our story, Charl often expressed his insecurities directly (e.g., worrying about her job, feeling hurt by her distance). Although his expression became harsh under pressure, the underlying drive was to seek clarity and resolve the insecurity. Nade, conversely, seemed to act out her insecurities (e.g., sleeping with clients perhaps partly out of fear the relationship wouldn't last) rather than communicating her fears directly to Charl for reassurance.</p>
              </talk>
@@ -119,7 +119,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> More likely to lie about their feelings or actions because of shame or fear about the truth. If asked directly, "Is something wrong?" they might say "nothing's wrong" out of not knowing how to articulate their feelings or fearing a negative reaction.</p>
 
@@ -130,7 +130,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Nade's pattern of lying (about staying with a guy, about client interactions, about stopping work) contrasts with Charl's persistent attempts to get the truth, even confronting her with evidence ("I confronted her about the photos," "I sent you screenshots"). While Charl wasn't perfect, his drive was towards uncovering honesty, a characteristic more aligned with secure attachment than Nade's consistent pattern of deception driven by avoidance.</p>
              </talk>
@@ -148,7 +148,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Might end a relationship abruptly or unclearly (like a breakup-by-text) and then cope by numbing (with rebounds, substance use, etc.). Might disappear then reappear, or send confusing mixed signals (because they are internally conflicted about it).</p>
 
@@ -161,7 +161,7 @@
             </ol>
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>Nade's breakups were often abrupt and avoidant (leaving after fights, the final exit with hostility). Her coping involved immediately moving in with Hubert. Charl, conversely, sought closure and understanding after both breakups ("sending her messages," wanting to talk, researching attachment styles). His approach, though perhaps persistent, aimed at processing and resolution, more typical of secure (or anxious) tendencies than Nade's pattern of shutting down and moving on without addressing the issues.</p>
              </talk>
@@ -179,7 +179,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Often choose people who match their trauma (toxic, abandoning, etc.) and might stay even when mistreated because it feels "normal." Might describe having a series of stormy romances or abrupt breakups, and may even say "all my exes were abusive" or "no one ever understood me."</p>
 
@@ -190,7 +190,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Nade's history includes a relationship with Christo, a controlling brothel owner who isolated and demeaned her. Her subsequent quick involvement with Hubert, who exhibited manipulative and harmful behaviors, suggests a pattern of gravitating towards potentially toxic dynamics, fitting the fearful-avoidant tendency. Charl, despite his own trauma history, seemed to be seeking a stable, loving connection with Nade, reflecting a desire for a secure bond, even if the execution was complicated by the intense circumstances.</p>
             </talk>
@@ -208,7 +208,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p><strong>Fearful-Avoidant Response:</strong> Often swings between extreme independence (rejecting help, refusing to ask for support) and anxious dependence (in moments of panic, perhaps clinging or making dramatic bids for attention). A fearful-avoidant friend, if going through a hard time, might vanish for a month because they don't know how to ask for help, then maybe overshare suddenly because they hit a breaking point, then feel embarrassed and disappear again.</p>
 
@@ -219,7 +219,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
             <talk voice="nova">
                 <p>Charl consistently provided support (financial, emotional) even when Nade was distant or difficult ("I paid her rent," "paid for a proper guest house," "stood by her"). This reflects a capacity for giving support. Nade struggled with receiving support (refusing help sometimes) and also with giving consistent support (disappearing, breaking promises, losing the phone needed for rent money). This highlights a difference in their approaches to interdependence.</p>
             </talk>
@@ -237,7 +237,7 @@
             <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
 
-        <div class="tab-content" data-tab="research" style="display: block;">
+        <div class="tab-content active" data-tab="research">
             <talk voice="nova">
                 <p>Let's say both a secure person and a disorganized avoidant person start dating someone they really like, and after a couple of months, their new partner has to cancel a weekend together due to a work emergency.</p>
 
@@ -252,7 +252,7 @@
              <!-- No external links in this section -->
         </div>
 
-        <div class="tab-content" data-tab="personal" style="display: none;">
+        <div class="tab-content" data-tab="personal">
              <talk voice="nova">
                  <p>In our story, Nade missing her appointment with Christo (due to oversleeping) triggered an extreme reaction (panic, violence, cutting her finger). While not exactly a cancellation by a partner, it shows how a disruption to plans involving someone significant could trigger an overwhelming, disproportionate response rooted in deeper fears, contrasting sharply with how a secure person might handle disappointment or rescheduling.</p>
              </talk>
@@ -281,3 +281,4 @@
 </div>
 
 <!-- Tab functionality is now handled by tabs.js -->
+
