@@ -12,9 +12,9 @@
 
 <div class="content-container page-content">
     <talk voice="echo">
-    <p>This was covered on the previous page, and comes down to: Individuals with this style <em>desperately crave love and connection</em> yet are <em>terrified of intimacy</em> at the same time.<sup>1</sup></p>
+    <p><b>Individuals with this style</b> <em>desperately crave love and connection</em> yet are <em>terrified of intimacy</em> at the same time.<sup>1</sup></p>
     </talk>
-    
+    <img src="media/graphs/attachment_form.png" alt="Attachment Forming"/>
 
     <h3>Origins in Childhood</h3>
 
@@ -55,7 +55,7 @@
         <div class="tab-content" data-tab="personal">
             <talk voice="alloy">
                 
-            <p>I can not say that your parents were bad parents. And from what I can figure out all your brothers are doing okay. But there is one big difference you did not always have that, your younger brother were too young to remember you can never forget. I know you know that between the ages of 1 and 7 years old are crucial</p>
+            <p>What is known about Nadè's childhood is that she was adopted with her younger brother when she was 4 years old, this is during those 7 critical years. By 4 years old a person's attachment style could have already started being avoidant or fearful. The fact is, is that avoidance feeds avoidance and reinforces itself. So from here onward avoidance of some shape will almost certainly emerge.  </p>
 
             </talk>
         </div>
@@ -67,10 +67,66 @@
     <p>In adulthood, this manifests as the disorganized (fearful-avoidant) attachment pattern: <em>oscillating between high anxiety and high avoidance</em> in close relationships<sup>1</sup>. These individuals experience a deep sense of unworthiness while simultaneously fearing dependency on others.</p>
 
     <p>A person with this attachment style might desperately want love and connection, but as soon as a relationship starts to feel real, they panic and pull away. They might also stay in unhealthy relationships because the chaos feels more "normal" than steady, reliable love.</p>
+    
+    <p></p>
+    </talk>
+    <p>1. <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today</a></p>
 
-    <p><sup>1</sup> <a href="https://www.psychologytoday.com/us/blog/understanding-ptsd/202307/fearful-avoidant-attachment-and-romantic-relationships#:~:text=Children%20who%20are%20raised%20to,high%20avoidance%20behaviors%20in%20their" target="_blank">Fearful-Avoidant Attachment and Romantic Relationships | Psychology Today</a></p>
+    <talk voice="nova">
+        <h2>Ages 1 to 7: Where It Begins</h2>
+        <p>
+            Between ages 1 and 7, a child's emotional foundation is built. This is the window where
+            attachment styles form, shaped by how caregivers respond to the child's needs for comfort,
+            safety, and presence.
+        </p>
+        <ul>
+            <li>
+            <strong>60%</strong> of children develop a <strong>secure attachment</strong>, meaning they
+            experience caregivers as consistent, warm, and responsive.
+            </li>
+            <li>
+            <strong>25%</strong> develop an <strong>avoidant attachment</strong>, where emotional needs
+            are minimized due to distant or unresponsive caregiving.
+            </li>
+            <li>
+            <strong>15%</strong> form a <strong>disorganized attachment</strong>—the result of caregiving
+            that is inconsistent, frightening, or both. These children internalize confusion: love is
+            wanted, but also feared.
+            </li>
+        </ul>
     </talk>
 
+    <talk voice="nova">
+        <h2>Adulthood and the Impact of the Sex Trade</h2>
+        <p>
+            In adulthood, especially among women who enter the sex trade through trauma, economic coercion,
+            or early boundary violations, we see a pronounced shift. The psychological demands of
+            emotionally separating oneself from intimacy—while being physically close—can exacerbate
+            disorganized attachment patterns.
+        </p>
+        <p>
+            What begins as 15% disorganized in childhood can become <strong>60% or more</strong> among adult
+            women in the sex trade.
+        </p>
+        <p>
+            This isn't about blame—it's about adaptation. These women learn to protect themselves through
+            emotional distancing, performance, and control. But the cost is high: their nervous systems
+            often remain in survival mode, mistrusting love and fearing vulnerability.
+        </p>
+    </talk>
+
+    <img style="min-width:100%; max-width:100%" src="media/graphs/sex_work.png" alt="Adult manifestation image"/>
+    <talk voice="nova">
+        <h2>The Message Behind the Data</h2>
+        <p>
+            This visual isn't here to label—it's here to humanize. What looks like detachment is often deep
+            pain. What looks like coldness is usually a shield forged in confusion and hurt.
+        </p>
+        <p>
+            Every attachment style is adaptive. And every one of them—especially disorganized—can begin to
+            heal when met with consistency, safety, and compassion.
+        </p>
+    </talk>
     <div class="example-container" id="example-adult-manifestation">
         <div class="example-header">
             <h3 class="example-title">Example: The Adult Expression</h3>
@@ -87,13 +143,34 @@
 
             <p>As one person with this attachment style described: "There is a constant dilemma... I finally want someone to hold me and give me the peace I never felt... and when I do find someone safe, I run."<sup>1</sup></p>
 
-            <p><sup>1</sup> <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style : r/HealMyAttachmentStyle</a></p>
+            <p><span style="display:none">Reference link to above:</span> 1. <a href="https://www.reddit.com/r/HealMyAttachmentStyle/comments/1cxw7xz/in_the_mind_of_an_fearful_avoidant_disorganized/#:~:text=Or%20in%20some%20cases%20you,You%20are%20not%20worth%20it" target="_blank">In the Mind of An Fearful Avoidant/ Disorganized Attachment Style</a></p>
             </talk>
         </div>
-
+        
         <div class="tab-content" data-tab="personal">
-            <talk voice="alloy">
-            <p>[Add your personal example here that shows how this attachment style has manifested in adult relationships]</p>
+            
+            <figure style="margin: 0; text-align: center;">
+                <video 
+                    style="min-width:100%; max-width:100%;" 
+                    src="media/our_journey.mp4" 
+                    poster="media/our_journey.png" 
+                    controls>
+                </video>
+                <figcaption style="color: #ccc; font-size: 14px; margin-top: 8px;">
+                    Our Journey - A Visual Reflection - 12 April 2024
+                </figcaption>
+            </figure>
+            <talk voice="nova">
+                <h2>When Charl and Nade found a Fairy tale</h2>
+                <p>From Charl's notes he recalls and describes their time at the cottage that resembled that of a fairy tail as both some of the best and confusing times of his life</p>
+                <p>The following is Charl's first person recollection...</p>
+                <p>You and I did everything together. And we never fought—not once. If anything ever did bother us, we'd just talk about it and everything was okay again.We were good for each other and even back then I knew you felt more for me than you were willing to admit. Then we found the Fairy Tale cottage. It was perfect for us—exactly what we needed at that point. It felt right.</p>
+                
+                <p>But just as we finally found a place to settle, a space where we could actually start building something real together—that's when things changed. That's when the relationship started to feel *real*, and you didn't want to feel too invested. So you did things, you went to see Ian again 3 times in November. I'm not going to say anything more about that now, because this isn't about that. But what matters is: you started creating distance. You said things like "we're just friends." And not long after, the fighting started.</p>
+                
+                <p>It's strange… because those fights gave you peace. The distance it created made you calm again. Then in December, the fighting completely stopped. Until Christmas Eve. That night, you and I sat together, laughing about how we were fighting. We couldn't even believe it. It felt like ancient history and I did not think it would be possible for us to do that again.</p>
+                
+                <p>Neither of us knew that moment—where we saw again how happy we actually were—would trigger your fear all over again. The next day, you went to see a client again, I'm not sure which one or what happened but we had that huge fight. You told me you needed space, and I didn't understand it.</p>
             </talk>
         </div>
     </div>
