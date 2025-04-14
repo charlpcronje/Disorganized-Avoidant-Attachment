@@ -225,6 +225,7 @@ if ($pageInfo && $sessionId) {
     <!-- JavaScript -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/tabs.js"></script>
     <script src="assets/js/examples.js"></script>
     <script src="assets/js/analytics.js"></script>
     <script type="module" src="assets/js/talk.api.js"></script>

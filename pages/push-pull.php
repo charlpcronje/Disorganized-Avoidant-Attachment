@@ -41,8 +41,8 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="nova">
-                <p>Our story vividly shows this. When Nade returned from Cape Town in October 2023, the first month was described as "perfect," filled with connection and intimacy ("everything was going great... we were more intimate than ever"). 
-                </br></br>    
+                <p>Our story vividly shows this. When Nade returned from Cape Town in October 2023, the first month was described as "perfect," filled with connection and intimacy ("everything was going great... we were more intimate than ever").
+                </br></br>
                 However, as the relationship solidified and Charl likely expressed deeper commitment, Nade began seeing her client Ian again in November. This coincided exactly with when "the fighting started." Her return to seeing a client she slept with acted as a way to create emotional distance and sabotage the deepening intimacy, fitting the pattern of withdrawing after a honeymoon phase.</p>
             </talk>
         </div>
@@ -133,7 +133,7 @@
 
         <p>The internal experience driving this push-pull is often described as living with constant ambivalence and anxiety. The person is locked in a battle between attachment and fear.</p>
     </talk>
-    <div class="example-container" id="example-breakup-return">
+    <div class="example-container" id="example-internal-experience">
         <div class="example-header">
             <h3 class="example-title">Example: Breaking Up and Attempting to Return</h3>
         </div>
@@ -178,79 +178,4 @@
     </talk>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const exampleContainers = document.querySelectorAll('.example-container');
-
-        exampleContainers.forEach(container => {
-            const researchTab = container.querySelector('.tab-content[data-tab="research"]');
-            const personalTab = container.querySelector('.tab-content[data-tab="personal"]');
-            const researchBtn = container.querySelector('.tab-btn[data-tab="research"]');
-            const personalBtn = container.querySelector('.tab-btn[data-tab="personal"]');
-
-            if (researchTab && personalTab && researchBtn && personalBtn) {
-                 // Determine initial state based on which button has the 'active' class
-                 if (personalBtn.classList.contains('active')) {
-                    personalTab.style.display = 'block';
-                    researchTab.style.display = 'none';
-                 } else {
-                    // Default to research tab if neither or research is active
-                    researchTab.style.display = 'block';
-                    personalTab.style.display = 'none';
-                    researchBtn.classList.add('active'); // Ensure research button is marked active
-                    personalBtn.classList.remove('active');
-                 }
-
-                researchBtn.addEventListener('click', function () {
-                    researchTab.style.display = 'block';
-                    personalTab.style.display = 'none';
-                    researchBtn.classList.add('active');
-                    personalBtn.classList.remove('active');
-                });
-
-                personalBtn.addEventListener('click', function () {
-                    researchTab.style.display = 'none';
-                    personalTab.style.display = 'block';
-                    personalBtn.classList.add('active');
-                    researchBtn.classList.remove('active');
-                });
-            }
-        });
-
-         // Copy Link Button Functionality
-        const copyButtons = document.querySelectorAll('.copy-link-btn');
-        copyButtons.forEach(button => {
-            button.addEventListener('click', function (event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('data-target');
-                const sectionElement = document.getElementById(targetId); // Assuming you add IDs like 'push-pull-summary' to relevant sections
-                if (sectionElement) {
-                    const url = window.location.href.split('#')[0] + '#' + targetId;
-                    navigator.clipboard.writeText(url).then(() => {
-                        // Optional: Provide user feedback
-                        const originalText = this.textContent;
-                        this.textContent = 'Link Copied!';
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                        }, 2000);
-                    }).catch(err => {
-                        console.error('Failed to copy link: ', err);
-                        // Optional: Provide error feedback
-                         const originalText = this.textContent;
-                         this.textContent = 'Copy Failed';
-                         setTimeout(() => {
-                            this.textContent = originalText;
-                        }, 2000);
-                    });
-                } else {
-                    // Handle case where target element doesn't exist (should have an ID)
-                     const originalText = this.textContent;
-                     this.textContent = 'Target not found!';
-                     setTimeout(() => {
-                        this.textContent = originalText;
-                    }, 2000);
-                }
-            });
-        });
-    });
-</script>
+<!-- Tab functionality is now handled by tabs.js -->

@@ -34,7 +34,7 @@
             </talk>
             1. <a href="https://www.reddit.com/r/BreakUps/comments/zfpvr9/for_those_whove_been_dumped_by_someone_with/#:~:text=Fast%20forward%20a%20couple%20of,stressed%20with%20work%20and%20sick" target="_blank">For those who've been dumped by someone with Disorganized/Fear-Avoidant Detachment, what was your experience in the months after the breakup?</a>
         </div>
-        
+
         <div class="tab-content" data-tab="personal">
             <talk voice="ash">
                 <br>When I got to know you end of 2022 / beginning of 2023 until you were gone from Silverton. In those 5-6 months you only did two bookings. It's not that you had no bookings, but you were either late every time, or the client didn't show up, or something happened that the booking never happened. It also wasn't that I held you back. I don't know how many times I ran to the liquor store for you because you didn't want to see a client sober.
@@ -56,7 +56,7 @@
             </talk>
         </div>
     </div>
-       
+
     <talk voice="ash">
         <h3>Blame-Shifting to Protect Self-Worth</h3>
 
@@ -84,7 +84,7 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="ash">
-                <p>Nade consistently shifted blame onto Charl, especially after the final breakup. She adopted Hubert's narrative, accusing Charl of being "abusive" and a "psychopath." Charl notes, "now she's accusing me of always being abusive and that my reaction to her infidelity is the problem and not what she actually did." 
+                <p>Nade consistently shifted blame onto Charl, especially after the final breakup. She adopted Hubert's narrative, accusing Charl of being "abusive" and a "psychopath." Charl notes, "now she's accusing me of always being abusive and that my reaction to her infidelity is the problem and not what she actually did."
                 </br></br>
                 She focused entirely on his emotional reactions (calling names, hitting her once after extreme provocation and months of her own violence/betrayal) to paint him as the sole cause of the relationship's failure, thereby deflecting responsibility for her sustained dishonesty, infidelity, drug use, and violence.
             </talk>
@@ -121,13 +121,13 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="ash">
-                <p>During their final, escalating argument, Nade employed multiple tactics that created conflict and prevented resolution. Charl describes her talking over him, reading cigarette warnings instead of listening, mocking his request for clear communication ("talk with your heart, not your brain"), sending a dismissive WhatsApp message and then cutting off communication by turning off her phone. 
-                </br></br>    
+                <p>During their final, escalating argument, Nade employed multiple tactics that created conflict and prevented resolution. Charl describes her talking over him, reading cigarette warnings instead of listening, mocking his request for clear communication ("talk with your heart, not your brain"), sending a dismissive WhatsApp message and then cutting off communication by turning off her phone.
+                </br></br>
                 She then escalated physically by pulling his computer screens and shouting "Hit me, hit me!" These actions served to derail any potential for constructive conversation and created intense conflict, ultimately leading to the physical altercation and breakup.</p>
             </talk>
         </div>
     </div>
-        
+
     <talk voice="ash">
         <h3>Gaslighting-Like Behavior (Often Unintentional)</h3>
 
@@ -185,8 +185,8 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="ash">
-                <p>Nade frequently withheld information or lied by omission. Key examples include: lying about staying with a woman in the guesthouse (when it was a man she was sleeping with); not telling Charl she informed Erica she'd continue seeing clients after promising him she'd stop; lying about going shopping when she actually went to work at Erica's brothel for the weekend; and borrowing money from Ian again after Charl had given her money specifically to pay off clients and cut ties. 
-                </br></br>    
+                <p>Nade frequently withheld information or lied by omission. Key examples include: lying about staying with a woman in the guesthouse (when it was a man she was sleeping with); not telling Charl she informed Erica she'd continue seeing clients after promising him she'd stop; lying about going shopping when she actually went to work at Erica's brothel for the weekend; and borrowing money from Ian again after Charl had given her money specifically to pay off clients and cut ties.
+                </br></br>
                 These secrets prevented Charl from understanding the true situation and protected her from confrontation.</p>
             </talk>
         </div>
@@ -218,18 +218,18 @@
 
         <div class="tab-content" data-tab="personal">
             <talk voice="ash">
-                <p>When ending the relationship via WhatsApp during the final argument, Nade sent a message "basically dismissing our whole relationship" with the phrase "thanks for being on my journey." This framed the end not as a result of her actions (infidelity, dishonesty, returning to work against their agreement) but as a natural, almost philosophical conclusion to a 'journey.' 
-                </br></br>    
+                <p>When ending the relationship via WhatsApp during the final argument, Nade sent a message "basically dismissing our whole relationship" with the phrase "thanks for being on my journey." This framed the end not as a result of her actions (infidelity, dishonesty, returning to work against their agreement) but as a natural, almost philosophical conclusion to a 'journey.'
+                </br></br>
                 This rationalization allowed her to avoid accountability for the specific betrayals and conflicts that led to the breakup, making it seem like an impersonal, inevitable parting rather than a consequence of her choices.</p>
             </talk>
         </div>
     </div>
-    
+
     <talk voice="ash">
         <h3>Understanding the Underlying Pain</h3>
 
         <p>It's important to understand that these behaviors stem from deep pain and fear, not malice. Dishonesty and deflection serve as shields for the fearful-avoidant. They lie or omit information to avoid anticipated hurt or rejection. They externalize blame to protect their fragile self-worth and to make sense of their own pullbacks. Common <strong>trauma-driven motives</strong> behind these behaviors include:</p>
-    
+
         <ul>
             <li><strong>Lying/omitting</strong> - motive: avoid potential conflict or rejection (if I tell the truth, you'll get mad or leave).</li>
             <li><strong>Blame-shifting</strong> - motive: protect a fragile self-worth (I can't be the problem because that would confirm I'm unlovable).</li>
@@ -241,37 +241,4 @@
     </talk>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const exampleContainers = document.querySelectorAll('.example-container');
-
-        exampleContainers.forEach(container => {
-            const researchTab = container.querySelector('.tab-content[data-tab="research"]');
-            const personalTab = container.querySelector('.tab-content[data-tab="personal"]');
-            const researchBtn = container.querySelector('.tab-btn[data-tab="research"]');
-            const personalBtn = container.querySelector('.tab-btn[data-tab="personal"]');
-
-            // Initially hide personal examples and activate research button
-            if (researchTab && personalTab && researchBtn && personalBtn) {
-                personalTab.style.display = 'none';
-                researchTab.style.display = 'block';
-                researchBtn.classList.add('active');
-                personalBtn.classList.remove('active');
-
-                researchBtn.addEventListener('click', function () {
-                    researchTab.style.display = 'block';
-                    personalTab.style.display = 'none';
-                    researchBtn.classList.add('active');
-                    personalBtn.classList.remove('active');
-                });
-
-                personalBtn.addEventListener('click', function () {
-                    researchTab.style.display = 'none';
-                    personalTab.style.display = 'block';
-                    personalBtn.classList.add('active');
-                    researchBtn.classList.remove('active');
-                });
-            }
-        });
-    });
-</script>
+<!-- Tab functionality is now handled by tabs.js -->
