@@ -7,6 +7,7 @@ require_once '../includes/config.php';
 require_once '../includes/db.php';
 require_once '../includes/functions.php';
 require_once 'admin-functions.php';
+require_once 'analytics-admin-helpers.php';
 
 // Check if user is logged in
 if (!isLoggedIn()) {
@@ -22,14 +23,35 @@ $logger = new Logger();
 $db = Database::getInstance();
 $conn = $db->getConnection();
 
-// Get dashboard statistics
-$stats = getDashboardStats();
+// Handle IP ignore/unignore actions
+if (isset($_POST['ignore_ip'])) {
+    addIgnoredIp($_POST['ignore_ip']);
+} elseif (isset($_POST['unignore_ip'])) {
+    removeIgnoredIp($_POST['unignore_ip']);
+}
 
-// Get recent sessions
-$recentSessions = getRecentSessions(10);
+// Handle archive analytics
+if (isset($_POST['archive_name']) && trim($_POST['archive_name']) !== '') {
+    archiveActiveAnalytics(trim($_POST['archive_name']));
+}
 
-// Get page view counts
-$pageViews = getPageViewCounts();
+// Get ignored IPs
+$ignoredIps = getIgnoredIpsArray();
+
+// Get dashboard statistics (filtered)
+$stats = getDashboardStats($ignoredIps);
+
+// Get recent sessions (filtered)
+$recentSessions = getRecentSessions(10, $ignoredIps);
+
+// Get page view counts (filtered)
+$pageViews = getPageViewCounts($ignoredIps);
+
+// Get all unique IPs with ignore status
+$allIps = getAllUniqueIpsWithIgnoreStatus();
+
+// Get analytics archives
+$archives = getAnalyticsArchives();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +101,37 @@ $pageViews = getPageViewCounts();
     <main class="admin-content">
         <div class="container">
             <div class="dashboard-header">
+                <!-- Analytics Filtering and IP Management -->
+                <div class="admin-analytics-tools" style="margin-bottom: 2em;">
+                    <h3>Analytics Filtering & IP Management</h3>
+                    <form method="post" style="margin-bottom: 1em; display:inline-block;">
+                        <input type="text" name="archive_name" placeholder="Archive Name" required />
+                        <button type="submit">Archive Current Analytics</button>
+                    </form>
+                    
+                    <div style="margin-bottom:1em;">
+                        <strong>Unique Visitor IPs:</strong>
+                        <table class="data-table">
+                            <thead><tr><th>IP Address</th><th>Status</th><th>Action</th></tr></thead>
+                            <tbody>
+                            <?php foreach($allIps as $ipInfo): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($ipInfo['ip']); ?></td>
+                                    <td><?php echo $ipInfo['ignored'] ? '<span style="color:red;">Ignored</span>' : '<span style="color:green;">Included</span>'; ?></td>
+                                    <td>
+                                        <?php if(!$ipInfo['ignored']): ?>
+                                            <form method="post" style="display:inline;"><input type="hidden" name="ignore_ip" value="<?php echo htmlspecialchars($ipInfo['ip']); ?>"><button type="submit" title="Exclude from analytics">Exclude</button></form>
+                                        <?php else: ?>
+                                            <form method="post" style="display:inline;"><input type="hidden" name="unignore_ip" value="<?php echo htmlspecialchars($ipInfo['ip']); ?>"><button type="submit" title="Include in analytics">Include</button></form>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="font-size:0.9em; color:#555;">Note: Analytics stats and charts below are filtered to <b>exclude</b> ignored IPs.</div>
+                </div>
                 <h2>Analytics Overview</h2>
                 <div class="date-filter">
                     <form action="" method="get">
