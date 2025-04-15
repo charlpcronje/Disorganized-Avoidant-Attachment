@@ -1,8 +1,11 @@
 <?php
-ini_set('session.cookie_httponly', 1);
-ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 1);
-session_start();
+// Only set session parameters and start session if no session exists
+if (session_status() == PHP_SESSION_NONE) {
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_only_cookies', 1);
+    ini_set('session.cookie_secure', 1);
+    session_start();
+}
 
 // Define database connection constants
 define('DB_HOST', 'localhost');

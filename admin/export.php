@@ -2,9 +2,6 @@
 // /admin/export.php
 // Export analytics data
 
-// Start session
-session_start();
-
 // Include required files
 require_once '../includes/config.php';
 require_once '../includes/db.php';

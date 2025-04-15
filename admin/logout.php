@@ -2,9 +2,6 @@
 // /admin/logout.php
 // Admin logout script
 
-// Start session
-session_start();
-
 // Include required files
 require_once '../includes/config.php';
 require_once '../includes/functions.php';

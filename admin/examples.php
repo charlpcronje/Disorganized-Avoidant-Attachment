@@ -2,9 +2,6 @@
 // /admin/examples.php
 // Admin interface for managing personal examples
 
-// Start session
-session_start();
-
 // Include required files
 require_once '../includes/config.php';
 require_once '../includes/db.php';
