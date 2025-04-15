@@ -35,7 +35,7 @@
     </div>
 
 
-<!-- Podcast placeholder -->
+    <!-- Podcast placeholder -->
     <div style="margin: 30px 0; text-align: center;">
         <h3>🎧 Listen: Overview of Everything</h3>
         <p>This podcast is about the full research. It gives a calm, easy-to-follow overview of what this is all about.</p>
