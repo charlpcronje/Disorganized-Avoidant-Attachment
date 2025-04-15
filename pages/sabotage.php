@@ -17,6 +17,8 @@
         <p>Many disorganized avoidants engage in <strong>self-sabotage</strong> of their relationships, and one destructive form this can take is <strong>infidelity</strong>. It may seem counterintuitive - why would someone who is afraid of abandonment risk destroying their relationship by cheating? The key is to understand that, for these individuals, <em>intimacy itself feels dangerous</em>.</p>
     </talk>
 
+    
+
     <div class="example-container" id="example-emotional-affair">
         <div class="example-header">
             <h3 class="example-title">Example: Emotional Affair as Escape Valve</h3>
@@ -166,6 +168,10 @@
         <p>It's important to stress that these rebounds and affairs are <em>not about malice or a cavalier attitude toward others' feelings</em>. They are usually desperate (if misguided) attempts to <em>regulate emotions</em>.</p>
     </talk>
 
+    <div style="padding:25px">
+        <img src="media/graphs/sabotage.png" style="max-width:100%; min-width:100%"/>
+    </div>
+
     <div class="example-container" id="example-emotional-regulation">
         <div class="example-header">
             <h3 class="example-title">Example: Avoiding Emotional Pain</h3>
@@ -215,7 +221,4 @@
         <p>For those with this attachment style, recognizing these self-sabotaging patterns is the first step toward change. For partners, understanding that these 
     <?php include "fragments/awareness.php"; ?>
 </div>
-
-
-<!-- Tab functionality is now handled by tabs.js -->
 

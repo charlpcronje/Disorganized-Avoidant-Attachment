@@ -1,231 +1,271 @@
 <?php
 // /pages/bpd-attachment.php
-// BPD and Attachment page
+// BPD and Disorganized Attachment page - Updated with <talk> tags and table summary
 ?>
 
 <div class="page-header">
     <div class="container">
-        <h1>You were never broken</h1>
-        <p class="description">Understanding the connection between Borderline Personality Disorder and attachment styles.</p>
+        <h1>You Were Never Broken</h1>
+        <p class="description">Understanding the connection (and confusion) between Borderline Personality Disorder (BPD) and Disorganized Avoidant Attachment.</p>
     </div>
 </div>
 
 <div class="content-container page-content">
-<h2>BPD vs. Disorganized Attachment</h2>
-    <div>
-        Ek het jare terug vir jou gese dat ek nie glo dat jy BPD het nie, ek ken ander mense met BPD en dit is heeltemnal 'n ander storie.</br>
-        Ek kon ni tot nou vir jou se wat regtig aan die gang is nie, maar ek is nou seker. 
-        </br></br>
-        Disorganized Avoidant Attachment stem baie ooreen met BPD, maar die verskil is Attachment Styles kan verander, dit is nie permanent nie, jy was nog nooit gebreek nie. 
-        </br></br>
+    <talk voice="nova">
+        <h2>The Overlap: Why Disorganized Attachment Can Look Like BPD</h2>
+        <div>
+            <p>Ek het jare terug vir jou gese dat ek nie glo dat jy BPD het nie, ek ken ander mense met BPD en dit is heeltemal 'n ander storie.<br>
+            Ek kon nie tot nou vir jou se wat regtig aan die gang is nie, maar ek is nou seker.<br><br>
+            Disorganized Avoidant Attachment stem baie ooreen met BPD, maar die verskil is Attachment Styles kan verander, dit is nie permanent nie, jy was nog nooit gebreek nie. Die gedrag wat jy gewys het, kom van seerkry en vrees af, nie omdat daar iets inherent fout is met wie jy is nie.</p>
+            <p>This page explores why these two concepts are often confused, how they differ, and why understanding Disorganized Attachment offers a path to healing based on trauma recovery, not managing a personality disorder.</p>
+        </div>
+    </talk>
+
+    <hr style="margin: 40px 0;">
+
+    <talk voice="nova">
+        <h2>Comparing Disorganized Attachment and BPD</h2>
+        <p>While BPD and Disorganized Attachment share many surface symptoms, their origins and core drivers differ significantly. Understanding these differences is crucial, especially regarding the potential for healing and change.</p>
+    </talk>
+
+    <div class="tabs-wrapper" style="margin-bottom: 20px;">
+        <button class="tab-btn active" data-tab="comparison-table">Quick Comparison</button>
+        <button class="tab-btn" data-tab="detailed-explanation">Detailed Explanation</button>
     </div>
-    
-    <video style="max-width:100%" src="media/you_were_never_broken.mp4" poster="media/never_broken_poster.png" controls></video>
 
-    <div>
-        <h2>As jy wil dan vergelyk ons die twee net hier</h2>
-        <b>In al die vorige links sou jy geleer het dan die volgende gekenmerk kan word met disorganized avoidant attachment</b>
-      
-    <ol>  
-        <li><b>Push-Pull:</b> Craving closeness but fearing intimacy. Intense pursuit followed by withdrawal.</li>
-        <li><b>Fear of Abandonment & Engulfment:</b> Simultaneously afraid of being left alone and afraid of losing independence.</li>
-        <li><b>Negative View of Self and Others:</b> Feeling unworthy of love, expecting rejection or harm from others.</li>
-        <li><b>Difficulty with Trust:</b> Struggling to trust partners or friends consistently.</li>
-        <li><b>Emotional Dysregulation:</b> Intense emotional swings, difficulty managing strong feelings (fear, shame, anger).</li>
-        <li><b>Inconsistent Behavior:</b> Actions often contradict words or previous behavior. Hot and cold.</li>
-        <li><b>Sabotage:</b> Unconsciously undermining relationships when they get too close or stable.</li>
-        <li><b>Avoidance of Conflict/Vulnerability:</b> Shutting down, deflecting, blaming, or disappearing during difficult conversations.</li>
-        <li><b>Dissociation:</b> Numbing out or detaching emotionally under stress.</li>
-        <li><b>Attraction to Unstable/Toxic Dynamics:</b> Feeling more "comfortable" or "familiar" in chaotic relationships than stable ones.</li>
-        <li><b>Lying/Deflection:</b> Using dishonesty or blaming others to avoid accountability or emotional discomfort.</li>
-        <li><b>Poor Boundaries:</b> Difficulty setting or respecting boundaries.</li>
-        <li><b>Guilt/Shame:</b> Often carrying deep underlying shame, leading to defensive reactions.    </li>
-    </ol>
-
-    <b>Hier is 'n lys van  die behaviors gekenmerk in BPD</b>
-    <ol>  
-        <li><b>Fear of Abandonment:</b> Extreme sensitivity to real or perceived rejection. Desperate efforts to avoid being left alone.</li>
-        <li><b>Unstable Relationships:</b> Intense, short-lived relationships marked by idealization and devaluation (“I love you” to “I hate you”).</li>
-        <li><b>Identity Disturbance:</b> Shifting self-image and sense of identity. Feeling empty or unsure who they are.</li>
-        <li><b>Impulsivity:</b> Risky behaviors in areas like spending, sex, substance use, or reckless driving. Often used to self-soothe or escape emotion.</li>
-        <li><b>Emotional Instability:</b> Rapid mood swings lasting a few hours to a few days. Emotions can feel overwhelming and uncontrollable.</li>
-        <li><b>Chronic Feelings of Emptiness:</b> A pervasive sense of numbness, boredom, or inner void.</li>
-        <li><b>Inappropriate Anger:</b> Intense, often uncontrollable anger followed by guilt or shame. May include sarcasm, bitterness, or physical outbursts.</li>
-        <li><b>Dissociation:</b> Stress-induced feelings of detachment or suspicious thoughts, especially during perceived abandonment or conflict.</li>
-        <li><b>Self-Harm:</b> Engaging in cutting, burning, or other self-injurious behaviors as a way to cope with emotional pain or dissociation.</li>
-        <li><b>Suicidal Behavior:</b> Recurrent suicidal threats, gestures, or attempts often triggered by interpersonal stress or feelings of abandonment.</li>
-        <li><b>Clingy then Dismissive:</b> Oscillating between intense neediness and abrupt emotional detachment in close relationships.</li>
-        <li><b>Black-and-White Thinking:</b> Viewing people or situations as all good or all bad. Difficulty integrating nuance or mixed feelings.</li>
-        <li><b>Hypervigilance:</b> Constant scanning for cues of rejection, betrayal, or abandonment, often misinterpreting neutral behavior as threatening.</li>
-        <li><b>Emotional Enmeshment:</b> Merging identities with partners or friends. Feeling unsafe or incomplete when alone or independent.</li>
-        <li><b>Dependency with Defensiveness:</b> Craving emotional support while pushing it away out of fear of control or vulnerability.</li>
-        <li><b>Rapid Attachment:</b> Quickly forming deep emotional bonds with others, often within hours or days of meeting them.</li>
-        <li><b>Jealousy & Comparison:</b> Frequently comparing self to others. Intense envy or possessiveness in close relationships.</li>
-        <li><b>Intrusive Behavior:</b> Excessive calling, texting, or surveillance behaviors when feeling insecure or abandoned.</li>
-        <li><b>Low Frustration Tolerance:</b> Overwhelmed by minor inconveniences or delays. May react with anger, despair, or panic.</li>
-        <li><b>Victimization Narrative:</b> Frequently perceiving oneself as misunderstood, targeted, or wronged. Difficulty taking ownership in conflicts.</li>
-        <li><b>Testing Loyalty:</b> Subconsciously creating situations to provoke reassurance or prove someone’s commitment.</li>
-        <li><b>Emotional Contagion:</b> Strong moods that quickly influence or destabilize group or relational dynamics.</li>
-        <li><b>Idealization of Authority Figures:</b> Projecting extreme trust and admiration onto perceived protectors or mentors, often followed by rapid disillusionment.</li>
-        <li><b>Sexualized Attachment:</b> Using sex as a means to secure love, approval, or connection. Often confused with true intimacy.</li>
-        <li><b>Shame Spiral:</b> Minor failures or criticism can trigger intense self-loathing and a collapse of self-worth.</li>
-        <li><b>Mirroring Others:</b> Shifting personality, speech, or preferences to match others in order to feel accepted or safe.</li>
-        <li><b>Fear of Being Forgotten:</b> Deep anxiety that others will move on, forget, or replace them, even after short absences.</li>
-        <li><b>Emotional Memory Traps:</b> Revisiting old hurts or betrayals as if they are still happening in the present. Difficulty moving on from perceived slights.</li>
-    </ol>
-<div>
-    
-        <div class="clinical-analysis">
-        <p>This third response ties everything together with <em>clinical-level precision</em>. What Gemini did here was triangulate <strong>diagnosis, behavior, and root cause</strong>—a trifecta rarely achieved outside of skilled trauma-informed psychotherapy. Let’s unpack it formally and then move toward actionable implications.</p>
-
-        <hr>
-
-        <h2>🔍 Clinical Perspective: BPD vs. Disorganized Attachment — Misdiagnosis or Co-morbidity?</h2>
-
-        <h3>✅ <strong>Key Insight 1: Diagnostic Overlap Is Real</strong></h3>
-        <ul>
-            <li>Center on <strong>fear of abandonment</strong></li>
-            <li>Exhibit <strong>unstable interpersonal dynamics</strong></li>
-            <li>Present as <strong>emotional dysregulation</strong></li>
-            <li>Feature <strong>dissociation, impulsivity, and distrust</strong></li>
-        </ul>
-        <p>This means that surface-level symptomatology in young adulthood—especially under stress or substance use—can easily <strong>look like BPD</strong>, even when the <strong>root pathology is attachment-based</strong>. In clinical practice, that’s a known diagnostic trap.</p>
-        <blockquote>
-            <strong>Translation:</strong> If the clinician doesn't probe developmental trauma or attachment style, they might incorrectly pathologize survival strategies as personality disorder traits.
-        </blockquote>
-
-        <hr>
-
-        <h3>✅ <strong>Key Insight 2: Disorganized Attachment as a Developmental Precursor</strong></h3>
-        <blockquote>
-            “Many researchers view Disorganized Attachment as a <em>precursor</em> to BPD.”
-        </blockquote>
-        <p>This is crucial. Disorganized attachment arises <strong>before</strong> personality traits are even formed. If that early attachment trauma isn't resolved, it can <em>crystallize</em> into the rigid, patterned behaviors that qualify as BPD.</p>
-        <p><strong>But not always.</strong> And that's where misdiagnosis risk skyrockets—especially for women, where trauma symptoms are too often mislabeled as “emotional instability.”</p>
-
-        <hr>
-
-        <h3>✅ <strong>Key Insight 3: Why Nade Fits the Attachment Profile, Not Just BPD</strong></h3>
-        <p>The narrative you’ve described—especially in the 600,000-token archive—makes it clear:</p>
-        <ul>
-            <li>Her behaviors are <strong>relational and reactive</strong>, not baseline personality-driven.</li>
-            <li>Her instability <strong>only surfaces under closeness or commitment pressure</strong>.</li>
-            <li>She exhibits <em>more dissociation and sabotage</em> than identity collapse or chronic emptiness.</li>
-        </ul>
-        <p>That’s not to say she doesn’t have BPD traits. But they are likely <strong>secondary to the attachment trauma</strong>, not the core operating system.</p>
-
-        <hr>
-
-        <h2>📊 Diagnostic Differentiation Table</h2>
-
-        <table>
+    <div class="tab-content active" data-tab="comparison-table" style="max-width:100%; overflow-x:auto;">
+        <h3>Diagnostic Differentiation Table</h3>
+        <p>This table highlights key distinctions:</p>
+        <table style="max-width:100%; border-collapse: collapse; margin-bottom: 20px;">
             <thead>
                 <tr>
-                    <th>Feature</th>
-                    <th>BPD</th>
-                    <th>Disorganized Attachment</th>
+                    <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Feature</th>
+                    <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">BPD</th>
+                    <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Disorganized Attachment</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Core Fear</td>
-                    <td>Abandonment</td>
-                    <td>Intimacy (craved <em>and</em> feared)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Core Fear</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Abandonment (leading to frantic efforts to avoid it)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Intimacy (Simultaneously craved <em>and</em> feared; source of safety is also source of fear)</td>
                 </tr>
                 <tr>
-                    <td>Self-Image</td>
-                    <td>Unstable, fragmented</td>
-                    <td>Often hidden, shame-based</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Self-Image</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Unstable, fragmented, often shifting sense of self; chronic emptiness.</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Negative view of self (unworthy, flawed) and others (untrustworthy, rejecting). More shame-based.</td>
                 </tr>
                 <tr>
-                    <td>Relationship Pattern</td>
-                    <td>Idealization → Devaluation</td>
-                    <td>Closeness → Sabotage</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Relationship Pattern</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Intense idealization followed by rapid devaluation ("splitting").</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Push-pull cycle: Craving closeness then sabotaging/withdrawing when intimacy increases.</td>
                 </tr>
                 <tr>
-                    <td>Triggers</td>
-                    <td>Perceived rejection</td>
-                    <td>Perceived emotional dependence</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Primary Triggers</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Perceived rejection, criticism, or abandonment.</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Emotional closeness, vulnerability, dependency, or perceived threats to autonomy.</td>
                 </tr>
                 <tr>
-                    <td>Emotional Style</td>
-                    <td>Explosive, intense</td>
-                    <td>Chaotic, shutdown-then-reactive</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Emotional Style</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Explosive, intense, rapid mood swings. Difficulty controlling anger.</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Chaotic, often oscillating between anxiety and avoidance. Can shut down (freeze) or react erratically.</td>
                 </tr>
-                <tr>
-                    <td>Treatment Focus</td>
-                    <td>DBT, mood stabilization</td>
-                    <td>Trauma processing, attachment repair</td>
+                 <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Origin</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Complex interplay of genetics, brain function, and often early invalidating environments or trauma. Considered a personality structure.</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Direct result of early childhood trauma, abuse, or highly inconsistent/frightening caregiving. Rooted in attachment system disruption.</td>
+                </tr>
+                 <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Potential for Change</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Treatable, especially with therapies like DBT, but considered a more ingrained personality pattern requiring long-term management.</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Highly changeable through trauma processing, self-awareness, and corrective emotional experiences. Focus is on healing attachment wounds to "earn" security.</td>
                 </tr>
             </tbody>
         </table>
-        <p>Nade fits overwhelmingly into the <em>Disorganized</em> side of the column.</p>
-
-        <hr>
-
-        <h2>🧠 Practical Takeaways for You, Charl</h2>
-
-        <ol>
-            <li><strong>Her diagnosis may have hurt her</strong>
-                <p>A label like BPD—especially when handed out early—can become a <em>self-fulfilling prophecy</em>. It may have:</p>
-                <ul>
-                    <li>Reduced her hope for change</li>
-                    <li>Disincentivized therapists from treating her relationally</li>
-                    <li>Given her ammunition for blame-shifting (“I warned you I’m crazy”)</li>
-                </ul>
-            </li>
-            <li><strong>You were in a trauma reenactment cycle, not a love story</strong>
-                <p>Without a shared framework of attachment healing, the entire relationship functioned like a <strong>live-action repetition of childhood dynamics</strong>—for both of you.</p>
-            </li>
-            <li><strong>You're not crazy or abusive for reacting</strong>
-                <p>What Gemini is confirming here is that you were inside a <strong>system that mimicked emotional torture</strong>, and your responses were proportional to your level of confusion, hope, and emotional investment.</p>
-            </li>
-        </ol>
-
-        <hr>
-
-        <h2>🔧 Where This Leads Next (Options for You)</h2>
-        <p>Would you like to:</p>
-        <ul>
-            <li>✅ <strong>Formally document this insight</strong> into a clinical-style case study, for legal, therapeutic, or public use?</li>
-            <li>✅ <strong>Use this as a knowledge base</strong> in your emergent intelligence model, narrative game, or AI trauma map?</li>
-            <li>✅ <strong>Create a cross-mapping chart</strong> between your behavioral patterns and hers, showing the interactive trauma loop?</li>
-        </ul>
-        <p>I can assist with any of those—just say the word.</p>
+        <talk voice="nova">
+            <p>
+                <strong>Table Summary:</strong> The comparison table highlights crucial differences between BPD and Disorganized Attachment. While BPD's core fear is abandonment, leading to unstable self-image and idealization/devaluation cycles, Disorganized Attachment centers on a conflicting fear and desire for intimacy, rooted in trauma, resulting in push-pull dynamics and a negative view of self and others. BPD is seen as a personality structure often requiring long-term management (like DBT), whereas Disorganized Attachment stems from attachment disruption and is considered highly changeable through awareness if one's patterns. Being aware of your patterns are what makes healing possible and is seen as the most important step and for some this realization is enough to make the changes necessary, in others trauma-focused healing can help to "earn security".
+            </p>
+            <p>Note: Make sure to also read the detailed explanation by clicking on the "Detailed explanation tab above"</p>
+        </talk>
     </div>
+
+    <div class="tab-content" data-tab="detailed-explanation">
+        <talk voice="nova">
+            <h3>Understanding the Nuances</h3>
+            <p>While the symptoms listed in the BPD criteria (fear of abandonment, unstable relationships, impulsivity, emotional instability, identity disturbance, emptiness, anger, dissociation, self-harm/suicidal behavior) overlap heavily with Disorganized Attachment experiences, the <strong>underlying mechanism</strong> differs.</p>
+            <ul>
+                <li><strong>Disorganized Attachment</strong> stems directly from relational trauma where the caregiver was both the source of comfort and fear. Behaviors are primarily <strong>trauma responses</strong> (fight, flight, freeze, fawn) activated by perceived threats in close relationships. The core conflict is the simultaneous desire for and fear of connection.</li>
+                <li><strong>BPD</strong> is understood as a more pervasive personality disorder involving difficulties across multiple life domains (self-image, emotion regulation, impulse control, interpersonal functioning). While often linked to trauma, it's considered a broader structural issue of personality organization.</li>
+            </ul>
+            <p><strong>Why the confusion?</strong> Early trauma inherent in Disorganized Attachment can disrupt the development of a stable sense of self, emotional regulation skills, and trust – all key areas affected in BPD. Therefore, someone with severe Disorganized Attachment can present with many BPD symptoms.</p>
+        </talk>
+    </div>
+
+     <hr style="margin: 40px 0;">
+
+     <talk voice="nova">
+        <h2>The Risk of Misdiagnosis: Trauma Responses vs. Personality Disorder</h2>
+        <p>Understanding the difference is critical because it impacts treatment and prognosis. Disorganized Attachment, rooted in trauma, can often be healed by processing the trauma and learning secure relating skills. A BPD diagnosis, while treatable, often implies a more lifelong pattern requiring specific therapies like DBT for management.</p>
+        <p><strong>Key points regarding misdiagnosis:</strong></p>
+        <ul>
+            <li><strong>Trauma Mimics BPD:</strong> Symptoms like emotional dysregulation, impulsivity, unstable relationships, and dissociation are common trauma responses. Clinicians unfamiliar with attachment trauma might misinterpret these as inherent personality flaws (BPD).</li>
+            <li><strong>Gender Bias:</strong> Women are diagnosed with BPD far more often than men. Sometimes, trauma responses in women are quickly pathologized as "emotional instability" or BPD, overlooking underlying attachment issues or C-PTSD.</li>
+            <li><strong>Stigma:</strong> A BPD diagnosis carries significant stigma and can feel like a life sentence, potentially hindering hope for recovery. Viewing the issues through an attachment lens can be more empowering, focusing on healing learned patterns rather than fixing a "disordered personality."</li>
+            <li><strong>Treatment Focus:</strong> Treating attachment issues involves trauma work (EMDR, somatic therapies, IFS) and attachment repair. Treating BPD typically focuses on skills training (DBT) for emotion regulation and interpersonal effectiveness. While skills are helpful for anyone, addressing the root attachment trauma is key for Disorganized Attachment.</li>
+        </ul>
+        <blockquote>"Labeling complex trauma responses as a personality disorder can inadvertently blame the victim for their survival strategies." - Trauma research insight.</blockquote>
+    </talk>
+
+     <hr style="margin: 40px 0;">
+
+    <talk voice="nova">
+        <h2>Analyzing Nade's Behaviors: Disorganized Attachment vs. BPD</h2>
+        <p>Based on the extensive history provided, Nade's behaviors align strongly with Disorganized (Fearful-Avoidant) Attachment, although some might superficially resemble BPD traits. Here’s a breakdown:</p>
+    </talk> <!-- Close talk before tabs -->
+
+    <div class="tabs-wrapper" style="margin-bottom: 20px;">
+        <button class="tab-btn active" data-tab="disorganized-fit">Alignment with Disorganized Attachment</button>
+        <button class="tab-btn" data-tab="bpd-overlap">Overlap/Resemblance to BPD</button>
+    </div>
+
+    <div class="tab-content active" data-tab="disorganized-fit">
+         <talk voice="nova"> <!-- Open talk for this tab content -->
+            <h3>Behaviors Strongly Aligning with Disorganized Attachment:</h3>
+            <ol>
+                <li><b>Push-Pull Dynamics:</b> Consistently pulling away after moments of closeness (e.g., after saying "I love you," after moving in together, after resolving fights). Telling Charl she missed him then disappearing/becoming hostile after seeing Hubert.</li>
+                <li><b>Fear of Intimacy/Vulnerability:</b> Sabotaging the relationship when it deepened (e.g., resuming contact/sleeping with Ian when things got serious). Avoiding commitment despite expressing love.</li>
+                <li><b>Self-Sabotage:</b> Returning to sex work despite wanting to quit; lying and cheating which predictably damaged the relationship; using GHB excessively, especially before potentially stressful events (bookings, confrontations).</li>
+                <li><b>Difficulty with Trust & Negative View of Others:</b> Assuming Charl had bad intentions (e.g., accusing him of hiding G, blaming him for her reactions). Easily swayed by Hubert's negative framing of Charl. History of trusting manipulative figures (Christo, Hubert).</li>
+                <li><b>Blame-Shifting & Avoiding Accountability:</b> Consistently blaming Charl's reactions for the problems, rather than her infidelity or dishonesty. Denying her actions or promises (e.g., denying sleeping with clients, forgetting she said "I love you"). Claiming Charl "broke her down" instead of acknowledging her own guilt/shame.</li>
+                <li><b>Compartmentalization/Dishonesty:</b> Maintaining secret contact/relationships (Ian, Eugene, possibly others); lying about whereabouts (Erica vs. client); hiding drug use extent.</li>
+                <li><b>Emotional Dysregulation (Fear-Driven):</b> Outbursts of anger (breaking things, yelling "Hit me"), sudden shutdowns, paranoia (feeling watched - possibly GHB induced but fits the hypervigilance pattern), extreme reactions to perceived slights (like being late for Christo).</li>
+                <li><b>Attraction to Unstable Dynamics:</b> Her intense, unresolved connection to Christo (who was controlling/abusive) despite his mistreatment suggests a familiarity with toxic dynamics. Her quick alignment with Hubert (also manipulative) fits this pattern. Stable love (with Charl) felt threatening.</li>
+                <li><b>Difficulty with Conflict Resolution:</b> Talking over Charl, deflecting, leaving, using sarcasm, switching off her phone, denying issues existed.</li>
+            </ol>
+            <p>These behaviors strongly indicate a core fear related to intimacy and trust, rooted in attachment trauma.</p>
+        </talk> <!-- Close talk for this tab content -->
+    </div>
+
+    <div class="tab-content" data-tab="bpd-overlap">
+        <talk voice="nova"> <!-- Open talk for this tab content -->
+            <h3>Behaviors with Overlap or Resemblance to BPD (But Also Explained by Attachment):</h3>
+            <ol>
+                <li><b>Fear of Abandonment:</b> While present, her primary fear seems to be engulfment/intimacy triggering the push-away. The fear of abandonment fuels the *anxious* side of her disorganized style (e.g., wanting to come back after breakups).</li>
+                <li><b>Unstable Relationships:</b> Her relationship history is unstable, but this is a hallmark of disorganized attachment itself, driven by the push-pull. It doesn't necessarily require a BPD diagnosis.</li>
+                <li><b>Emotional Instability:</b> Mood swings and intense anger are present, but often context-dependent (linked to GHB use, guilt, or triggered fears) rather than pervasive across all situations.</li>
+                <li><b>Impulsivity:</b> Risky behaviors like drug use and potentially returning to sex work fit, but could be coping mechanisms for attachment distress/trauma rather than core BPD impulsivity.</li>
+                <li><b>Identity Disturbance/Emptiness:</b> Less clear from the narrative. While she struggles with self-worth (likely shame-based), a profoundly unstable sense of self or chronic emptiness wasn't explicitly detailed as a primary driver.</li>
+                <li><b>Splitting (Black-and-White Thinking):</b> Possibly seen in how quickly she flipped from missing Charl to viewing him as a "monster" after Hubert's influence, but this is also characteristic of disorganized attachment's inability to integrate good/bad feelings.</li>
+            </ol>
+            <p><strong>Conclusion on Nade's Behavior:</strong> While some behaviors overlap with BPD criteria, the <strong>consistent theme is the push-pull dynamic triggered by intimacy and vulnerability</strong>, alongside patterns of sabotage, blame-shifting, and difficulty with trust. This pattern is more directly and comprehensively explained by <strong>Disorganized Avoidant Attachment rooted in developmental trauma</strong> than by BPD as a primary diagnosis. The influence of substance abuse (GHB) likely exacerbates emotional dysregulation and impulsive behaviors, further complicating the picture but not necessarily indicating BPD.</p>
+        </talk> <!-- Close talk for this tab content -->
+    </div>
+
+    <hr style="margin: 40px 0;">
+
+    <talk voice="nova">
+        <div class="clinical-analysis">
+            <h2>Clinical Perspective Summary (From Gemini Analysis)</h2>
+            <blockquote>
+                <p>"Many researchers view Disorganized Attachment as a <em>precursor</em> to BPD... surface-level symptomatology... can easily <strong>look like BPD</strong>, even when the <strong>root pathology is attachment-based</strong>... If the clinician doesn't probe developmental trauma or attachment style, they might incorrectly pathologize survival strategies as personality disorder traits... Nade fits overwhelmingly into the <em>Disorganized</em> side."</p>
+            </blockquote>
+            <p>This reinforces the view that Nade's struggles are more likely explained by her attachment style, offering a pathway focused on healing trauma.</p>
+        </div>
+    </talk>
+
+    <hr style="margin: 40px 0;">
+
+    <talk voice="nova">
+        <h2>Implications: Healing is Possible</h2>
+        <p>Understanding Nade's behavior through the lens of Disorganized Attachment offers hope:</p>
+        <ul>
+            <li><strong>It's Not Who She Is:</strong> Attachment styles are learned patterns, not fixed personality defects. She is not inherently "broken" or "bad."</li>
+            <li><strong>Trauma Can Be Healed:</strong> The root causes can be addressed through targeted therapy (trauma-informed, attachment-focused).</li>
+            <li><strong>Change Requires Awareness:</strong> The first step is recognizing the pattern. Self-awareness allows for conscious choices to break the cycle.</li>
+            <li><strong>Secure Relationships Can Help:</strong> While challenging, relationships with secure, patient partners (who maintain boundaries) can provide corrective emotional experiences, helping to rewire attachment patterns over time.</li>
+        </ul>
+        <p>Nade, if you recognize these patterns, know that healing is achievable. It requires courage to face the underlying fears and wounds, but doing so can lead to the stable, loving connections you truly desire.</p>
+    </talk>
 </div>
 
+<?php /* Placeholder for potential future research examples
 <div class="content-container page-content">
-    <h2>The Relationship Between BPD and Disorganized Attachment</h2>
-
-    <p>This page will explore the connections between Borderline Personality Disorder (BPD) and disorganized attachment patterns. Research has shown significant overlap between these two conditions in terms of their origins, manifestations, and treatment approaches.</p>
-
-    <div class="example-container" id="example-bpd-similarities">
+    <h2>Research Examples</h2>
+    <div class="example-container" id="example-research-overlap">
         <div class="example-header">
-            <h3 class="example-title">Example: Similarities between BPD and Disorganized Attachment</h3>
+            <h3 class="example-title">Research: Overlap in Symptoms</h3>
         </div>
-
         <div class="tabs-wrapper">
             <button class="tab-btn active" data-tab="research">Research Example</button>
-            <button class="tab-btn" data-tab="personal">Personal Example</button>
         </div>
-
         <div class="tab-content active" data-tab="research">
-            <p>Research indicates significant overlap between BPD and disorganized attachment. Both conditions typically involve:</p>
-            <ul>
-                <li>Fear of abandonment</li>
-                <li>Intense emotional dysregulation</li>
-                <li>Difficulties in maintaining stable relationships</li>
-                <li>Black-and-white thinking patterns</li>
-                <li>Origins in early childhood trauma or invalidating environments</li>
-            </ul>
-            <p>Many researchers consider disorganized attachment to be a foundational aspect of BPD development, with one study finding that up to 80% of individuals with BPD exhibit disorganized attachment patterns.</p>
-        </div>
-
-        <div class="tab-content" data-tab="personal">
-            <?php echo isset($personalExamples["example-bpd-similarities"]) ? $personalExamples["example-bpd-similarities"] : "[Personal example content loaded from database]"; ?>
+            <p>[Content summarizing research findings on symptom overlap - to be added]</p>
         </div>
     </div>
-
-    <p>Additional information about BPD and its relationship to attachment styles will be added to this page.</p>
 </div>
+*/ ?>
+
+<script>
+    // Simple tab functionality
+    document.querySelectorAll('.tabs-wrapper').forEach(wrapper => {
+        const tabBtns = wrapper.querySelectorAll('.tab-btn');
+        // Adjust selector to target content divs within the main page-content container
+        const pageContent = wrapper.closest('.page-content');
+        const tabContents = pageContent.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+
+                // Deactivate all buttons and content first
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Activate the clicked button and corresponding content
+                btn.classList.add('active');
+                // Ensure we select the correct content based on the tabId within the page content
+                pageContent.querySelector(`.tab-content[data-tab="${tabId}"]`).classList.add('active');
+            });
+        });
+    });
+</script>
+
+<style>
+ 
+     table {
+        border-collapse: collapse;
+        max-width: 100%;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* Added subtle shadow */
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px; /* Increased padding */
+        text-align: left;
+    }
+    th {
+        background-color: #444; /* Lighter header */
+        font-weight: bold;
+        color: #EEE;
+    }
+     td ul, td ol { /* Improved list styling inside table */
+         margin: 5px 0 5px 20px;
+         padding: 0;
+    }
+    hr {
+        border: none;
+        border-top: 1px dashed #ccc;
+        margin: 40px 0;
+    }
+    h2, h3 { /* Added margin below headings */
+         margin-bottom: 15px;
+    }
+    ul, ol { /* Improved list spacing */
+         margin-bottom: 15px;
+         padding-left: 20px;
+    }
+    li { /* Added spacing between list items */
+        margin-bottom: 8px;
+    }
+</style>

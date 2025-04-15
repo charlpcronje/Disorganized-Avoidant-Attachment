@@ -11,6 +11,16 @@
 </div>
 
 <div class="content-container page-content">
+    <!-- Podcast placeholder -->
+    <div style="margin: 30px 0; text-align: center;">
+        <h3>🎧 Listen: Overview on how it affected you</h3>
+        <p>This podcast is about the research but but a bit practical, it is how avoidane affected you personal life</p>
+        <audio controls>
+            <source src="media/betrayal- manipulation-loss.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <talk voice="ash">
         <h2>Lies, Deflection, and Blaming Loved Ones</h2>
 
@@ -241,4 +251,4 @@
     </talk>
 </div>
 
-<!-- Tab functionality is now handled by tabs.js -->
+

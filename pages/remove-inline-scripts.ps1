@@ -12,7 +12,7 @@ foreach ($page in $pages) {
     
     # Replace the script with a comment
     $pattern = '(?s)<script>\s*document\.addEventListener\(''DOMContentLoaded'', function \(\) \{\s*const exampleContainers = document\.querySelectorAll\(''.example-container''\);.*?</script>'
-    $replacement = "<!-- Tab functionality is now handled by tabs.js -->"
+    $replacement = ""
     
     $newContent = $content -replace $pattern, $replacement
     
