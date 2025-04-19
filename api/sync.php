@@ -26,7 +26,18 @@ $method = $_SERVER['REQUEST_METHOD'];
 $headers = json_encode(getallheaders());
 $body = file_get_contents('php://input');
 $query_params = json_encode($_GET);
-$ip_address = $_SERVER['REMOTE_ADDR'] ?? '';
+function get_client_ip() {
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+        return trim($ip);
+    }
+    if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+        return $_SERVER['HTTP_X_REAL_IP'];
+    }
+    return $_SERVER['REMOTE_ADDR'] ?? '';
+}
+
+$ip_address = get_client_ip();
 $apiCallId = log_api_call($endpoint, $method, $headers, $body, $query_params, $ip_address);
 
 // Register shutdown function to log response
