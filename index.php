@@ -9,8 +9,8 @@ require_once 'includes/functions.php';
 require_once 'includes/plugin-loader.php';
 
 
-// Handle name entry
-if (!isset($_SESSION['visitor_name'])) {
+// Handle name entry (ALWAYS require a valid visitor name before any page logic)
+if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
     $error = '';
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_name'])) {
         $input_name = strtolower(trim($_POST['visitor_name']));

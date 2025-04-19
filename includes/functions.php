@@ -141,6 +141,11 @@ function recordPageView($pageId, $sessionId) {
         'timestamp' => time()
     ]);
     
+    if (!$sessionId) {
+        $logger = new Logger();
+        $logger->error("recordPageView called with null sessionId (no session row in DB). Event not logged.");
+        return false;
+    }
     $stmt = $conn->prepare("INSERT INTO events (session_id, page_id, event_type, event_data) VALUES (?, ?, 'pageview', ?)");
     $stmt->bind_param("iis", $sessionId, $pageId, $eventData);
     
@@ -149,6 +154,11 @@ function recordPageView($pageId, $sessionId) {
 
 // Create or retrieve a session
 function getSession() {
+    // Always require a valid visitor_name for session creation
+    if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
+        header('Location: /index.php');
+        exit;
+    }
     if (!isset($_SESSION['db_session_id'])) {
         $db = Database::getInstance();
         $conn = $db->getConnection();
@@ -191,12 +201,15 @@ function getSession() {
                 $_SESSION['db_session_id'] = $conn->insert_id;
             } else {
                 $logger = new Logger();
-                $logger->error("Failed to create session: " . $conn->error);
+                $logger->error("Failed to create session: " . $conn->error . ". Using temporary session.");
+                // Fallback: use a negative session ID to indicate a dummy session (not tracked in DB)
+                $_SESSION['db_session_id'] = -1;
             }
         }
     }
     
-    return $_SESSION['db_session_id'] ?? null;
+    // Always return a session id, even if dummy (negative)
+    return $_SESSION['db_session_id'] ?? -1;
 }
 
 // Update session duration
