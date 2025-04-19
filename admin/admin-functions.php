@@ -214,10 +214,13 @@ function getPageViewCounts() {
 function formatDuration($seconds) {
     if (!$seconds) return '0:00';
 
-    $minutes = floor($seconds / 60);
-    $hours = floor($minutes / 60);
-    $minutes = intval($minutes % 60);
-    $seconds = intval($seconds % 60);
+    // Always cast to float, then round to int for all math
+    $seconds = (float)$seconds;
+    $seconds = (int)round($seconds);
+    $minutes = intdiv($seconds, 60);
+    $hours = intdiv($minutes, 60);
+    $minutes = $minutes % 60;
+    $seconds = $seconds % 60;
 
     if ($hours > 0) {
         return sprintf('%d:%02d:%02d', $hours, $minutes, $seconds);
