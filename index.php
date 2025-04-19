@@ -8,7 +8,6 @@ require_once 'includes/db.php';
 require_once 'includes/functions.php';
 require_once 'includes/plugin-loader.php';
 
-session_start();
 
 // Handle name entry
 if (!isset($_SESSION['visitor_name'])) {
