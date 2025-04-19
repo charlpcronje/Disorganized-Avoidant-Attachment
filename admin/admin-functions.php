@@ -213,12 +213,13 @@ function getPageViewCounts() {
 // Format duration from seconds to readable time
 function formatDuration($seconds) {
     if (!$seconds) return '0:00';
-    
+
+    $seconds = (float)$seconds; // Ensure it's a float
     $minutes = floor($seconds / 60);
     $hours = floor($minutes / 60);
     $minutes %= 60;
-    $seconds %= 60;
-    
+    $seconds = $seconds % 60;
+
     if ($hours > 0) {
         return sprintf('%d:%02d:%02d', $hours, $minutes, $seconds);
     } else {
