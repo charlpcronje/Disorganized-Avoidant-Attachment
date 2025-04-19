@@ -148,7 +148,7 @@ try {
                         <div class="session-info-grid">
                             <div class="info-item">
                                 <div class="info-label">Visitor ID</div>
-                                <div class="info-value"><?php echo htmlspecialchars($sessionDetails['session']['visitor_id']); ?></div>
+                                <div class="info-value"><?php echo htmlspecialchars(substr($sessionDetails['session']['visitor_id'],0,10)); ?></div>
                             </div>
                             
                             <div class="info-item">
