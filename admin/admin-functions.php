@@ -214,7 +214,6 @@ function getPageViewCounts() {
 function formatDuration($seconds) {
     if (!$seconds) return '0:00';
 
-    $seconds = (float)$seconds; // Ensure it's a float
     $minutes = floor($seconds / 60);
     $hours = floor($minutes / 60);
     $minutes = intval($minutes % 60);
