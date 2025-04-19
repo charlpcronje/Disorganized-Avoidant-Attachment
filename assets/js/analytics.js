@@ -1,7 +1,140 @@
 // /assets/js/analytics.js
-// Detailed user behavior tracking system
+// Next-gen event-driven analytics logger: logs every scroll, click, element-in-view, media event, and syncs every 20s. No reliance on unload. All details logged for full session playback.
 
 class Analytics {
+    constructor() {
+        this.sessionId = this.getOrCreateSessionId();
+        this.pageId = document.body.dataset.pageId || window.location.pathname;
+        this.apiEndpoint = '/api/sync.php';
+        this.syncInterval = 20000;
+        this.eventBuffer = [];
+        this.lastElementStates = new Map(); // For element-in-view
+        this.visitorName = this.getOrPromptVisitorName();
+        this.init();
+    }
+
+    init() {
+        this.bindScroll();
+        this.bindClicks();
+        this.bindElementInView();
+        this.bindMedia();
+        this.startSyncInterval();
+    }
+
+    getOrCreateSessionId() {
+        let id = localStorage.getItem('analytics_session_id');
+        if (!id) {
+            id = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+            localStorage.setItem('analytics_session_id', id);
+        }
+        return id;
+    }
+
+    logEvent(type, data = {}) {
+        this.eventBuffer.push({
+            type,
+            pageId: this.pageId,
+            sessionId: this.sessionId,
+            visitorName: this.visitorName,
+            timestamp: Date.now(),
+            data
+        });
+    }
+
+    getOrPromptVisitorName() {
+        let name = sessionStorage.getItem('analytics_visitor_name');
+        if (!name) {
+            name = prompt('Please enter your name for this session:');
+            if (name) {
+                sessionStorage.setItem('analytics_visitor_name', name);
+            } else {
+                name = 'Anonymous';
+                sessionStorage.setItem('analytics_visitor_name', name);
+            }
+        }
+        return name;
+    }
+
+    bindScroll() {
+        let lastY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const nowY = window.scrollY;
+            this.logEvent('scroll', { from: lastY, to: nowY });
+            lastY = nowY;
+        }, { passive: true });
+    }
+
+    bindClicks() {
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('[data-analytics-click], a, button, input, .talk-tag, video, audio');
+            if (target) {
+                this.logEvent('click', {
+                    tag: target.tagName,
+                    classes: target.className,
+                    id: target.id,
+                    name: target.name,
+                    value: target.value,
+                    text: target.innerText?.slice(0, 100),
+                    x: e.clientX,
+                    y: e.clientY
+                });
+            }
+        });
+    }
+
+    bindElementInView() {
+        // Track all elements with [data-analytics-view] or .track-view
+        const elements = document.querySelectorAll('[data-analytics-view], .track-view');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                const id = el.dataset.analyticsId || el.id || el.className || el.tagName;
+                if (entry.isIntersecting) {
+                    this.lastElementStates.set(el, Date.now());
+                    this.logEvent('element_in_view', { id, visible: true });
+                } else if (this.lastElementStates.has(el)) {
+                    const inTime = this.lastElementStates.get(el);
+                    const duration = Date.now() - inTime;
+                    this.logEvent('element_in_view', { id, visible: false, duration });
+                    this.lastElementStates.delete(el);
+                }
+            });
+        }, { threshold: [0, 0.5, 1] });
+        elements.forEach(el => observer.observe(el));
+    }
+
+    bindMedia() {
+        // Track all audio/video/talk-tag elements
+        const medias = document.querySelectorAll('audio, video, .talk-tag');
+        medias.forEach(media => {
+            media.addEventListener('play', () => this.logEvent('media_play', { id: media.id || media.className, currentTime: media.currentTime }));
+            media.addEventListener('pause', () => this.logEvent('media_pause', { id: media.id || media.className, currentTime: media.currentTime }));
+            media.addEventListener('seeked', () => this.logEvent('media_seek', { id: media.id || media.className, currentTime: media.currentTime }));
+            media.addEventListener('volumechange', () => this.logEvent('media_volume', { id: media.id || media.className, volume: media.volume }));
+        });
+    }
+
+    startSyncInterval() {
+        setInterval(() => this.syncEvents(), this.syncInterval);
+    }
+
+    syncEvents() {
+        if (this.eventBuffer.length === 0) return;
+        const events = this.eventBuffer.slice();
+        this.eventBuffer = [];
+        fetch(this.apiEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId: this.sessionId, pageId: this.pageId, events })
+        }).catch(() => {
+            // On failure, re-buffer events for next sync
+            this.eventBuffer = events.concat(this.eventBuffer);
+        });
+    }
+}
+
+window.Analytics = new Analytics();
+
     getVisitorName() {
         return window.VISITOR_NAME || '';
     }
