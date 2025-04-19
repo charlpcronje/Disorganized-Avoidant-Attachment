@@ -154,7 +154,14 @@ function getSession() {
         $conn = $db->getConnection();
         
         $sessionId = session_id();
-        $visitorId = isset($_COOKIE['visitor_id']) ? $_COOKIE['visitor_id'] : generateToken();
+        // Use the visitor name from session if available, else fallback to cookie or random token
+        if (isset($_SESSION['visitor_name'])) {
+            $visitorId = $_SESSION['visitor_name'];
+        } else if (isset($_COOKIE['visitor_id'])) {
+            $visitorId = $_COOKIE['visitor_id'];
+        } else {
+            $visitorId = generateToken();
+        }
         $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
         $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '';
         $referrer = $_SERVER['HTTP_REFERER'] ?? '';
