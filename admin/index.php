@@ -101,6 +101,20 @@ $archives = getAnalyticsArchives();
     <main class="admin-content">
         <div class="container">
             <div class="dashboard-header">
+    <!-- API Calls Summary Section -->
+    <?php
+    // API call stats
+    $apiTotal = $conn->query("SELECT COUNT(*) AS total FROM api_calls")->fetch_assoc()['total'];
+    $apiCompleted = $conn->query("SELECT COUNT(*) AS completed FROM api_calls WHERE response IS NOT NULL AND response != ''")->fetch_assoc()['completed'];
+    $apiUncompleted = $conn->query("SELECT COUNT(*) AS uncompleted FROM api_calls WHERE response IS NULL OR response = ''")->fetch_assoc()['uncompleted'];
+    ?>
+    <div style="margin-bottom:2em; background:#f5f7fa; border:1px solid #dde3ec; padding:15px 20px; border-radius:8px;">
+        <strong>API Calls:</strong>
+        <span style="margin-left:20px;">Total: <b><?= $apiTotal ?></b></span>
+        <span style="margin-left:20px; color:green;">Completed: <b><?= $apiCompleted ?></b></span>
+        <span style="margin-left:20px; color:orange;">Uncompleted: <b><?= $apiUncompleted ?></b></span>
+        <a href="api-calls.php" style="margin-left:30px; color:#2a5ba5; text-decoration:underline;font-weight:600;">View API Logs</a>
+    </div>
                 <!-- Analytics Filtering and IP Management -->
                 <div class="admin-analytics-tools" style="margin-bottom: 2em;">
                     <h3>Analytics Filtering & IP Management</h3>

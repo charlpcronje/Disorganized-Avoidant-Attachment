@@ -18,6 +18,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 require_once '../includes/config.php';
 require_once '../includes/db.php';
 require_once '../includes/functions.php';
+require_once __DIR__ . '/log_api_call.php';
+
+// Log incoming API call
+$endpoint = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
+$headers = json_encode(getallheaders());
+$body = file_get_contents('php://input');
+$query_params = json_encode($_GET);
+$ip_address = $_SERVER['REMOTE_ADDR'] ?? '';
+$apiCallId = log_api_call($endpoint, $method, $headers, $body, $query_params, $ip_address);
+
+// Register shutdown function to log response
+function log_api_call_response() {
+    global $apiCallId;
+    $response = ob_get_contents();
+    log_api_response($apiCallId, $response);
+}
+ob_start();
+register_shutdown_function('log_api_call_response');
 
 $logger = new Logger();
 $response = ['success' => false, 'message' => 'Unknown error'];
@@ -117,4 +136,6 @@ try {
 }
 
 // Send response
-echo json_encode($response);
+$responseJSON = json_encode($response);
+register_shutdown_function('log_api_call_response', $conn, $apiCallId, $responseJSON);
+echo $responseJSON;
