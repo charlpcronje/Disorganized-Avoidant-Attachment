@@ -217,13 +217,18 @@ function formatDuration($seconds) {
     $seconds = (float)$seconds; // Ensure it's a float
     $minutes = floor($seconds / 60);
     $hours = floor($minutes / 60);
-    $minutes %= 60;
+    $minutes = $minutes % 60;
     $seconds = $seconds % 60;
 
+    // Explicitly cast to int before sprintf to avoid PHP 8.1+ warnings
+    $hours = (int)$hours;
+    $minutes = (int)$minutes;
+    $seconds = (int)round($seconds); // round to nearest int for safety
+
     if ($hours > 0) {
-        return sprintf('%d:%02d:%02d', (int)$hours, (int)$minutes, (int)$seconds);
+        return sprintf('%d:%02d:%02d', $hours, $minutes, $seconds);
     } else {
-        return sprintf('%d:%02d', (int)$minutes, (int)$seconds);
+        return sprintf('%d:%02d', $minutes, $seconds);
     }
 }
 
