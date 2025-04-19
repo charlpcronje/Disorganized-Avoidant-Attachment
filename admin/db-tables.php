@@ -3,6 +3,7 @@
 // Admin page to view all database tables in tabs
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
+require_once '../includes/db.php';
 
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
