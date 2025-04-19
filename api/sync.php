@@ -65,7 +65,9 @@ $input = json_decode($inputJSON, true);
 
 // Optionally store visitorName in PHP session for backend use
 if (isset($input['visitorName'])) {
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     $_SESSION['visitor_name'] = $input['visitorName'];
 }
 
