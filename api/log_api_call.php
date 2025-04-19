@@ -16,7 +16,6 @@ if (!function_exists('get_client_ip')) {
         return $_SERVER['REMOTE_ADDR'] ?? '';
     }
 }
-}
 
 function log_api_call($endpoint, $method, $headers, $body, $query_params, $ip_address) {
     $db = Database::getInstance();
