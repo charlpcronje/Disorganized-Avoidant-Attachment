@@ -186,8 +186,11 @@ function getPageViewCounts() {
     try {
         $query = "SELECT p.id, p.title, 
                  COUNT(CASE WHEN e.event_type = 'pageview' THEN 1 END) as views,
-                 AVG(CASE WHEN e.event_type = 'page_exit' THEN 
-                     JSON_EXTRACT(e.event_data, '$.duration') 
+                 AVG(CASE WHEN e.event_type = 'page_exit' 
+                          AND JSON_EXTRACT(e.event_data, '$.duration') IS NOT NULL
+                          AND JSON_EXTRACT(e.event_data, '$.duration') > 0
+                          AND JSON_EXTRACT(e.event_data, '$.duration') < 86400
+                     THEN JSON_EXTRACT(e.event_data, '$.duration') 
                  END) as avg_time,
                  COUNT(CASE WHEN e.event_type = 'tab_switch' THEN 1 END) as tab_switches
                  FROM pages p
