@@ -124,6 +124,11 @@ class Analytics {
     recordPageView() {
         if (!this.pageId) return;
 
+        // Prevent double-counting: Only log one pageview per page load
+        const pvKey = `pageview_${this.pageId}`;
+        if (sessionStorage.getItem(pvKey)) return;
+        sessionStorage.setItem(pvKey, '1');
+
         this.pendingEvents.push({
             type: 'pageview',
             pageId: this.pageId,
