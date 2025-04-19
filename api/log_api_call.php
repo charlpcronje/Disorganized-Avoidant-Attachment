@@ -4,7 +4,8 @@
 require_once '../includes/db.php';
 
 // Helper to get real client IP behind proxies
-function get_client_ip() {
+if (!function_exists('get_client_ip')) {
+    function get_client_ip() {
     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
         $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
         return trim($ip);

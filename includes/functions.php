@@ -164,6 +164,7 @@ function getSession() {
         $conn = $db->getConnection();
         
         $sessionId = session_id();
+
         // Use the visitor name from session if available, else fallback to cookie or random token
         if (isset($_SESSION['visitor_name'])) {
             $visitorId = $_SESSION['visitor_name'];
