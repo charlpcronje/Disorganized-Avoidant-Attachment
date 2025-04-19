@@ -138,6 +138,7 @@ $playbackEvents = getSessionEventsForPlayback($sessionId);
                         <?php foreach ($events as $event): ?>
                         <div class="timeline-item" data-timestamp="<?php echo strtotime($event['timestamp']); ?>">
                             <div class="timeline-time"><?php echo date('H:i:s', strtotime($event['timestamp'])); ?></div>
+                            <div class="timeline-visitor">Visitor: <?php echo htmlspecialchars($event['visitor_name'] ?? ''); ?></div>
                             <div class="timeline-content">
                                 <div class="timeline-event-type"><?php echo ucfirst(str_replace('_', ' ', $event['event_type'])); ?></div>
                                 <div class="timeline-details">

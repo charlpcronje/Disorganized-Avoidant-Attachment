@@ -8,6 +8,31 @@ require_once 'includes/db.php';
 require_once 'includes/functions.php';
 require_once 'includes/plugin-loader.php';
 
+session_start();
+
+// Handle name entry
+if (!isset($_SESSION['visitor_name'])) {
+    $error = '';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_name'])) {
+        $input_name = strtolower(trim($_POST['visitor_name']));
+        if (in_array($input_name, ['charl', 'nade'])) {
+            $_SESSION['visitor_name'] = ucfirst($input_name);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
+            exit;
+        } else {
+            $error = 'Name not recognized.';
+        }
+    }
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Enter Name</title>';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+    echo '<style>body{font-family:sans-serif;background:#f6f6f6;margin:0;padding:0;display:flex;align-items:center;justify-content:center;height:100vh;}form{background:#fff;padding:2em 2.5em;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}label{font-size:1.2em;}input[type=text]{font-size:1.1em;padding:0.5em;margin-top:0.5em;margin-bottom:1em;width:100%;border-radius:4px;border:1px solid #ccc;}button{padding:0.6em 2em;font-size:1em;border:none;border-radius:4px;background:#2e7d32;color:#fff;cursor:pointer;}button:hover{background:#256027;}p.error{color:#b71c1c;}</style>';
+    echo '</head><body><form method="post"><label for="visitor_name">Enter your name:</label><br><input type="text" id="visitor_name" name="visitor_name" autocomplete="off" required><br>';
+    if ($error) echo '<p class="error">' . htmlspecialchars($error) . '</p>';
+    echo '<button type="submit">Continue</button></form></body></html>';
+    exit;
+}
+$visitorName = $_SESSION['visitor_name'];
+
 // Initialize logger (Keep as is, assuming it works or isn't critical for page loading)
 $logger = new Logger();
 
@@ -90,6 +115,7 @@ if ($pageInfo && $sessionId) {
         window.BASE_URL = '<?php echo BASE_URL; ?>';
         window.SYNC_INTERVAL = <?php echo SYNC_INTERVAL; ?>;
         window.SCROLL_DEBOUNCE = <?php echo SCROLL_DEBOUNCE; ?>;
+        window.VISITOR_NAME = '<?php echo htmlspecialchars($visitorName); ?>';
     </script>
 </head>
 <!-- Uses the dynamically set page slug and ID -->

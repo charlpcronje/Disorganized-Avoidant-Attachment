@@ -247,8 +247,9 @@ function getSessionDetails($sessionId) {
         $session = $sessionResult->fetch_assoc();
         
         // Get all events for this session
-        $eventsQuery = "SELECT e.*, p.title as page_title 
+        $eventsQuery = "SELECT e.*, s.visitor_id as visitor_name, p.title as page_title, p.slug as page_slug
                        FROM events e
+                       JOIN sessions s ON e.session_id = s.id
                        JOIN pages p ON e.page_id = p.id
                        WHERE e.session_id = ?
                        ORDER BY e.timestamp ASC";
@@ -372,9 +373,10 @@ function exportEventsToCSV() {
     $logger = new Logger();
     
     try {
-        $query = "SELECT e.id, e.session_id, p.title as page_title, 
+        $query = "SELECT e.id, e.session_id, s.visitor_id as visitor_name, p.title as page_title, 
                  e.event_type, e.timestamp, e.event_data
                  FROM events e
+                 JOIN sessions s ON e.session_id = s.id
                  JOIN pages p ON e.page_id = p.id
                  ORDER BY e.timestamp DESC";
         $result = $conn->query($query);
@@ -392,6 +394,7 @@ function exportEventsToCSV() {
         fputcsv($output, [
             'Event ID',
             'Session ID',
+            'Visitor Name',
             'Page',
             'Event Type',
             'Timestamp',
@@ -403,6 +406,7 @@ function exportEventsToCSV() {
             fputcsv($output, [
                 $row['id'],
                 $row['session_id'],
+                $row['visitor_name'],
                 $row['page_title'],
                 $row['event_type'],
                 $row['timestamp'],

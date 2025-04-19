@@ -193,6 +193,7 @@ try {
                         <thead>
                             <tr>
                                 <th>Time</th>
+                                <th>Visitor</th>
                                 <th>Event Type</th>
                                 <th>Page</th>
                                 <th>Details</th>
@@ -202,6 +203,7 @@ try {
                             <?php foreach ($sessionDetails['events'] as $event): ?>
                             <tr>
                                 <td><?php echo date('H:i:s', strtotime($event['timestamp'])); ?></td>
+                                <td><?php echo htmlspecialchars($event['visitor_name'] ?? ''); ?></td>
                                 <td><?php echo ucfirst(str_replace('_', ' ', $event['event_type'])); ?></td>
                                 <td><?php echo htmlspecialchars($event['page_title']); ?></td>
                                 <td>

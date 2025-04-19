@@ -2,6 +2,9 @@
 // Detailed user behavior tracking system
 
 class Analytics {
+    getVisitorName() {
+        return window.VISITOR_NAME || '';
+    }
     constructor() {
         // Configuration
         this.syncInterval = window.SYNC_INTERVAL || 20000; // milliseconds
@@ -195,7 +198,8 @@ class Analytics {
                 path: this.scrollPositions.map(p => ({
                     y: p.position,
                     t: p.timestamp - this.scrollPositions[0].timestamp // Relative time
-                }))
+                })),
+                visitorName: this.getVisitorName()
             }
         });
 
@@ -216,7 +220,8 @@ class Analytics {
             data: {
                 url,
                 label,
-                position: position
+                position: position,
+                visitorName: this.getVisitorName()
             }
         });
 
@@ -238,7 +243,8 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 nextPageUrl,
-                position: position
+                position: position,
+                visitorName: this.getVisitorName()
             }
         });
 
@@ -259,7 +265,8 @@ class Analytics {
             data: {
                 tabId,
                 tabLabel,
-                position: position
+                position: position,
+                visitorName: this.getVisitorName()
             }
         });
 
@@ -278,7 +285,8 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 duration,
-                scrollPosition: window.scrollY
+                scrollPosition: window.scrollY,
+                visitorName: this.getVisitorName()
             }
         });
 
@@ -301,7 +309,8 @@ class Analytics {
             },
             body: JSON.stringify({
                 sessionId: this.sessionId,
-                events: events
+                events: events,
+                visitorName: this.getVisitorName()
             }),
             keepalive: forceSync, // Ensure data is sent even on page close
             mode: this.fetchMode // Use no-cors mode to handle CORS issues
