@@ -217,8 +217,8 @@ function formatDuration($seconds) {
     $seconds = (float)$seconds; // Ensure it's a float
     $minutes = floor($seconds / 60);
     $hours = floor($minutes / 60);
-    $minutes = $minutes % 60;
-    $seconds = $seconds % 60;
+    $minutes = (int)($minutes % 60);
+    $seconds = (int)($seconds % 60);
 
     // Explicitly cast to int before sprintf to avoid PHP 8.1+ warnings
     $hours = (int)$hours;
