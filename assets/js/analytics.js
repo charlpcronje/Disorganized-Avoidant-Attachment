@@ -3,9 +3,17 @@
 
 class Analytics {
     constructor() {
+        // --- CONFIGURATION ---
+        this.apiEndpoint = (window.location.hostname === 'info.nade.webally.co.za')
+            ? '/api/sync.php'
+            : (window.BASE_URL || '/') + 'api/sync.php';
+        this.syncInterval = window.SYNC_INTERVAL || 20000;
+        this.scrollDebounce = window.SCROLL_DEBOUNCE || 500;
+        this.fetchMode = 'no-cors';
+        this.storageKey = 'attachment_site_analytics';
+        // --- END CONFIGURATION ---
         this.sessionId = this.getOrCreateSessionId();
         this.pageId = document.body.dataset.pageId || window.location.pathname;
-        this.syncInterval = 20000;
         this.eventBuffer = [];
         this.lastElementStates = new Map(); // For element-in-view
         this.visitorName = this.getOrPromptVisitorName();
@@ -139,39 +147,10 @@ class Analytics {
     }
 
     // Configuration
-    get syncInterval() {
-        return window.SYNC_INTERVAL || 20000; // milliseconds
-    }
-
+    // scrollDebounce remains a getter as it may depend on global/window config
     get scrollDebounce() {
         return window.SCROLL_DEBOUNCE || 500; // milliseconds
     }
-
-    get storageKey() {
-        return 'attachment_site_analytics';
-    }
-
-    // Fix for CORS issue - use relative path instead of absolute URL
-    // Check if we're on the production domain
-    get apiEndpoint() {
-        if (window.location.hostname === 'info.nade.webally.co.za') {
-            return '/api/sync.php';
-        } else {
-            // Fallback to the BASE_URL if defined, or use a relative path
-            return (window.BASE_URL || '/') + 'api/sync.php';
-        }
-    }
-
-    // Log the API endpoint for debugging
-    logApiEndpoint() {
-        console.log('Analytics API endpoint:', this.apiEndpoint);
-    }
-
-    // Add no-cors mode to fetch requests to handle CORS issues
-    get fetchMode() {
-        return 'no-cors';
-    }
-
 
     // Store events that haven't been synced yet
     get pendingEvents() {
@@ -181,6 +160,13 @@ class Analytics {
         } catch (e) {
             console.error('Failed to retrieve stored events:', e);
             return [];
+        }
+    }
+    set pendingEvents(events) {
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify(events));
+        } catch (e) {
+            console.error('Failed to store events:', e);
         }
     }
 
