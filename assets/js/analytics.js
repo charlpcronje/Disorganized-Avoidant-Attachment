@@ -170,13 +170,6 @@ class Analytics {
         return 'no-cors';
     }
 
-    get pageId() {
-        return document.body.dataset.pageId || null;
-    }
-
-    get sessionId() {
-        return document.body.dataset.sessionId || null;
-    }
 
     // Store events that haven't been synced yet
     get pendingEvents() {
