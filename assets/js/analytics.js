@@ -16,7 +16,7 @@ class Analytics {
         this.pageId = document.body.dataset.pageId || window.location.pathname;
         this.eventBuffer = [];
         this.lastElementStates = new Map(); // For element-in-view
-        this.visitorName = this.getVisitorName();
+        
         this.init();
         // Log the resolved API endpoint for diagnostics
         console.log('[Analytics] Using API endpoint:', this.apiEndpoint);

@@ -63,13 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
 
-// Optionally store visitorName in PHP session for backend use
-if (isset($input['visitorName'])) {
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    $_SESSION['visitor_name'] = $input['visitorName'];
-}
+
 
 // Validate input
 if (json_last_error() !== JSON_ERROR_NONE || !isset($input['sessionId']) || !isset($input['events']) || !is_array($input['events'])) {
@@ -98,14 +92,9 @@ $conn->begin_transaction();
 
 try {
     // Update session end time and visitor name if provided
-    if (isset($input['visitorName']) && !empty($input['visitorName'])) {
-        $stmt = $conn->prepare("UPDATE sessions SET end_time = CURRENT_TIMESTAMP, total_duration = TIMESTAMPDIFF(SECOND, start_time, CURRENT_TIMESTAMP), visitor_id = ? WHERE id = ?");
-        $stmt->bind_param("si", $input['visitorName'], $sessionId);
-    } else {
-        $stmt = $conn->prepare("UPDATE sessions SET end_time = CURRENT_TIMESTAMP, total_duration = TIMESTAMPDIFF(SECOND, start_time, CURRENT_TIMESTAMP) WHERE id = ?");
-        $stmt->bind_param("i", $sessionId);
-    }
-    $stmt->execute();
+    $stmt = $conn->prepare("UPDATE sessions SET end_time = CURRENT_TIMESTAMP, total_duration = TIMESTAMPDIFF(SECOND, start_time, CURRENT_TIMESTAMP) WHERE id = ?");
+$stmt->bind_param("i", $sessionId);
+$stmt->execute();
 
     // Process each event
     $successCount = 0;
@@ -123,7 +112,7 @@ try {
         $eventType = $event['type'];
         
         // Always attach visitor name to every event
-        $visitorName = isset($input['visitorName']) ? $input['visitorName'] : (isset($_SESSION['visitor_name']) ? $_SESSION['visitor_name'] : null);
+        $visitorName = isset($_SESSION['visitor_name']) ? $_SESSION['visitor_name'] : null;
         $eventDataArr = $event['data'];
         $eventDataArr['visitorName'] = $visitorName;
         $eventData = json_encode($eventDataArr);
