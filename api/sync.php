@@ -27,6 +27,8 @@ $headers = json_encode(getallheaders());
 $body = file_get_contents('php://input');
 $query_params = json_encode($_GET);
 $logger = new Logger();
+// Ensure database connection is available
+$conn = Database::getInstance()->getConnection();
 function get_client_ip() {
     global $logger;
     $logger->info('get_client_ip() called');
