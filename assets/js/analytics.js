@@ -492,10 +492,31 @@ class Analytics {
         });
 
         // Save the fixed events
-        this.saveEvents();
-        console.log('Event types fixed, will retry on next sync interval');
-    }
 }
 
-// Initialize analytics when DOM is loaded
-window.analytics = new Analytics();
+}
+
+// Proxy handler to log all gets, sets, and method calls
+const analyticsHandler = {
+    get(target, prop, receiver) {
+        const value = Reflect.get(target, prop, receiver);
+        if (typeof value === 'function') {
+            return function (...args) {
+                console.log(`[Analytics Proxy] Method call: ${String(prop)}`, args);
+                const result = value.apply(this === receiver ? target : this, args);
+                console.log(`[Analytics Proxy] Method result: ${String(prop)}`, result);
+                return result;
+            };
+        } else {
+            console.log(`[Analytics Proxy] Get property: ${String(prop)}`, value);
+            return value;
+        }
+    },
+    set(target, prop, value, receiver) {
+        console.log(`[Analytics Proxy] Set property: ${String(prop)}`, value);
+        return Reflect.set(target, prop, value, receiver);
+    }
+};
+
+// Initialize analytics when DOM is loaded with proxy
+window.analytics = new Proxy(new Analytics(), analyticsHandler);
