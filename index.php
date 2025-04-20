@@ -12,17 +12,22 @@ require_once 'includes/plugin-loader.php';
 // Handle name entry (ALWAYS require a valid visitor name before any page logic)
 if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
     $error = '';
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_name'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_name'], $_POST['password'])) {
         $input_name = strtolower(trim($_POST['visitor_name']));
+        $input_password = trim($_POST['password']);
         if (in_array($input_name, ['charl', 'nade'])) {
-            $_SESSION['visitor_name'] = ucfirst($input_name);
-            header('Location: ' . $_SERVER['REQUEST_URI']);
-            exit;
+            if ($input_password === 'nade1234') {
+                $_SESSION['visitor_name'] = ucfirst($input_name);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
+                exit;
+            } else {
+                $error = 'Incorrect password.';
+            }
         } else {
             $error = 'Name not recognized.';
         }
     }
-    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Private Access – Enter Name</title>';
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Private Access – Enter Name & Password</title>';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     echo '<style>
         body { font-family: "Segoe UI", Arial, sans-serif; background: #181a20; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; color: #f2f2f2; }
@@ -30,8 +35,8 @@ if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
         h1 { margin-top: 0; font-size: 1.7em; color: #fff; }
         p.desc { color: #b0b8c1; margin-bottom: 1.5em; font-size: 1.09em; }
         label { font-size: 1.17em; color: #f2f2f2; }
-        input[type=text] { font-size: 1.1em; padding: 0.6em; margin-top: 0.6em; margin-bottom: 1.3em; width: 100%; border-radius: 5px; border: 1px solid #444; background: #22242b; color: #f2f2f2; transition: border 0.2s; }
-        input[type=text]:focus { border: 1.5px solid #5e81ff; outline: none; }
+        input[type=text], input[type=password] { font-size: 1.1em; padding: 0.6em; margin-top: 0.6em; margin-bottom: 1.3em; width: 100%; border-radius: 5px; border: 1px solid #444; background: #22242b; color: #f2f2f2; transition: border 0.2s; }
+        input[type=text]:focus, input[type=password]:focus { border: 1.5px solid #5e81ff; outline: none; }
         button { padding: 0.7em 2.3em; font-size: 1.08em; border: none; border-radius: 5px; background: linear-gradient(90deg, #5e81ff 0%, #3c60e7 100%); color: #fff; cursor: pointer; font-weight: 600; letter-spacing: 0.02em; transition: background 0.2s; }
         button:hover { background: linear-gradient(90deg, #3c60e7 0%, #5e81ff 100%); }
         p.error { color: #ff4e4e; margin-top: 0.5em; }
@@ -39,19 +44,21 @@ if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
     </style>';
     echo '</head><body><form method="post">';
     echo '<h1>Private Website Access</h1>';
-    echo '<p class="desc">The website is private. Please enter your name to proceed.</p>';
+    echo '<p class="desc">The website is private. Please enter your name and password to proceed.</p>';
     echo '<label for="visitor_name">Enter your name:</label><br>';
     echo '<input type="text" id="visitor_name" name="visitor_name" autocomplete="off" required><br>';
+    echo '<label for="password">Password:</label><br>';
+    echo '<input type="password" id="password" name="password" autocomplete="off" required><br>';
     if ($error) echo '<p class="error">' . htmlspecialchars($error) . '</p>';
     echo '<button type="submit">Continue</button>';
-    echo '<div class="why">Why is this happening?<br>This website is private and will only grant one person access. Since the name is only known to the intended recipient, this is more than enough security without requiring anyone to remember passwords.</div>';
+    echo '<div class="why">Why is this happening?<br>This website is private and will only grant one person access. Since the name and password are only known to the intended recipients, this is more than enough security without requiring anyone to remember complex passwords.</div>';
     echo '</form></body></html>';
     exit;
 }
 $visitorName = $_SESSION['visitor_name'];
 
-// Initialize logger (Keep as is, assuming it works or isn't critical for page loading)
-$logger = new Logger();
+// Initialize logLoggerger (Keep as is, assuming it works or isn't critical for page loading)
+$logger = new ();
 
 // Get session ID for analytics (Keep as is)
 $sessionId = getSession();
