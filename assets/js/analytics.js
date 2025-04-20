@@ -15,7 +15,7 @@ class Analytics {
         // --- END CONFIGURATION ---
         this.sessionId = this.getOrCreateSessionId();
         this.pageId = document.body.dataset.pageId || window.location.pathname;
-        this.eventBuffer = [];
+
         this.lastElementStates = new Map(); // For element-in-view
         
         this.init();
@@ -42,13 +42,17 @@ class Analytics {
     }
 
     logEvent(type, data = {}) {
-        this.eventBuffer.push({
+        // Push to persistent pendingEvents for robust analytics
+        const events = this.pendingEvents;
+        events.push({
             type,
             pageId: this.pageId,
             sessionId: this.sessionId,
             timestamp: Date.now(),
             data
         });
+        this.pendingEvents = events;
+        this.saveEvents();
     }
 
     bindScroll() {
@@ -110,31 +114,58 @@ class Analytics {
         });
     }
 
+    // Only one correct startSyncInterval and syncEvents should exist
     startSyncInterval() {
-        console.log("starting sync interval:",this.syncInterval);
+        console.log("starting sync interval:", this.syncInterval);
         setInterval(() => this.syncEvents(), this.syncInterval);
     }
 
-    syncEvents() {
-        if (this.eventBuffer.length === 0) {
-            console.log("no events to sync");
-            return;
-        }
-        const events = this.eventBuffer.slice();
-        console.log("syncing events", this.eventBuffer.length);
-        this.eventBuffer = [];
+    // Sync events with server
+    syncEvents(forceSync = false) {
+        if (this.pendingEvents.length === 0) return;
+
+        // Don't sync small batches unless forced
+        if (this.pendingEvents.length < 5 && !forceSync) return;
+
+        const events = [...this.pendingEvents];
+
         fetch(this.apiEndpoint, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sessionId: this.sessionId, pageId: this.pageId, events })
-        }).catch((err) => {
-            // On failure, re-buffer events for next sync
-            this.eventBuffer = events.concat(this.eventBuffer);
-            console.error('[Analytics] Failed to sync events:', err, 'Endpoint:', this.apiEndpoint);
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                sessionId: this.sessionId,
+                events: events
+            }),
+            keepalive: forceSync, // Ensure data is sent even on page close
+            mode: this.fetchMode // Use no-cors mode to handle CORS issues
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Remove synced events from pending list
+                this.pendingEvents = this.pendingEvents.filter(
+                    event => !events.some(e => e.timestamp === event.timestamp && e.type === event.type)
+                );
+                this.saveEvents();
+                console.log('Analytics events synced successfully:', data);
+            } else {
+                // Log server-side errors
+                console.error('Server error syncing analytics events:', data.message);
+
+                // If there's a data truncation error, fix the event types
+                if (data.message && data.message.includes('Data truncated for column')) {
+                    console.warn('Fixing truncated event types...');
+                    this.fixTruncatedEventTypes();
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Failed to sync analytics events:', error);
         });
     }
 
-    // Configuration
 
     // Store events that haven't been synced yet
     get pendingEvents() {
