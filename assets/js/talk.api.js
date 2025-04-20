@@ -140,7 +140,8 @@ class TalkAPI {
                         talkId: section.id,
                         voice,
                         text,
-                        audioUrl
+                        audioUrl,
+                        
                     }
                 });
                 window.siteAnalytics.saveEvents();

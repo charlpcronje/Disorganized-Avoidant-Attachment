@@ -16,7 +16,7 @@ class Analytics {
         this.pageId = document.body.dataset.pageId || window.location.pathname;
         this.eventBuffer = [];
         this.lastElementStates = new Map(); // For element-in-view
-        this.visitorName = this.getOrPromptVisitorName();
+        this.visitorName = this.getVisitorName();
         this.init();
         // Log the resolved API endpoint for diagnostics
         console.log('[Analytics] Using API endpoint:', this.apiEndpoint);
@@ -44,19 +44,9 @@ class Analytics {
             type,
             pageId: this.pageId,
             sessionId: this.sessionId,
-            visitorName: this.visitorName,
             timestamp: Date.now(),
             data
         });
-    }
-
-    getOrPromptVisitorName() {
-        let name = sessionStorage.getItem('analytics_visitor_name');
-        if (!name) {
-            name = 'Anonymous';
-            sessionStorage.setItem('analytics_visitor_name', name);
-        }
-        return name;
     }
 
     bindScroll() {
@@ -135,10 +125,6 @@ class Analytics {
             this.eventBuffer = events.concat(this.eventBuffer);
             console.error('[Analytics] Failed to sync events:', err, 'Endpoint:', this.apiEndpoint);
         });
-    }
-
-    getVisitorName() {
-        return window.VISITOR_NAME || '';
     }
 
     // Configuration
@@ -310,8 +296,7 @@ class Analytics {
                 path: this.scrollPositions.map(p => ({
                     y: p.position,
                     t: p.timestamp - this.scrollPositions[0].timestamp // Relative time
-                })),
-                visitorName: this.getVisitorName()
+                }))
             }
         });
 
@@ -332,8 +317,7 @@ class Analytics {
             data: {
                 url,
                 label,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -355,8 +339,7 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 nextPageUrl,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -377,8 +360,7 @@ class Analytics {
             data: {
                 tabId,
                 tabLabel,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -397,8 +379,7 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 duration,
-                scrollPosition: window.scrollY,
-                visitorName: this.getVisitorName()
+                scrollPosition: window.scrollY
             }
         });
 
@@ -421,8 +402,7 @@ class Analytics {
             },
             body: JSON.stringify({
                 sessionId: this.sessionId,
-                events: events,
-                visitorName: this.getVisitorName()
+                events: events
             }),
             keepalive: forceSync, // Ensure data is sent even on page close
             mode: this.fetchMode // Use no-cors mode to handle CORS issues

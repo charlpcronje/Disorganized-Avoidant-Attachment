@@ -132,7 +132,7 @@ if ($pageInfo && $sessionId) {
         window.BASE_URL = '<?php echo BASE_URL; ?>';
         window.SYNC_INTERVAL = <?php echo SYNC_INTERVAL; ?>;
         window.SCROLL_DEBOUNCE = <?php echo SCROLL_DEBOUNCE; ?>;
-        window.VISITOR_NAME = '<?php echo htmlspecialchars($visitorName); ?>';
+
     </script>
 </head>
 <!-- Uses the dynamically set page slug and ID -->
