@@ -33,10 +33,10 @@ class Analytics {
     }
 
     getOrCreateSessionId() {
-        let id = localStorage.getItem('analytics_session_id');
+        let id = sessionStorage.getItem('analytics_session_id');
         if (!id) {
             id = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-            localStorage.setItem('analytics_session_id', id);
+            sessionStorage.setItem('analytics_session_id', id);
         }
         return id;
     }

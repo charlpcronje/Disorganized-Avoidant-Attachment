@@ -73,15 +73,41 @@ if (json_last_error() !== JSON_ERROR_NONE || !isset($input['sessionId']) || !iss
     exit;
 }
 
-$sessionId = intval($input['sessionId']);
+$frontendSessionId = $input['sessionId'];
 $events = $input['events'];
 
 // Validate session ID
-if ($sessionId <= 0) {
+if (!isset($frontendSessionId) || trim($frontendSessionId) === '') {
     $response['message'] = 'Invalid session ID';
-    $logger->error('Sync API: Invalid session ID: ' . $sessionId);
+    $logger->error('Sync API: Invalid session ID: ' . print_r($frontendSessionId, true));
     echo json_encode($response);
     exit;
+}
+
+// Find or create session in the sessions table
+// sessions table has a unique 'session_id' (varchar) and an auto-increment 'id' column
+$sessionLookupStmt = $conn->prepare("SELECT id FROM sessions WHERE session_id = ? LIMIT 1");
+$sessionLookupStmt->bind_param("s", $frontendSessionId);
+$sessionLookupStmt->execute();
+$sessionLookupStmt->bind_result($sessionRowId);
+$found = $sessionLookupStmt->fetch();
+$sessionLookupStmt->close();
+
+if ($found && $sessionRowId) {
+    $sessionId = $sessionRowId;
+} else {
+    // Insert new session row
+    $insertSessionStmt = $conn->prepare("INSERT INTO sessions (session_id, start_time) VALUES (?, CURRENT_TIMESTAMP)");
+    $insertSessionStmt->bind_param("s", $frontendSessionId);
+    if ($insertSessionStmt->execute()) {
+        $sessionId = $conn->insert_id;
+    } else {
+        $response['message'] = 'Failed to create session';
+        $logger->error('Sync API: Failed to insert session: ' . $conn->error);
+        echo json_encode($response);
+        exit;
+    }
+    $insertSessionStmt->close();
 }
 
 $db = Database::getInstance();
@@ -101,6 +127,9 @@ $stmt->execute();
     $errorCount = 0;
 
     $insertStmt = $conn->prepare("INSERT INTO events (session_id, page_id, event_type, event_data) VALUES (?, ?, ?, ?)");
+
+    // Bind session_id as string (s) instead of integer (i)
+    // The bind_param call will be updated at the point of execution below.
 
     foreach ($events as $event) {
         if (!isset($event['type']) || !isset($event['pageId']) || !isset($event['timestamp']) || !isset($event['data'])) {
