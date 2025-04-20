@@ -5,12 +5,13 @@ class Analytics {
     constructor() {
         this.sessionId = this.getOrCreateSessionId();
         this.pageId = document.body.dataset.pageId || window.location.pathname;
-        this.apiEndpoint = '/api/sync.php';
         this.syncInterval = 20000;
         this.eventBuffer = [];
         this.lastElementStates = new Map(); // For element-in-view
         this.visitorName = this.getOrPromptVisitorName();
         this.init();
+        // Log the resolved API endpoint for diagnostics
+        console.log('[Analytics] Using API endpoint:', this.apiEndpoint);
     }
 
     init() {
@@ -126,9 +127,10 @@ class Analytics {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ sessionId: this.sessionId, pageId: this.pageId, events })
-        }).catch(() => {
+        }).catch((err) => {
             // On failure, re-buffer events for next sync
             this.eventBuffer = events.concat(this.eventBuffer);
+            console.error('[Analytics] Failed to sync events:', err, 'Endpoint:', this.apiEndpoint);
         });
     }
 
