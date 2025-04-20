@@ -79,6 +79,18 @@ function getPageBySlug($slug) {
     return null;
 }
 
+// Canonical IP detection: prefer X-Real-IP, then X-Forwarded-For, then REMOTE_ADDR
+function get_client_ip() {
+    if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+        return $_SERVER['HTTP_X_REAL_IP'];
+    }
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+        return trim($ip);
+    }
+    return $_SERVER['REMOTE_ADDR'] ?? '';
+}
+
 // Get next page
 function getNextPage($currentOrder) {
     $db = Database::getInstance();
