@@ -53,13 +53,8 @@ class Analytics {
     getOrPromptVisitorName() {
         let name = sessionStorage.getItem('analytics_visitor_name');
         if (!name) {
-            name = prompt('Please enter your name for this session:');
-            if (name) {
-                sessionStorage.setItem('analytics_visitor_name', name);
-            } else {
-                name = 'Anonymous';
-                sessionStorage.setItem('analytics_visitor_name', name);
-            }
+            name = 'Anonymous';
+            sessionStorage.setItem('analytics_visitor_name', name);
         }
         return name;
     }

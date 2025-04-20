@@ -22,12 +22,30 @@ if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
             $error = 'Name not recognized.';
         }
     }
-    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Enter Name</title>';
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Private Access – Enter Name</title>';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-    echo '<style>body{font-family:sans-serif;background:#f6f6f6;margin:0;padding:0;display:flex;align-items:center;justify-content:center;height:100vh;}form{background:#fff;padding:2em 2.5em;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}label{font-size:1.2em;}input[type=text]{font-size:1.1em;padding:0.5em;margin-top:0.5em;margin-bottom:1em;width:100%;border-radius:4px;border:1px solid #ccc;}button{padding:0.6em 2em;font-size:1em;border:none;border-radius:4px;background:#2e7d32;color:#fff;cursor:pointer;}button:hover{background:#256027;}p.error{color:#b71c1c;}</style>';
-    echo '</head><body><form method="post"><label for="visitor_name">Enter your name:</label><br><input type="text" id="visitor_name" name="visitor_name" autocomplete="off" required><br>';
+    echo '<style>
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #181a20; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; color: #f2f2f2; }
+        form { background: #23262f; padding: 2.5em 2.8em; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.4); min-width: 350px; }
+        h1 { margin-top: 0; font-size: 1.7em; color: #fff; }
+        p.desc { color: #b0b8c1; margin-bottom: 1.5em; font-size: 1.09em; }
+        label { font-size: 1.17em; color: #f2f2f2; }
+        input[type=text] { font-size: 1.1em; padding: 0.6em; margin-top: 0.6em; margin-bottom: 1.3em; width: 100%; border-radius: 5px; border: 1px solid #444; background: #22242b; color: #f2f2f2; transition: border 0.2s; }
+        input[type=text]:focus { border: 1.5px solid #5e81ff; outline: none; }
+        button { padding: 0.7em 2.3em; font-size: 1.08em; border: none; border-radius: 5px; background: linear-gradient(90deg, #5e81ff 0%, #3c60e7 100%); color: #fff; cursor: pointer; font-weight: 600; letter-spacing: 0.02em; transition: background 0.2s; }
+        button:hover { background: linear-gradient(90deg, #3c60e7 0%, #5e81ff 100%); }
+        p.error { color: #ff4e4e; margin-top: 0.5em; }
+        .why { font-size: 0.97em; color: #7c8591; margin-top: 2em; }
+    </style>';
+    echo '</head><body><form method="post">';
+    echo '<h1>Private Website Access</h1>';
+    echo '<p class="desc">The website is private. Please enter your name to proceed.</p>';
+    echo '<label for="visitor_name">Enter your name:</label><br>';
+    echo '<input type="text" id="visitor_name" name="visitor_name" autocomplete="off" required><br>';
     if ($error) echo '<p class="error">' . htmlspecialchars($error) . '</p>';
-    echo '<button type="submit">Continue</button></form></body></html>';
+    echo '<button type="submit">Continue</button>';
+    echo '<div class="why">Why is this happening?<br>This website is private and will only grant one person access. Since the name is only known to the intended recipient, this is more than enough security without requiring anyone to remember passwords.</div>';
+    echo '</form></body></html>';
     exit;
 }
 $visitorName = $_SESSION['visitor_name'];
