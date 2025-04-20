@@ -29,23 +29,6 @@ $query_params = json_encode($_GET);
 $logger = new Logger();
 // Ensure database connection is available
 $conn = Database::getInstance()->getConnection();
-function get_client_ip() {
-    global $logger;
-    $logger->info('get_client_ip() called');
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
-        $logger->info('get_client_ip() using HTTP_X_FORWARDED_FOR: ' . $ip);
-        return trim($ip);
-    }
-    if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
-        $logger->info('get_client_ip() using HTTP_X_REAL_IP: ' . $_SERVER['HTTP_X_REAL_IP']);
-        return $_SERVER['HTTP_X_REAL_IP'];
-    }
-    $logger->info('get_client_ip() using REMOTE_ADDR: ' . ($_SERVER['REMOTE_ADDR'] ?? ''));
-    return $_SERVER['REMOTE_ADDR'] ?? '';
-}
-$logger->info('get_client_ip() finished');
-
 $ip_address = get_client_ip();
 $apiCallId = log_api_call($endpoint, $method, $headers, $body, $query_params, $ip_address);
 
