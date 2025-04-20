@@ -107,10 +107,83 @@ class Analytics {
         // Track all audio/video/talk-tag elements
         const medias = document.querySelectorAll('audio, video, .talk-tag');
         medias.forEach(media => {
-            media.addEventListener('play', () => this.logEvent('media_play', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('pause', () => this.logEvent('media_pause', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('seeked', () => this.logEvent('media_seek', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('volumechange', () => this.logEvent('media_volume', { id: media.id || media.className, volume: media.volume }));
+            const mediaType = media.tagName.toLowerCase();
+            let playInterval = null;
+
+            // Track play event
+            media.addEventListener('play', () => {
+                this.logEvent('media_play', {
+                    id: media.id || media.className,
+                    currentTime: media.currentTime,
+                    duration: media.duration,
+                    src: media.src || media.currentSrc,
+                    type: mediaType
+                });
+                // Start interval to log every second while playing
+                if (!playInterval) {
+                    playInterval = setInterval(() => {
+                        if (!media.paused && !media.ended) {
+                            this.logEvent('media_progress', {
+                                id: media.id || media.className,
+                                currentTime: media.currentTime,
+                                duration: media.duration,
+                                src: media.src || media.currentSrc,
+                                type: mediaType
+                            });
+                        }
+                    }, 1000);
+                }
+            });
+
+            // Track pause event
+            media.addEventListener('pause', () => {
+                this.logEvent('media_pause', {
+                    id: media.id || media.className,
+                    currentTime: media.currentTime,
+                    duration: media.duration,
+                    src: media.src || media.currentSrc,
+                    type: mediaType
+                });
+                if (playInterval) {
+                    clearInterval(playInterval);
+                    playInterval = null;
+                }
+            });
+
+            // Track ended event
+            media.addEventListener('ended', () => {
+                this.logEvent('media_ended', {
+                    id: media.id || media.className,
+                    currentTime: media.currentTime,
+                    duration: media.duration,
+                    src: media.src || media.currentSrc,
+                    type: mediaType
+                });
+                if (playInterval) {
+                    clearInterval(playInterval);
+                    playInterval = null;
+                }
+            });
+
+            // Track seek event
+            media.addEventListener('seeked', () => {
+                this.logEvent('media_seek', {
+                    id: media.id || media.className,
+                    currentTime: media.currentTime,
+                    duration: media.duration,
+                    src: media.src || media.currentSrc,
+                    type: mediaType
+                });
+            });
+
+            // Track volume change
+            media.addEventListener('volumechange', () => {
+                this.logEvent('media_volume', {
+                    id: media.id || media.className,
+                    volume: media.volume,
+                    type: mediaType
+                });
+            });
         });
     }
 
