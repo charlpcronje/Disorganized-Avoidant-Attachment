@@ -42,13 +42,16 @@ class Analytics {
     }
 
     logEvent(type, data = {}) {
+        // Ensure every event's data includes a timestamp (for playback)
+        const now = Date.now();
+        data.timestamp = now;
         // Push to persistent pendingEvents for robust analytics
         const events = this.pendingEvents;
         events.push({
             type,
             pageId: this.pageId,
             sessionId: this.sessionId,
-            timestamp: Date.now(),
+            timestamp: now,
             data
         });
         this.pendingEvents = events;
@@ -106,12 +109,15 @@ class Analytics {
     bindMedia() {
         // Track all audio/video/talk-tag elements
         const medias = document.querySelectorAll('audio, video, .talk-tag');
+        console.log('[Analytics] bindMedia: Found', medias.length, 'media elements');
         medias.forEach(media => {
             const mediaType = media.tagName.toLowerCase();
             let playInterval = null;
+            console.log(`[Analytics] bindMedia: Setting up for`, mediaType, media.id || media.className, media);
 
             // Track play event
             media.addEventListener('play', () => {
+                console.log('[Analytics] media_play event fired for', mediaType, media.id || media.className, media.currentTime);
                 this.logEvent('media_play', {
                     id: media.id || media.className,
                     currentTime: media.currentTime,
@@ -123,6 +129,7 @@ class Analytics {
                 if (!playInterval) {
                     playInterval = setInterval(() => {
                         if (!media.paused && !media.ended) {
+                            console.log('[Analytics] media_progress event for', mediaType, media.id || media.className, media.currentTime);
                             this.logEvent('media_progress', {
                                 id: media.id || media.className,
                                 currentTime: media.currentTime,
@@ -137,6 +144,7 @@ class Analytics {
 
             // Track pause event
             media.addEventListener('pause', () => {
+                console.log('[Analytics] media_pause event fired for', mediaType, media.id || media.className, media.currentTime);
                 this.logEvent('media_pause', {
                     id: media.id || media.className,
                     currentTime: media.currentTime,
@@ -152,6 +160,7 @@ class Analytics {
 
             // Track ended event
             media.addEventListener('ended', () => {
+                console.log('[Analytics] media_ended event fired for', mediaType, media.id || media.className, media.currentTime);
                 this.logEvent('media_ended', {
                     id: media.id || media.className,
                     currentTime: media.currentTime,
@@ -167,6 +176,7 @@ class Analytics {
 
             // Track seek event
             media.addEventListener('seeked', () => {
+                console.log('[Analytics] media_seek event fired for', mediaType, media.id || media.className, media.currentTime);
                 this.logEvent('media_seek', {
                     id: media.id || media.className,
                     currentTime: media.currentTime,
@@ -178,6 +188,7 @@ class Analytics {
 
             // Track volume change
             media.addEventListener('volumechange', () => {
+                console.log('[Analytics] media_volume event fired for', mediaType, media.id || media.className, media.volume);
                 this.logEvent('media_volume', {
                     id: media.id || media.className,
                     volume: media.volume,
