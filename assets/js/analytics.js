@@ -147,10 +147,6 @@ class Analytics {
     }
 
     // Configuration
-    // scrollDebounce remains a getter as it may depend on global/window config
-    get scrollDebounce() {
-        return window.SCROLL_DEBOUNCE || 500; // milliseconds
-    }
 
     // Store events that haven't been synced yet
     get pendingEvents() {
