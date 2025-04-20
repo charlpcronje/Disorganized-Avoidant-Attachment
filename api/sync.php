@@ -120,10 +120,12 @@ if ($found && $sessionRowId) {
 } else {
     $logger->info('No session found. Inserting new session for session_id: ' . $frontendSessionId);
     // Insert new session row
-    $insertSessionStmt = $conn->prepare("INSERT INTO sessions (session_id, start_time) VALUES (?, CURRENT_TIMESTAMP)");
+    $visitorName = isset($_SESSION['visitor_name']) ? $_SESSION['visitor_name'] : null;
+    $logger->info('Visitor name for session insert: ' . print_r($visitorName, true));
+    $insertSessionStmt = $conn->prepare("INSERT INTO sessions (session_id, visitor_id, start_time) VALUES (?, ?, CURRENT_TIMESTAMP)");
     $logger->info('Prepared insert statement for new session.');
-    $insertSessionStmt->bind_param("s", $frontendSessionId);
-    $logger->info('Bound param for new session insert.');
+    $insertSessionStmt->bind_param("ss", $frontendSessionId, $visitorName);
+    $logger->info('Bound params for new session insert. session_id=' . $frontendSessionId . ', visitor_id=' . $visitorName);
     if ($insertSessionStmt->execute()) {
         $sessionId = $conn->insert_id;
         $logger->info('Inserted new session. New sessionId: ' . $sessionId);

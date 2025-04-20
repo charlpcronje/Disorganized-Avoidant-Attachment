@@ -174,7 +174,7 @@ function getSession() {
             $visitorId = generateToken();
         }
         $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
-        $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '';
+        $ipAddress = get_client_ip();
         $referrer = $_SERVER['HTTP_REFERER'] ?? '';
         $isMobile = preg_match('/(android|iphone|ipad|mobile)/i', $userAgent) ? 1 : 0;
         
