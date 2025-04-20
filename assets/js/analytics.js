@@ -3,6 +3,7 @@
 
 class Analytics {
     constructor() {
+        console.log('[Analytics] Initializing... 1');
         // --- CONFIGURATION ---
         this.apiEndpoint = (window.location.hostname === 'info.nade.webally.co.za')
             ? '/api/sync.php'
@@ -23,6 +24,7 @@ class Analytics {
     }
 
     init() {
+        console.log('[Analytics] Initializing... 2');
         this.bindScroll();
         this.bindClicks();
         this.bindElementInView();
@@ -468,6 +470,4 @@ class Analytics {
 }
 
 // Initialize analytics when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    window.analytics = new Analytics();
-});
+window.analytics = new Analytics();
