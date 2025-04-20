@@ -12,6 +12,7 @@
 
 <div class="content-container page-content">
     <!-- Podcast placeholder -->
+     <!--
     <div style="margin: 30px 0; text-align: center;">
         <h3>🎧 Listen: Overview on how it affected you</h3>
         <p>This podcast is about the research but but a bit practical, it is how avoidane affected you personal life</p>
@@ -20,10 +21,8 @@
             Your browser does not support the audio element.
         </audio>
     </div>
-
+    -->
     <talk voice="ash">
-        <h2>Lies, Deflection, and Blaming Loved Ones</h2>
-
         <p>To cope with their intense fear of intimacy and the shame they carry, disorganized avoidants often resort to <strong>dishonesty and deflection</strong>. Importantly, these are usually <em>reflexive, unconscious tactics</em> - not calculated manipulation. The person is often <em>not fully aware</em> that they are lying or shifting blame; they are instinctively trying to protect themselves from emotional discomfort or perceived danger. This can manifest as withholding information, making excuses, or even gaslighting-type behaviors (unintentionally) when confronted about their withdrawal or other hurtful actions.</p>
     </talk>
     <div class="example-container" id="example-denying-feelings">
