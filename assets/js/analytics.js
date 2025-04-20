@@ -111,6 +111,7 @@ class Analytics {
     }
 
     startSyncInterval() {
+        console.log("starting sync interval:",this.syncInterval);
         setInterval(() => this.syncEvents(), this.syncInterval);
     }
 
@@ -212,11 +213,6 @@ class Analytics {
             this.recordPageExit();
             this.syncEvents(true); // Force immediate sync
         });
-    }
-
-    // Start periodic synchronization
-    startSyncInterval() {
-        setInterval(() => this.syncEvents(), this.syncInterval);
     }
 
     // Record page view event
