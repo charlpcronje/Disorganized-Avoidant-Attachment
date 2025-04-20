@@ -421,6 +421,7 @@ class Analytics {
 
     // Sync events with server
     syncEvents(forceSync = false) {
+        console.log('Pending events...',this.pendingEvents.length);
         if (this.pendingEvents.length === 0) return;
 
         // Don't sync small batches unless forced
