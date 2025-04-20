@@ -113,8 +113,12 @@ class Analytics {
     }
 
     syncEvents() {
-        if (this.eventBuffer.length === 0) return;
+        if (this.eventBuffer.length === 0) {
+            console.log("no events to sync");
+            return;
+        }
         const events = this.eventBuffer.slice();
+        console.log("syncing events", this.eventBuffer.length);
         this.eventBuffer = [];
         fetch(this.apiEndpoint, {
             method: 'POST',
