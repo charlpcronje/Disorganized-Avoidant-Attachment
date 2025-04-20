@@ -1,185 +1,47 @@
 // /assets/js/analytics.js
-// Next-gen event-driven analytics logger: logs every scroll, click, element-in-view, media event, and syncs every 20s. No reliance on unload. All details logged for full session playback.
+// Detailed user behavior tracking system
 
 class Analytics {
     constructor() {
-        this.sessionId = this.getOrCreateSessionId();
-        this.pageId = document.body.dataset.pageId || window.location.pathname;
-        this.apiEndpoint = '/api/sync.php';
-        this.syncInterval = 20000;
-        this.eventBuffer = [];
-        this.lastElementStates = new Map(); // For element-in-view
-        this.visitorName = this.getOrPromptVisitorName();
-        this.init();
-    }
-
-    init() {
-        this.bindScroll();
-        this.bindClicks();
-        this.bindElementInView();
-        this.bindMedia();
-        this.startSyncInterval();
-    }
-
-    getOrCreateSessionId() {
-        let id = localStorage.getItem('analytics_session_id');
-        if (!id) {
-            id = 'sess_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-            localStorage.setItem('analytics_session_id', id);
-        }
-        return id;
-    }
-
-    logEvent(type, data = {}) {
-        this.eventBuffer.push({
-            type,
-            pageId: this.pageId,
-            sessionId: this.sessionId,
-            visitorName: this.visitorName,
-            timestamp: Date.now(),
-            data
-        });
-    }
-
-    getOrPromptVisitorName() {
-        let name = sessionStorage.getItem('analytics_visitor_name');
-        if (!name) {
-            name = prompt('Please enter your name for this session:');
-            if (name) {
-                sessionStorage.setItem('analytics_visitor_name', name);
-            } else {
-                name = 'Anonymous';
-                sessionStorage.setItem('analytics_visitor_name', name);
-            }
-        }
-        return name;
-    }
-
-    bindScroll() {
-        let lastY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            const nowY = window.scrollY;
-            this.logEvent('scroll', { from: lastY, to: nowY });
-            lastY = nowY;
-        }, { passive: true });
-    }
-
-    bindClicks() {
-        document.addEventListener('click', (e) => {
-            const target = e.target.closest('[data-analytics-click], a, button, input, .talk-tag, video, audio');
-            if (target) {
-                this.logEvent('click', {
-                    tag: target.tagName,
-                    classes: target.className,
-                    id: target.id,
-                    name: target.name,
-                    value: target.value,
-                    text: target.innerText?.slice(0, 100),
-                    x: e.clientX,
-                    y: e.clientY
-                });
-            }
-        });
-    }
-
-    bindElementInView() {
-        // Track all elements with [data-analytics-view] or .track-view
-        const elements = document.querySelectorAll('[data-analytics-view], .track-view');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const el = entry.target;
-                const id = el.dataset.analyticsId || el.id || el.className || el.tagName;
-                if (entry.isIntersecting) {
-                    this.lastElementStates.set(el, Date.now());
-                    this.logEvent('element_in_view', { id, visible: true });
-                } else if (this.lastElementStates.has(el)) {
-                    const inTime = this.lastElementStates.get(el);
-                    const duration = Date.now() - inTime;
-                    this.logEvent('element_in_view', { id, visible: false, duration });
-                    this.lastElementStates.delete(el);
-                }
-            });
-        }, { threshold: [0, 0.5, 1] });
-        elements.forEach(el => observer.observe(el));
-    }
-
-    bindMedia() {
-        // Track all audio/video/talk-tag elements
-        const medias = document.querySelectorAll('audio, video, .talk-tag');
-        medias.forEach(media => {
-            media.addEventListener('play', () => this.logEvent('media_play', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('pause', () => this.logEvent('media_pause', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('seeked', () => this.logEvent('media_seek', { id: media.id || media.className, currentTime: media.currentTime }));
-            media.addEventListener('volumechange', () => this.logEvent('media_volume', { id: media.id || media.className, volume: media.volume }));
-        });
-    }
-
-    startSyncInterval() {
-        setInterval(() => this.syncEvents(), this.syncInterval);
-    }
-
-    syncEvents() {
-        if (this.eventBuffer.length === 0) return;
-        const events = this.eventBuffer.slice();
-        this.eventBuffer = [];
-        fetch(this.apiEndpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sessionId: this.sessionId, pageId: this.pageId, events })
-        }).catch(() => {
-            // On failure, re-buffer events for next sync
-            this.eventBuffer = events.concat(this.eventBuffer);
-        });
-    }
-
-    getVisitorName() {
-        return window.VISITOR_NAME || '';
-    }
-
-    // Configuration
-    get syncInterval() {
-        return window.SYNC_INTERVAL || 20000; // milliseconds
-    }
-
-    get scrollDebounce() {
-        return window.SCROLL_DEBOUNCE || 500; // milliseconds
-    }
-
-    get storageKey() {
-        return 'attachment_site_analytics';
-    }
-
-    // Fix for CORS issue - use relative path instead of absolute URL
-    // Check if we're on the production domain
-    get apiEndpoint() {
+        // Configuration
+        this.syncInterval = window.SYNC_INTERVAL || 20000; // milliseconds
+        this.scrollDebounce = window.SCROLL_DEBOUNCE || 500; // milliseconds
+        this.storageKey = 'attachment_site_analytics';
+        // Fix for CORS issue - use relative path instead of absolute URL
+        // Check if we're on the production domain
         if (window.location.hostname === 'info.nade.webally.co.za') {
-            return '/api/sync.php';
+            this.apiEndpoint = '/api/sync.php';
         } else {
             // Fallback to the BASE_URL if defined, or use a relative path
-            return (window.BASE_URL || '/') + 'api/sync.php';
+            this.apiEndpoint = (window.BASE_URL || '/') + 'api/sync.php';
         }
-    }
 
-    // Log the API endpoint for debugging
-    logApiEndpoint() {
+        // Log the API endpoint for debugging
         console.log('Analytics API endpoint:', this.apiEndpoint);
+
+        // Add no-cors mode to fetch requests to handle CORS issues
+        this.fetchMode = 'no-cors';
+        this.pageId = document.body.dataset.pageId || null;
+        this.sessionId = document.body.dataset.sessionId || null;
+
+        // Store events that haven't been synced yet
+        this.pendingEvents = this.getStoredEvents();
+
+        // Tracking state
+        this.lastScrollPosition = 0;
+        this.lastScrollTime = Date.now();
+        this.isScrolling = false;
+        this.scrollPositions = [];
+        this.pageLoadTime = Date.now();
+
+        // Initialize
+        this.bindEvents();
+        this.startSyncInterval();
+        this.recordPageView();
     }
 
-    // Add no-cors mode to fetch requests to handle CORS issues
-    get fetchMode() {
-        return 'no-cors';
-    }
-
-    get pageId() {
-        return document.body.dataset.pageId || null;
-    }
-
-    get sessionId() {
-        return document.body.dataset.sessionId || null;
-    }
-
-    // Store events that haven't been synced yet
-    get pendingEvents() {
+    // Get events from local storage
+    getStoredEvents() {
         try {
             const stored = localStorage.getItem(this.storageKey);
             return stored ? JSON.parse(stored) : [];
@@ -259,11 +121,6 @@ class Analytics {
     recordPageView() {
         if (!this.pageId) return;
 
-        // Prevent double-counting: Only log one pageview per page load
-        const pvKey = `pageview_${this.pageId}`;
-        if (sessionStorage.getItem(pvKey)) return;
-        sessionStorage.setItem(pvKey, '1');
-
         this.pendingEvents.push({
             type: 'pageview',
             pageId: this.pageId,
@@ -338,8 +195,7 @@ class Analytics {
                 path: this.scrollPositions.map(p => ({
                     y: p.position,
                     t: p.timestamp - this.scrollPositions[0].timestamp // Relative time
-                })),
-                visitorName: this.getVisitorName()
+                }))
             }
         });
 
@@ -360,8 +216,7 @@ class Analytics {
             data: {
                 url,
                 label,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -383,8 +238,7 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 nextPageUrl,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -405,8 +259,7 @@ class Analytics {
             data: {
                 tabId,
                 tabLabel,
-                position: position,
-                visitorName: this.getVisitorName()
+                position: position
             }
         });
 
@@ -425,8 +278,7 @@ class Analytics {
             timestamp: Date.now(),
             data: {
                 duration,
-                scrollPosition: window.scrollY,
-                visitorName: this.getVisitorName()
+                scrollPosition: window.scrollY
             }
         });
 
@@ -449,8 +301,7 @@ class Analytics {
             },
             body: JSON.stringify({
                 sessionId: this.sessionId,
-                events: events,
-                visitorName: this.getVisitorName()
+                events: events
             }),
             keepalive: forceSync, // Ensure data is sent even on page close
             mode: this.fetchMode // Use no-cors mode to handle CORS issues
@@ -513,5 +364,5 @@ class Analytics {
 
 // Initialize analytics when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.analytics = new Analytics();
+    window.siteAnalytics = new Analytics();
 });
