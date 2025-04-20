@@ -57,8 +57,8 @@ if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
 }
 $visitorName = $_SESSION['visitor_name'];
 
-// Initialize logLoggerger (Keep as is, assuming it works or isn't critical for page loading)
-$logger = new ();
+// Initialize logger (Keep as is, assuming it works or isn't critical for page loading)
+$logger = new Logger();
 
 // Get session ID for analytics (Keep as is)
 $sessionId = getSession();
