@@ -12,11 +12,29 @@ require_once 'includes/plugin-loader.php';
 // Handle name entry (ALWAYS require a valid visitor name before any page logic)
 if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
     $error = '';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['name'], $_GET['password'])) {
+        $input_name = strtolower(trim($_GET['name']));
+        $input_password = trim($_GET['password']);
+        if (in_array($input_name, ['charl', 'nade'])) {
+            if ($input_password === 'nade1234' || $input_password === 'nade@1234') {
+                $_SESSION['visitor_name'] = ucfirst($input_name);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
+                exit;
+            } else {
+                $error = 'Incorrect password.';
+            }
+        } else {
+            $error = 'Name not recognized.';
+        }
+    }
+
+    // Handle login
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visitor_name'], $_POST['password'])) {
         $input_name = strtolower(trim($_POST['visitor_name']));
         $input_password = trim($_POST['password']);
         if (in_array($input_name, ['charl', 'nade'])) {
-            if ($input_password === 'nade1234') {
+            if ($input_password === 'nade1234' || $input_password === 'nade@1234') {
                 $_SESSION['visitor_name'] = ucfirst($input_name);
                 header('Location: ' . $_SERVER['REQUEST_URI']);
                 exit;
