@@ -17,7 +17,7 @@ if (!isset($_SESSION['visitor_name']) || empty($_SESSION['visitor_name'])) {
         $input_name = strtolower(trim($_GET['name']));
         if (in_array($input_name, ['charl', 'nade','gpt'])) {
             $_SESSION['visitor_name'] = ucfirst($input_name);
-            header('Location: ' . $_SERVER['REQUEST_URI']);
+            header('Location: ' . strtok($_SERVER["REQUEST_URI"], '?'));
             exit;
         } else {
             $error = 'Name not recognized.';

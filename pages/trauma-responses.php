@@ -160,12 +160,19 @@
             </ol>
         </div>
 
+        <!--
         <div class="tab-content" data-tab="personal">
              <talk voice="nova">
+             <figure style="display: inline-block; margin: 0;">   
+                <video style="max-width:100%; min-width:100%;" src="media/jammer.mp4" controls></video>
+                <figcaption style="margin-top: 8px; font-style: italic; font-size: 14px; color: #666;">
+                    Ek het die video gemaak so paar maande terug maar ek dink nie jy het dit ooit gesien nie.
+                </figcaption>
+            </figure>
                  <p>Charl describes Nade's GHB episodes where she became violent, broke things, and seemed disconnected from reality ("she starts falling around... just saying random words... hit herself"). While GHB has its own effects, this behavior also mirrors a dissociative or freeze/fight state often seen in trauma survivors when overwhelmed, suggesting her nervous system was taking over rather than conscious malice.</p>
              </talk>
-             <!-- No external links -->
         </div>
+        -->
     </div>
 
     <talk voice="nova">
